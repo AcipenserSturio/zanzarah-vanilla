@@ -1,0 +1,47 @@
+UID = "7982B534"
+Name = "23D47EB1"
+TriggerScript = """
+deployNpcAtTrigger.51.1
+setCamera.3004
+changeWaypoint.1.2
+changeWaypoint.2.3
+playAnimation.12.-1
+say.<We meet again, human girl.>.0
+waitForUser
+setTalkLabels.1.2.1
+talk.<Do you really believe you could win in a fairy duel against me, {4*Seamus the Great}?>
+waitForUser
+label.1
+setCamera.1006
+fight.-1.0
+label.2
+setTalkLabels.-1.-1.0
+talk.<Nobody will defeat Seamus the Great!>
+waitForUser
+changeWaypoint.3.2
+playAnimation.0.-1
+exit"""
+InitScript = """
+setModel.g204s20m
+defaultWizForm.4.1.6
+defaultWizForm.3.0.5
+defaultWizForm.21.2.6
+defaultWizForm.22.3.11"""
+UpdateScript = """
+label.0
+idle
+ifTriggerIsActive.50
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.1000
+setTalkLabels.-1.-1.0
+talk.<
+    My fairies weren't fighting properly, else I would have won.
+    I'll go back into the forest to collect even stronger fairies for our next duel.
+>
+waitForUser
+changeWaypoint.3.4
+removeNpc"""
+VictoriousScript = "killPlayer"

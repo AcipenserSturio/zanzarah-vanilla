@@ -1,0 +1,40 @@
+UID = "ABF0DA04"
+Name = "F8438821"
+TriggerScript = """
+setCamera.1000
+changeWaypoint.-1.-1
+playAnimation.13.-1
+say.<Stay away from me, you skinny thing!>.0
+waitForUser
+talk.<
+    How can you stupid little mite hope to defeat me?
+    As long as I'm standing here, the power of the magic cage will remain.
+    You're going to have to defeat me!
+>
+waitForUser
+setCamera.1006
+fight.-1.0"""
+InitScript = """
+setModel.u001s01m
+defaultWizForm.53.0.34
+defaultWizForm.31.1.30
+defaultWizForm.50.2.20
+defaultWizForm.51.3.32
+defaultWizForm.25.4.25"""
+UpdateScript = """
+label.0
+lookAtPlayer.10.1
+ifPlayerIsClose.20
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.1000
+say.<
+    How could I lose against such a skinny little human?
+    It's intolerable!
+>.0
+waitForUser
+startEffect.0.-1
+removeNpc"""
+VictoriousScript = "killPlayer"

@@ -1,0 +1,19 @@
+UID = "1DDD5094"
+Name = "B18BDDB1"
+InitScript = """
+setNpcType.1
+setModel.p000s00m
+movementSpeed.40"""
+UpdateScript = """
+label.0
+moveSystem.0.0
+gotoRandomLabel.3.0
+goto.0
+label.1
+playAnimation.0.90
+goto.0
+label.2
+playSound.0
+playAnimation.0.-1
+lookAtPlayer.20.0
+goto.0"""

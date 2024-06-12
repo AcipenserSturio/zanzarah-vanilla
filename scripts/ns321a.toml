@@ -1,0 +1,9 @@
+UID = "6ECEDA24"
+Name = "97688F91"
+InitScript = """
+setModel.u003s03m
+defaultWizForm.15.0.52
+defaultWizForm.16.1.40
+defaultWizForm.55.2.31
+defaultWizForm.56.3.26"""
+UpdateScript = "lookAtPlayer.0.1"

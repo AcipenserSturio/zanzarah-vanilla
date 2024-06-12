@@ -1,0 +1,31 @@
+UID = "0A1E3314"
+Name = "10E82091"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Welcome to my library.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Oh, the {4*Realm of Clouds}.
+    A place of legend.
+    No other place in {4*Zanzarah} is more radiant and beautiful.
+    There are many unique places among the clouds.
+>
+waitForUser
+talk.<
+    There is the {4*White Cathedral}, the {4*Druid's} home; the great {4*arena}, at one time a place where Fairy Masters tested their strength; the white {4*Cloud Pavilion}, where lavish celebrations were held ...
+    but all this was a long time ago.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Since the platform ceased to function, no one has been able to reach the clouds.
+    Many have entirely forgotten that the {4*Realm of Clouds} ever existed.
+>
+waitForUser
+exit"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.4.0.28"""
+UpdateScript = "lookAtPlayer.0.1"

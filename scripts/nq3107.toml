@@ -1,0 +1,74 @@
+UID = "33D0C584"
+Name = "7B2D8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.1
+goto.0
+endIf
+ifPlayerHasCards.1.0.22
+setNpcModifier.-1.-1.1
+say.<Many stories are being told about you, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You've freed the lost {4*Dwarf Master}?
+    Then the innocence of the dwarves has been proven and I can trade crystals again.
+>
+waitForUser
+goto.0
+endIf
+ifPlayerHasCards.1.0.26
+goto.10
+endIf
+say.<Come on in.>.0
+waitForUser
+label.0
+say.<I deal in crystals and fairy coins.>.1
+choice.6.<Buy 1 crystal for 10 fairy coins>
+choice.5.<Sell 1 crystal for 5 fairy coins>
+choice.7.<No business>
+waitForUser
+label.5
+ifPlayerHasCards.1.0.6
+setTalkLabels.-1.-1.0
+talk.<Business is business.>
+waitForUser
+removePlayerCards.1.0.6
+givePlayerCards.5.0.4
+exit
+endIf
+setTalkLabels.-1.-1.0
+talk.<You don't have a single crystal, so you won't get any fairy coins from me!>
+waitForUser
+goto.0
+label.6
+ifPlayerHasCards.10.0.4
+setTalkLabels.-1.-1.0
+talk.<Business is business.>
+waitForUser
+removePlayerCards.10.0.4
+givePlayerCards.1.0.6
+exit
+endIf
+setTalkLabels.-1.-1.0
+talk.<If you don't have sufficient fairy coins, we'll never do business.>
+waitForUser
+goto.0
+label.7
+exit
+label.10
+say.<Hello, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<Ever since you found {4*Quinlin's} Staff of Rule, the whole of {4*Zanzarah} believes that we dwarves are in cahoots with the Shadow Elves.>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    That's why my shop has been closed.
+    I can't trade any more crystals until our innocence is proven.
+>
+waitForUser
+exit"""
+InitScript = "setModel.d000s00m"
+UpdateScript = "lookAtPlayer.-1.1"

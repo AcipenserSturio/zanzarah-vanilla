@@ -1,0 +1,232 @@
+UID = "DF3258B4"
+Name = "B18BDDB1"
+TriggerScript = """
+ifTriggerIsActive.31
+goto.10
+endIf
+ifPlayerHasCards.1.2.0
+setCamera.3005
+deployNpcAtTrigger.94.0
+setTalkLabels.-1.-1.0
+talk.<
+    You've got a {4*Nature Fairy}! What a dreadful being! Who told you I'm vulnerable to these fairies?
+>
+waitForUser
+talk.<If you want to defeat me, you need to catch me first.>
+waitForUser
+deployNpcAtTrigger.96.0
+gotoRandomLabel.2.20
+label.20
+deployNpcAtTrigger.99.0
+changeDatabase.84C594B4
+exit
+label.21
+deployNpcAtTrigger.18.0
+changeDatabase.84C594B4
+exit
+endIf
+deployNpcAtTrigger.35.1
+setCamera.3005
+ifPlayerHasCards.7.0.6
+removePlayerCards.7.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.10
+changeWaypoint.10.5
+exit
+endIf
+ifPlayerHasCards.6.0.6
+removePlayerCards.6.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.10
+changeWaypoint.10.5
+exit
+endIf
+ifPlayerHasCards.5.0.6
+removePlayerCards.5.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.10
+changeWaypoint.10.5
+exit
+endIf
+ifPlayerHasCards.4.0.6
+removePlayerCards.4.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.10
+changeWaypoint.10.5
+exit
+endIf
+ifPlayerHasCards.3.0.6
+removePlayerCards.3.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.10
+changeWaypoint.10.5
+exit
+endIf
+ifPlayerHasCards.2.0.6
+removePlayerCards.2.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.10
+changeWaypoint.10.5
+exit
+endIf
+ifPlayerHasCards.1.0.6
+removePlayerCards.1.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.10
+changeWaypoint.10.5
+exit
+endIf
+talk.<
+    What a miserable sight! You haven't found a single crystal I could {4*steal}.
+>
+waitForUser
+exit
+label.10
+ifPlayerHasCards.1.2.0
+setCamera.3005
+deployNpcAtTrigger.94.0
+setTalkLabels.-1.-1.0
+talk.<
+    You've got a {4*Nature Fairy}! What a dreadful being! Who told you I'm vulnerable to these fairies?
+>
+waitForUser
+talk.<If you want to defeat me, you need to catch me first.>
+waitForUser
+deployNpcAtTrigger.96.0
+gotoRandomLabel.2.20
+label.20
+deployNpcAtTrigger.99.0
+changeDatabase.84C594B4
+exit
+label.21
+deployNpcAtTrigger.18.0
+changeDatabase.84C594B4
+exit
+endIf
+deployNpcAtTrigger.36.1
+setCamera.3005
+ifPlayerHasCards.7.0.6
+removePlayerCards.7.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.10
+changeWaypoint.10.5
+exit
+endIf
+ifPlayerHasCards.6.0.6
+removePlayerCards.6.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.11
+changeWaypoint.11.5
+exit
+endIf
+ifPlayerHasCards.5.0.6
+removePlayerCards.5.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.11
+changeWaypoint.11.5
+exit
+endIf
+ifPlayerHasCards.4.0.6
+removePlayerCards.4.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.11
+changeWaypoint.11.5
+exit
+endIf
+ifPlayerHasCards.3.0.6
+removePlayerCards.3.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.11
+changeWaypoint.11.5
+exit
+endIf
+ifPlayerHasCards.2.0.6
+removePlayerCards.2.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.11
+changeWaypoint.11.5
+exit
+endIf
+ifPlayerHasCards.1.0.6
+removePlayerCards.1.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    You have {4*crystals} on you! No traveller can pass me without my stealing {4*crystals} from him.
+>
+waitForUser
+changeWaypoint.5.11
+changeWaypoint.11.5
+exit
+endIf
+talk.<
+    What a miserable sight! You haven't found a single crystal I could {4*steal}.
+>
+waitForUser
+exit"""
+InitScript = """
+setNpcType.0
+setCollision.0
+wizform.0.62.2
+movementSpeed.20"""
+UpdateScript = """
+label.0
+idle
+ifTriggerIsActive.31
+startPrelude
+endIf
+ifTriggerIsActive.30
+startPrelude
+endIf
+goto.0"""

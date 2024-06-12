@@ -1,0 +1,29 @@
+UID = "7EDC6334"
+Name = "B7993001"
+TriggerScript = """
+setCamera.1000
+changeWaypoint.-1.-1
+say.<This is no place for a human!>.1
+delay.15
+setCamera.1006
+fight.-1.1"""
+InitScript = """
+setNpcType.3
+setCollision.0
+ifNpcModifierHasValue.1
+defaultWizForm.66.0.20
+defaultWizForm.66.1.20
+else
+defaultWizForm.65.0.25
+endIf"""
+UpdateScript = """
+label.0
+idle
+ifPlayerIsClose.15
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+removeNpcAtTrigger.59
+removeNpcAtTrigger.61
+removeNpc"""

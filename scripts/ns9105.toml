@@ -1,0 +1,59 @@
+UID = "D2CB5434"
+Name = "B18BDDB1"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Greetings, traveller.>.0
+waitForUser
+label.0
+say.<I am one of the last inhabitants of Zanzarah who still remembers the time of the Great Divide.>.1
+choice.1.<A hermit's life>
+choice.2.<The Great Divide>
+choice.3.<See you soon>
+waitForUser
+label.1
+setTalkLabels.-1.-1.2
+talk.<
+    When the world of the humans and the world of Zanzarah were divided, I came here.
+    I have lived at peace with the fairies ever since, and I know some of their secrets.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Some fairies will have almost allergic reactions if you pick a certain fairy as your {4*active fairy}.
+    There's a {4*Stone Fairy} living in the caves on the other side of the waterfalls.
+    You can chase it away with a {4*Nature Fairy} as your active fairy.
+>
+waitForUser
+goto.0
+label.2
+setTalkLabels.-1.-1.2
+talk.<
+    Those were dreadful times.
+    The humans hunted us magical creatures everywhere we went.
+    I was driven from my swamp near the coast.
+>
+waitForUser
+talk.<
+    But one day the {4*White Druid} found me.
+    He collected all the endangered magical creatures and we travelled to Zanzarah through the {4*magic portals}.
+>
+waitForUser
+setCamera.2003
+talk.<
+    The Druid locked these portals behind us with the {4*runes} and he set up the {4*Guard}.
+    The Guard is a very strong spell which watches over the borders between the worlds.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    We were only able to survive in Zanzarah thanks to the {4*Guard}.
+    But it's strange - sometimes I miss you humans.
+>
+waitForUser
+setCamera.1006
+goto.0
+label.3
+exit"""
+InitScript = "setModel.g001s01m"
+UpdateScript = "lookAtPlayer.-1.1"

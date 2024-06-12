@@ -1,0 +1,25 @@
+UID = "0FE37C24"
+Name = "B18BDDB1"
+TriggerScript = """
+setCamera.1000
+say.<A human in our garden?!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You should be careful, many {4*fairies} take pleasure in pestering wanderers with their magic.
+    If I may give you some advice, look for {4*magical places} in our world, they sometimes cause helpful miracles ...
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    ...
+    with some luck you'll even find one of these {4*magic fields} near my stone! 
+>
+waitForUser
+setCamera.3100
+delay.20
+setCamera.1006
+delay.20
+startEffect.1.-1
+removeNpc"""
+InitScript = "wizform.0.3.1"

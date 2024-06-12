@@ -1,0 +1,28 @@
+UID = "6CA12BA4"
+Name = "B18BDDB1"
+TriggerScript = """
+setCamera.3010
+playPlayerAnimation.35.-1
+say.<Wow, what was that?>.1
+playAmyVoice.trg01a
+delay.30
+playPlayerAnimation.0.-1
+setCamera.3011
+say.<Where am I now?>.1
+playAmyVoice.trg01b
+delay.30
+say.<I hope this isn't one of those dreams full of little green men ...>.1
+setCamera.3012
+playAmyVoice.trg01c
+delay.25
+removeNpc"""
+InitScript = """
+setNpcType.4
+setCollision.0"""
+UpdateScript = """
+label.0
+ifPlayerIsClose.155
+startPrelude
+endIf
+idle
+goto.0"""

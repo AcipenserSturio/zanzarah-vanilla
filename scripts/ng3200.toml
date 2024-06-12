@@ -1,0 +1,69 @@
+UID = "F3306004"
+Name = "5FFBCC31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Approach, collector of fairies.>.0
+waitForUser
+label.10
+say.<
+    I have a wide selection of {4*active} and {4*passive} spells to offer.
+    How may I help you?
+>.1
+choice.0.<Tell me how to get {4*spells}>
+choice.1.<Create a {4*selection} of spells for me>
+choice.2.<I'll be back later>
+waitForUser
+label.0
+setTalkLabels.-1.-1.2
+talk.<
+    It's quite a simple matter really.
+    I have numerous different spells for your fairies.
+    But I don't exactly offer them for sale ...
+    
+>
+waitForUser
+talk.<
+    ...
+    I create a random selection of spells, and you may select {4*any} spell you want to have.
+    Just to make matters a little more exciting and lucrative ...
+>
+waitForUser
+setTalkLabels.0.10.1
+talk.<
+    ...
+    I have added a few {4*blanks}.
+    The price for each {4*selection} is set and non-negotiable.
+    Do you want me to explain the rules again?
+>
+waitForUser
+goto.10
+label.1
+setupGambling.20.3.0
+setupGambling.1.1.10
+setupGambling.1.1.11
+setupGambling.1.1.12
+setupGambling.1.1.70
+setupGambling.1.1.71
+setupGambling.1.1.72
+setupGambling.1.1.0
+setupGambling.1.1.1
+setupGambling.1.1.2
+setupGambling.1.1.60
+setupGambling.1.1.61
+setupGambling.1.1.62
+setupGambling.1.1.62
+setupGambling.1.1.30
+setupGambling.1.1.31
+setupGambling.1.1.32
+setupGambling.1.1.90
+setupGambling.1.1.91
+setupGambling.1.1.92
+waitForUser
+goto.10
+label.2
+exit"""
+InitScript = """
+setCollision.0
+setModel.w002s02m"""
+UpdateScript = "lookAtPlayer.0.1"

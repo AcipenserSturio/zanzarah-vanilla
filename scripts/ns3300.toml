@@ -1,0 +1,68 @@
+UID = "8C136A14"
+Name = "10E82091"
+TriggerScript = """
+setCamera.3000
+playAnimation.13.-1
+ifNpcModifierHasValue.1
+say.<Oh, you again!>.0
+waitForUser
+setTalkLabels.10.11.1
+talk.<Do you want to fight my fairies now?>
+waitForUser
+exit
+endIf
+setNpcModifier.-1.-1.1
+say.<
+    What?
+    Humans in Zanzarah?
+    Will the evil never stop?
+>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    The whole land is going to rack and ruin! The entry to our beloved home in {4*Monagham} has been blocked by a huge rock.
+    Dwarf Master {4*Quinlin} has vanished, and the ghastly {4*Shadow Elves} are roaming the mountains.
+>
+waitForUser
+talk.<
+    One of them even tried to get into our tower, because that's where my brothers and I keep one of the three {4*Elemental Stones}.
+    The Stone of {4*Earth}!
+>
+waitForUser
+talk.<Only by uniting this stone with the lost Elemental Stones of {4*Air} and {4*Nature} can you activate the old elevator and travel to the Realm of Clouds.>
+waitForUser
+setTalkLabels.10.11.1
+talk.<
+    But, since we guard the tower, you must beat each of us in a {4*fairy duel} in order to get the stone.
+    Would you care to try?
+>
+waitForUser
+exit
+label.10
+setCamera.1006
+fight.-1.0
+label.11
+setTalkLabels.-1.-1.0
+talk.<Praise be to the Druid, for I am by no means a good Fairy Master.>
+waitForUser
+exit"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.47.0.24
+defaultWizForm.47.2.20
+defaultWizForm.48.4.27"""
+UpdateScript = "lookAtPlayer.0.1"
+DefeatedScript = """
+setTalkLabels.-1.-1.0
+setCamera.3000
+talk.<
+    So you've beaten me.
+    Hah, but you'll never win against my three brothers.
+    Follow me into my room, if you like.
+    I know quite a lot about the platform.
+>
+waitForUser
+changeWaypoint.-1.0
+changeWaypoint.0.1
+removeNpc"""
+VictoriousScript = "killPlayer"

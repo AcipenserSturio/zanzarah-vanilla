@@ -1,0 +1,71 @@
+UID = "501F4684"
+Name = "23D47EB1"
+TriggerScript = """
+setCamera.3000
+playAnimation.12.-1
+ifNpcModifierHasValue.1
+say.<Ugh, the human again!>.0
+waitForUser
+else
+setNpcModifier.-1.-1.1
+say.<
+    Bah, a human! Don't come too close to me.
+>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    How could {4*Rafi} be so naive as to lead a human to our glorious world?! Humans always cause {4*misery} and {4*destruction}.
+>
+waitForUser
+endIf
+ifPlayerHasCards.1.0.16
+setTalkLabels.-1.-1.2
+talk.<I will only let you pass if you have a {4*bag} to collect {4*pixies} with.>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    What?
+    Where did you human get my father's {4*collecting bag}?
+    And you've got a {4*fairy}! That's unjust! Just wait until we meet again.
+>
+waitForUser
+changeWaypoint.1.2
+removeNpc
+exit
+endIf
+label.0
+say.<What do you want, human?>.1
+choice.1.<Leave village>
+choice.2.<Pixie plague>
+choice.3.<Nothing for now>
+waitForUser
+exit
+label.1
+setTalkLabels.-1.-1.2
+talk.<
+    This path leads to the woods and to {4*Tiralin}, the capital city of {4*Zanzarah}.
+    There are pixies everywhere here.
+    My father {4*Lucius, the Guardian of Pixies}, sent me to catch the {4*pixies}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    But I'm far too lazy to work.
+    Why don't you get a {4*collecting bag} and hunt for pixies yourself?
+    Then you may pass if you want.
+>
+waitForUser
+goto.0
+label.2
+setTalkLabels.-1.-1.0
+talk.<
+    Pixies are only small beasts, but {4*fairies} are very different.
+    Only the best {4*Fairy Masters} fight one another in fairy duels.
+    One day I'll be a famous Fairy Master: {4*Seamus the Great}.
+>
+waitForUser
+goto.0
+label.3
+exit"""
+InitScript = "setModel.g204s20m"
+UpdateScript = "lookAtPlayer.0.1"

@@ -1,0 +1,60 @@
+UID = "3418ED04"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNumberOfNpcsIs.1.D23AD1A4
+say.<It's not over yet, Amy.>.0
+waitForUser
+talk.<As long as the {4*leader} of the Shadow Elves is out there, I will not return to the swamp!>
+waitForUser
+exit
+endIf
+say.<Greetings, Amy, saviour of the Swamp Goblins.>.0
+waitForUser
+ifPlayerHasCards.1.0.47
+setTalkLabels.5.6.1
+talk.<
+    Now you've found the {4*Fairy Card of Nature}.
+    You're the best Fairy Master I've ever met.
+    It would be an honour to me to challenge you to a {4*fairy duel}.
+    Will you accept the challenge?
+>
+waitForUser
+label.5
+setCamera.1006
+fight.-1.0
+label.6
+setTalkLabels.-1.-1.0
+talk.<
+    Pity.
+    Maybe another time then.
+    Good luck on your travels.
+>
+waitForUser
+exit
+endIf
+talk.<
+    All Shadow Elves have been defeated! You're very skilled.
+    But have you found the {4*Fairy Card of Nature}?
+    It's supposed to be hidden in a ring of stone here in the swamp.
+    Look out for the shimmering {4*ghost lights} and follow them!
+>
+waitForUser"""
+InitScript = """
+setModel.g007s01m
+defaultWizForm.62.0.9
+defaultWizForm.58.1.11"""
+UpdateScript = """
+deployNpcAtTrigger.67.0
+lookAtPlayer.-1.1"""
+DefeatedScript = """
+setTalkLabels.-1.-1.0
+talk.<
+    This fairy duel was an honour.
+    Good luck on your travels.
+>
+waitForUser
+changeDatabase.B2989D04
+exit"""
+VictoriousScript = "killPlayer"

@@ -1,0 +1,75 @@
+UID = "1F4D22A4"
+Name = "1C1716B1"
+TriggerScript = """
+setCamera.1002
+playAnimation.13.-1
+ifNpcModifierHasValue.1
+say.<Oh, Amy.>.0
+else
+say.<Oh, I'm so terribly unhappy!>.0
+setNpcModifier.-1.-1.1
+endIf
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    I am so unhappy! I lost my favourite fairy {4*Segbuzz} in a fairy duel! I can't possibly take part in the tournament in the {4*Old Tree} without it.
+>
+waitForUser
+talk.<
+    Some Fairy Masters find Chaos Fairies a little gruff, but I love my {4*Segbuzz}.
+    Its wings are so delicate and its nose is so sweet.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You can only trade your active fairy.
+    If you have my beloved {4*Segbuzz}, select it as your {4*active} fairy.
+>
+waitForUser
+ifPlayerHasCards.1.0.26
+goto.10
+endIf
+ifPlayerHasCards.1.2.68
+setTalkLabels.-1.-1.0
+talk.<
+    No, that's not {4*my} fairy Segbuzz.
+    I hear a seller in {4*Tiralin} has got my fairy.
+    That's the one I want.
+>
+waitForUser
+exit
+endIf
+exit
+label.10
+ifPlayerHasCards.1.2.68
+setTalkLabels.1.2.1
+talk.<
+    My fairy! You found my favourite fairy {4*Segbuzz}! Please can I have it back?
+    I can give you one of my fairies in exchange.
+>
+waitForUser
+exit
+else
+exit
+endIf
+label.1
+setTalkLabels.-1.-1.0
+talk.<
+    Thank you.
+    Now I've got {4*Segbuzz}, I can take part in the tournament.
+    Thanks to you, I'm bound to win.
+    Here, have this {4*Worgot} as a token of my thanks.
+>
+waitForUser
+tradeWizform.9
+setCamera.3000
+changeWaypoint.1.2
+removeNpc
+exit
+label.2
+setTalkLabels.-1.-1.0
+talk.<Oh, I'm so terribly unhappy!>
+waitForUser
+exit"""
+InitScript = "setModel.g203s23m"
+UpdateScript = "lookAtPlayer.-1.1"

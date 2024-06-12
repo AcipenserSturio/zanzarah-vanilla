@@ -1,0 +1,90 @@
+UID = "70B749B4"
+Name = "F655D391"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifPlayerHasCards.1.0.56
+goto.10
+endIf
+ifNumberOfNpcsIs.1.5AB6E504
+setTalkLabels.-1.-1.0
+talk.<
+    There's one last prickly bush on our land.
+    Find it and you'll receive the elementary key to the {4*elevator} into the world of the Druid.
+>
+waitForUser
+exit
+endIf
+ifNumberOfNpcsIs.2.5AB6E504
+setTalkLabels.-1.-1.0
+talk.<
+    There are two more bushes here on our land.
+    Find them and I'll give you the Elementary Key of Nature.
+>
+waitForUser
+exit
+endIf
+ifNumberOfNpcsIs.3.5AB6E504
+setTalkLabels.-1.-1.0
+talk.<You still need to find and remove three further prickly bushes, then you'll receive my part of the old {4*elevator} into the world of the Druid.>
+waitForUser
+exit
+endIf
+ifNumberOfNpcsIs.4.5AB6E504
+setTalkLabels.-1.-1.0
+talk.<
+    There are four more bushes hidden in our valley.
+    Only after they have all disappeared can I give you the elementary key to the {4*elevator} of the Druid.
+>
+waitForUser
+exit
+endIf
+ifNumberOfNpcsIs.0.5AB6E504
+setTalkLabels.-1.-1.0
+talk.<
+    Thank you for freeing our house from the bushes.
+    You really deserve to have the {4*Elementary Key of Nature}.
+    Use it to activate the elevator up to the realm of the Druid.
+>
+waitForUser
+givePlayerCards.1.0.56
+exit
+endIf
+ifNumberOfNpcsIs.5.5AB6E504
+say.<Welcome to our forest hut.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    The {4*prickly bushes} have overgrown our land so much we can't live in it any longer.
+    My husband is looking for a {4*remedy}, which is supposed to be hidden in the swamp.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Find any prickly bushes on our land and remove them.
+    I've found the {4*Elementary Key of Nature} to the world of the Druid.
+    I can reward you with it.
+>
+waitForUser
+exit
+endIf
+label.10
+ifNumberOfNpcsIs.1.E3A72994
+say.<Thanks for freeing our house from the bushes.>.0
+waitForUser
+exit
+endIf
+say.<Welcome to our forest hut.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    My husband is still lost in the {4*swamp village}.
+    He doesn't know that you've cleared our valley of prickly bushes.
+    If only somebody could {4*tell} him so he returns home.
+>
+waitForUser
+exit"""
+InitScript = """
+setModel.w000s00m
+movementSpeed.13"""
+UpdateScript = "lookAtPlayer.0.1"

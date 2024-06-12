@@ -1,0 +1,68 @@
+UID = "B7D0A034"
+Name = "E95016B1"
+TriggerScript = """
+deployNpcAtTrigger.89.1
+setCamera.3010
+delay.5
+setCamera.2000
+changeWaypoint.-1.-1
+playAnimation.13.-1
+setCamera.3011
+say.<
+    So you're Amy from the human world?
+    Welcome to the gates of {4*Tiralin}.
+>.0
+waitForUser
+setCamera.1000
+setTalkLabels.-1.-1.2
+talk.<
+    I'm glad I've met you! {4*Rafi} told me you had arrived in {4*Zanzarah}, and told me to keep an eye on you.
+    But many dreadful things have happened since then.
+>
+waitForUser
+talk.<
+    There's a rumour that sinister, vicious creatures called {4*Shadow Elves} have come here from the {4*Shadow Realm}.
+    {4*Pixies} are on the loose, and large {4*prickly bushes} are spreading like wildfire.
+>
+waitForUser
+talk.<
+    On top of all that, I've just heard that my father, Dwarf Master {4*Quinlin}, has disappeared.
+    He saw these troubled times coming, and now that we need him he's nowhere to be found.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I hope you'll understand that I must go looking for my father.
+    He's not as young as he was, and he's bound to need my help.
+    
+>
+waitForUser
+delay.5
+givePlayerCards.1.0.58
+setCamera.3011
+changeWaypoint.-1.1001
+setTalkLabels.-1.-1.2
+talk.<
+    Oh, I almost forgot: The last time we met, {4*Rafi} asked me to give you this book.
+    It's a {4*fairy book}.
+    Any decent Fairy Master ought to have one.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You can use it to organise the fairies you collect and find out about their strengths and weaknesses.
+    Excuse me, I really must go now ...
+>
+waitForUser
+changeWaypoint.1001.1002
+changeWaypoint.1002.1003
+removeNpc
+exit"""
+InitScript = "setModel.d006s02m"
+UpdateScript = """
+label.0
+ifPlayerIsClose.200
+startPrelude
+endIf
+lookAtPlayer.10.1
+goto.0"""

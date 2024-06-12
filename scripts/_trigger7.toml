@@ -1,0 +1,21 @@
+UID = "574A9024"
+Name = "B18BDDB1"
+TriggerScript = """
+delay.30
+setCamera.3010
+delay.20
+say.<This is where it gets interesting ...>.1
+playAmyVoice.trg07a
+setCamera.3011
+delay.20
+removeNpc"""
+InitScript = """
+setNpcType.4
+setCollision.0"""
+UpdateScript = """
+label.0
+ifPlayerIsClose.145
+startPrelude
+endIf
+idle
+goto.0"""

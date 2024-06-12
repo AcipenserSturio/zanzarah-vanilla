@@ -1,0 +1,51 @@
+UID = "E1129734"
+Name = "8A0B7EB1"
+TriggerScript = """
+setCamera.3000
+playAnimation.13.-1
+say.<It's good to see you again, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    I see you've found a fairy of your own.
+    Guard it well, you'll have great need of its help on your travels.
+>
+waitForUser
+talk.<
+    Have you noticed all the little impish {4*pixies}, Amy?
+    They will mock and pester you whenever they can.
+    
+>
+waitForUser
+talk.<
+    It was my task to guard them, but a devious {4*Shadow Elf} appeared not long ago and opened the pixies' cages.
+    Now the little pests are running around free and getting up to mischief throughout {4*Zanzarah}.
+>
+waitForUser
+talk.<
+    It will take a good Fairy Master to catch all the pixies.
+    The {4*pixies} are bound to be hiding in the most distant corners of {4*Zanzarah}.
+>
+waitForUser
+talk.<
+    I'm afraid I'm not up to the job, but maybe you can help me.
+    Take this magic {4*pixie bag} and catch as many pixies as you can.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Bring the pixies you catch to my {4*cottage} just behind this entry.
+    Then I can lock them up again.
+    I will reward you for every {4*5} pixies you catch!
+>
+waitForUser
+modifyTrigger.0.3202.7
+setNpcModifier.2411.69.0
+givePlayerCards.1.0.16
+changeWaypoint.10.11
+removeNpc
+exit"""
+InitScript = """
+setModel.g207s23m
+wizform.1.1.2"""
+UpdateScript = "lookAtPlayer.0.1"

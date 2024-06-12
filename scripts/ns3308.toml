@@ -1,0 +1,70 @@
+UID = "05147314"
+Name = "0FDF8F91"
+TriggerScript = """
+setTalkLabels.-1.-1.0
+ifPlayerHasCards.1.0.22
+say.<Oh, Amy!>.0
+waitForUser
+talk.<
+    You proved {4*Quinlin's} innocence! I am very grateful.
+    I hope the little dwarf comes this way again soon.
+>
+waitForUser
+exit
+endIf
+ifNpcModifierHasValue.1
+goto.10
+endIf
+ifPlayerHasCards.1.0.44
+label.10
+say.<Oh, it's you.>.0
+waitForUser
+talk.<
+    Don't believe the bad rumours about {4*Quinlin}! He's a decent, wise dwarf.
+>
+waitForUser
+exit
+endIf
+setCamera.3000
+playAnimation.13.-1
+say.<A human girl has become a Fairy Mistress?>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    I don't believe that {4*Quinlin's} a traitor.
+    He often visited this place, and I know him well.
+    He'd never betray us to the {4*Shadow Elves}!
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<If you want the {4*Fairy Card of Air}, you'll have to pass me first!>
+waitForUser
+fight.-1.0
+exit"""
+InitScript = """
+setModel.g004s03m
+defaultWizForm.75.0.25
+defaultWizForm.42.1.30
+defaultWizForm.57.2.20
+defaultWizForm.58.3.15
+defaultWizForm.23.4.27"""
+UpdateScript = """
+ifNpcModifierHasValue.1
+lookAtPlayer.0.1
+endIf
+label.0
+lookAtPlayer.1.1
+ifPlayerIsClose.2
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.1000
+setTalkLabels.-1.-1.0
+talk.<
+    Oh, poor {4*Quinlin}.
+    Fetch the card, it's up the top of the tree.
+    But don't believe those evil rumours!
+>
+waitForUser
+setNpcModifier.-1.-1.1"""

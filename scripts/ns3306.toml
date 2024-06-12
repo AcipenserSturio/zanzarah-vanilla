@@ -1,0 +1,22 @@
+UID = "E3843EB4"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Welcome to the Great Tree of the swamp.>.0
+waitForUser
+setTalkLabels.5.6.1
+talk.<May I offer you some {4*healing potions} for your travels?>
+waitForUser
+label.5
+givePlayerCards.4.0.1
+changeDatabase.599E9214
+exit
+label.6
+setTalkLabels.-1.-1.0
+talk.<All right then.>
+waitForUser
+changeDatabase.599E9214
+exit"""
+InitScript = "setModel.g001s01m"
+UpdateScript = "lookAtPlayer.-1.1"

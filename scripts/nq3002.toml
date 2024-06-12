@@ -1,0 +1,178 @@
+UID = "8EC38334"
+Name = "21791F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifPlayerHasCards.1.0.22
+setTalkLabels.-1.-1.2
+talk.<
+    What a disaster! The Druid was lying to us the whole time?
+    He summoned the {4*Shadow Elves} and kept the {4*Guard} alive?
+>
+waitForUser
+talk.<
+    How could he be so presumptuous?
+    How could he take the fate of {4*Zanzarah} into his own hands! He must have been blinded by hatred and age.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Amy, you must follow the prophecy! Find the entry to the {4*Shadow Realm}.
+    You will find the {4*Guard} in the darkness of that place.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.44
+setTalkLabels.-1.-1.0
+talk.<
+    I'm impressed.
+    You won the tournament in the Old Tree! Using the {4*Fairy Card of Air Magic}, you can now make use of the air eddies.
+    They may even help you reach the {4*White Cathedral} ...
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.26
+setTalkLabels.-1.-1.2
+talk.<
+    You found {4*evidence} in the {4*Realm of Clouds}?
+    At last we'll know who is to blame for the plague that is torturing our beloved {4*Zanzarah}.
+>
+waitForUser
+talk.<Hmmmm ...>
+waitForUser
+talk.<Can that be?>
+waitForUser
+talk.<
+    The {4*artefact} is {4*Quinlin's} {4*Staff of Rule}, without a doubt! So he must be the {4*traitor} who summoned the Shadow Elves! We've got to find and destroy him.
+>
+waitForUser
+talk.<
+    We will organise a tournament of the Fairy Masters in the {4*Great Tree} in the swamp.
+    
+>
+waitForUser
+talk.<
+    That way, we will find the best Fairy Master in {4*Zanzarah}.
+    The winner will be sent to find {4*Quinlin}.
+    The dwarves must be stopped.
+>
+waitForUser
+setTalkLabels.20.21.1
+talk.<
+    You should take part.
+    Do you know how to get to the Great Tree?
+>
+waitForUser
+label.20
+setTalkLabels.-1.-1.0
+talk.<Good luck in the tournament then.>
+waitForUser
+exit
+label.21
+setTalkLabels.-1.-1.0
+talk.<
+    You'll have to cross the swamp village and follow the catwalks up to the {4*Great Tree}.
+    Good luck in the tournament.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.15
+gotoRandomLabel.2.80
+label.80
+say.<Welcome.>.0
+goto.90
+label.81
+say.<It's good to see you.>.0
+label.90
+waitForUser
+label.0
+say.<How can I help you?>.1
+choice.1.<The locked western gate>
+choice.2.<Trade and exchange>
+choice.3.<Not right now.>
+waitForUser
+label.1
+setTalkLabels.-1.-1.2
+talk.<
+    The {4*western gate}?
+    The dwarves locked it a long, long time ago, using an {4*iron lock}.
+    The world behind it has been a mystery ever since.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<Legends tell of mysterious ruins beyond the gate, but we don't know anything more about what's out there, except that it's said that place is very dangerous for elves like us.>
+waitForUser
+goto.0
+label.2
+setTalkLabels.-1.-1.0
+talk.<
+    You're in luck! We have a large store that sells magic potions and items here in {4*Tiralin}.
+    The owner is a famous fairy collector.
+    You can go there to buy goods or trade {4*fairies} and other magic objects.
+    
+>
+waitForUser
+goto.0
+label.3
+exit
+endIf
+ifNpcModifierHasValue.0
+setNpcModifier.-1.-1.1
+say.<In the name of all the magical creatures in Zanzarah!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    A human in our town! Would you believe it?! It appears the prophecy is more than just a legend after all.
+>
+waitForUser
+talk.<
+    Still, I should have expected it, really.
+    {4*Owls} flew over our roofs and scattered in all directions ...
+>
+waitForUser
+talk.<
+    There are bad rumours coming from the Misty Swamps.
+    They say the {4*Shadow Elves} have left their realm.
+    And {4*Quinlin}, the leader of the dwarves, has disappeared.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    And then you appear - a human.
+    These are truly times of change.
+>
+waitForUser
+exit
+else
+say.<Welcome to my town hall.>.0
+waitForUser
+setNpcModifier.-1.-1.1
+gotoRandomLabel.3.100
+label.100
+talk.<Where can {4*Quinlin} have gone?>
+goto.200
+label.101
+talk.<
+    There are bad rumours coming from the Misty Swamps.
+    They say the {4*Shadow Elves} have left their realm.
+    And {4*Quinlin}, the leader of the dwarves, has disappeared.
+>
+goto.200
+label.102
+talk.<
+    These are disturbed times.
+    What else is likely to happen?
+>
+goto.200
+endIf
+label.200
+waitForUser"""
+InitScript = "setModel.g302s32m"
+UpdateScript = """
+label.0
+lookAtPlayer.20.1
+moveSystem.1.1
+goto.0"""

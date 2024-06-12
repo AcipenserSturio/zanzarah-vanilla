@@ -1,0 +1,29 @@
+UID = "E12A0D14"
+Name = "15A948B1"
+TriggerScript = """
+ifNpcModifierHasValue.1
+say.<What are you still doing here?!>.0
+waitForUser
+exit
+endIf
+say.<Ooh, a being of flesh and blood!>.0
+setTalkLabels.-1.-1.2
+talk.<
+    You shouldn't spend too long in this sinister world, or you'll finish up like us ...
+    I was curious to see what the {4*Shadow Realm} is like, so I travelled the dark colonnade labyrinths.
+>
+waitForUser
+talk.<The vicious {4*Shadow Elves} barred the way home, so I have been trapped here for years, which hasn't done my consistency any good at all.>
+waitForUser
+talk.<
+    You see my mate in the corner there?
+    He's even worse off than I am.
+    He wanted to find one of those strange {4*Fire Fairies} and got lost in the {4*Shadow Realm}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<But everyone knows Fire Fairies live in the great {4*lava caves} under the mountains ...>
+waitForUser
+setNpcModifier.-1.-1.1"""
+InitScript = "setModel.x002s02"
+UpdateScript = "lookAtPlayer.0.1"

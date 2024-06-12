@@ -1,0 +1,42 @@
+UID = "6A0F3E24"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<
+    Welcome, human.
+    I hear you're helping us goblins.
+>.0
+waitForUser
+label.0
+say.<I can tell you about magic spells and their effects.>.1
+choice.1.<Equip a fairy with a spell>
+choice.2.<The right spell for the right fairy>
+choice.3.<No thank you>
+waitForUser
+label.1
+setTalkLabels.-1.-1.0
+talk.<
+    In the {4*menu} you'll find your fairies and spells.
+    When you click on one of the spells and drag it on one of the fairies, this fairy will learn the spell.
+    The spell then disappears from your menu.
+>
+waitForUser
+goto.0
+label.2
+setTalkLabels.-1.-1.0
+talk.<
+    Some fairies can perform special spells better than others.
+    I'm no Fairy Master, but the real champions learn the best {4*combinations} and train their fairies for them.
+>
+waitForUser
+goto.0
+label.3
+exit"""
+InitScript = """
+setModel.g004s03m
+movementSpeed.8"""
+UpdateScript = """
+label.0
+moveSystem.1.2
+goto.0"""

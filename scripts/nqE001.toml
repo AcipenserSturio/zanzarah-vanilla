@@ -1,0 +1,92 @@
+UID = "CC999B24"
+Name = "60D826B1"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.1000
+say.<Hello, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Use the {4*iron key} to enter the realm of the {4*Shadow Elves}.
+    You will find the {4*Guard} there.
+>
+waitForUser
+exit
+endIf
+setNpcModifier.3600.40.1
+setNpcModifier.3600.43.1
+setNpcModifier.3600.54.1
+setNpcModifier.3600.21.1000
+setNpcModifier.3600.7.1000
+setNpcModifier.-1.-1.1000
+setNpcModifier.3402.3.0
+say.<The human from the prophecy!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    All our hopes seemed forlorn! I was on my way to visit a friend of mine, a Swamp Goblin named {4*Rafi}.
+    Suddenly, {4*Shadow Elves} from the sinister depths of {4*Zanzarah} attacked me.
+>
+waitForUser
+setCamera.2003
+talk.<
+    Those villains stole the {4*Staff of Rule}.
+    I fought like a lion, but black magic brought me here instead.
+    My own factory! When I wanted to leave, the Metal Fairies attacked me.
+>
+waitForUser
+talk.<
+    My own creation! They're holding me here - I just don't believe it! The place of my greatest achievements has become my prison.
+>
+waitForUser
+talk.<
+    This is where I helped the {4*White Druid}, the master of the Realm of Clouds, to create the Guard.
+    A being that is half iron, half magic, and capable of travelling to the astral plane of the fairies.
+>
+waitForUser
+talk.<
+    The {4*Guard} sealed the portals to the human world to protect us from your ignorance.
+    The {4*Druid} really didn't have a very high opinion of you humans.
+>
+waitForUser
+talk.<
+    But the separation was only intended to last for a limited amount of time.
+    After all, what good is a world of magic which serves no one?
+    So we created the {4*prophecy}.
+>
+waitForUser
+setCamera.1000
+talk.<
+    It said that, in time, an individual would be chosen; a human whom the fairies would follow, a great Fairy Master.
+    His magic would overcome the {4*Guard} and reunite the worlds.
+>
+waitForUser
+talk.<
+    It was {4*Rafi's} task to watch over the human world, to wait and act once the right moment had come.
+    He possessed the last {4*portal} that led into your world.
+    It was a rune that could overcome the borders of {4*Zanzarah}.
+>
+waitForUser
+changeWaypoint.-1.-1
+talk.<
+    I expect his reasons for choosing you will always remain a secret.
+    So take this {4*iron key} and use it to open the dwarves' {4*iron gates} to the Shadow Realm.
+>
+waitForUser
+talk.<
+    But be watchful - someone must have summoned the {4*Shadow Elves}.
+    Only the {4*White Druid} possesses such power.
+    I find it hard to believe, but the Druid does fear humans, and he loathes change.
+>
+waitForUser
+talk.<
+    He could be very dangerous, both to you and to {4*Zanzarah}.
+    Never underestimate him.
+>
+setTalkLabels.-1.-1.0
+waitForUser
+givePlayerCards.1.0.22
+exit"""
+InitScript = "setModel.d005s01m"
+UpdateScript = "lookAtPlayer.0.1"

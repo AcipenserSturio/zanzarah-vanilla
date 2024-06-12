@@ -1,0 +1,64 @@
+UID = "0D317E14"
+Name = "6E781E01"
+TriggerScript = """
+setCamera.3003
+playAnimation.13.-1
+ifNpcModifierHasValue.1
+say.<Greetings again.>.0
+waitForUser
+setTalkLabels.10.11.1
+talk.<
+    Only a brave Fairy Master can be a good one! Do you dare compete against me, {4*Rufus the Fairy Master}?
+>
+waitForUser
+else
+setNpcModifier.-1.-1.1
+say.<Greetings from Rufus the Fairy Master.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Are you treating my fairy well?
+    Its well-being means a lot to me.
+    It must be trained and equipped with powerful magic.
+    
+>
+waitForUser
+setCamera.1006
+setTalkLabels.10.11.1
+talk.<
+    Only if you duel other Fairy Masters can you gain a strong collection of fairies.
+    Are you ready to face me in a duel?
+>
+waitForUser
+endIf
+label.10
+fight.-1.0
+label.11"""
+InitScript = """
+setModel.g202s22m
+movementSpeed.10
+defaultWizForm.0.0.4
+defaultWizForm.9.1.4
+defaultWizForm.7.2.5"""
+UpdateScript = """
+label.0
+moveSystem.1.2
+gotoRandomLabel.3.0
+goto.0
+label.1
+playAnimation.0.-1
+lookAtPlayer.90.1
+goto.0
+label.2
+playAnimation.0.-1
+lookAtPlayer.20.1
+goto.0"""
+DefeatedScript = """
+setTalkLabels.-1.-1.0
+talk.<
+    One day you'll be a famous Fairy Master.
+    A human Fairy Master! Who would have believed it?
+>
+waitForUser
+changeDatabase.CD6BA214"""
+VictoriousScript = "killPlayer"

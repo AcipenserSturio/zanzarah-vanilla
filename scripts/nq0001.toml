@@ -1,0 +1,124 @@
+UID = "55373434"
+Name = "9F4416B1"
+TriggerScript = """
+setCamera.3001
+deployNpcAtTrigger.99.1
+delay.15
+changeWaypoint.2.1
+playSound.4
+say.<
+    ...ah...
+    just like that one there!
+>.1
+playAmyVoice.trg01d
+playPlayerAnimation.34.-1
+delay.15
+setCamera.2000
+changeWaypoint.1.3
+setCamera.3003
+playAnimation.13.-1
+say.<In the Holy Druid's name!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<At last!>
+waitForUser
+talk.<
+    My mission has been fulfilled.
+    I had almost given up hope.
+    Humans are so terribly narrow-minded where magic is concerned.
+    You are the {4*only one} who could use the rune.
+>
+waitForUser
+setCamera.3004
+talk.<
+    And yet I have been watching you anthropoids for centuries, searching for the prophesied heroine.
+    Only she would step through the ancient portal.
+>
+waitForUser
+talk.<
+    Thus it is written.
+    And now you are here.
+    I actually did it - I, Rafi the Goblin, {4*the genius}! It was high time, too.
+>
+waitForUser
+talk.<
+    Once there was true harmony here in Zanzarah - peace among the goblins in the great swamp, the elves in the woods and the dwarves in their mountain caves.
+    The {4*White Druid}, our guardian, watched over them all.
+>
+waitForUser
+talk.<
+    But now one disaster follows another.
+    The {4*fairies} were once the pillars of magic in Zanzarah.
+    But now they are wild, and instead of helping us, they attack us.
+>
+waitForUser
+talk.<
+    Our paths are either blockaded by large rocks or overgrown by horrid bushes full of thorns.
+    Life has become a burden.
+    And matters are still getting worse! 
+>
+waitForUser
+setTalkLabels.10.11.1
+talk.<
+    The Shadow Elves have left their dark homes and are creating chaos in Zanzarah.
+    No one can stand up to them without the fairies' help.
+    But now you are here, and there is hope once more! You will help us, won't you?
+>
+waitForUser
+label.10
+setTalkLabels.-1.-1.2
+talk.<
+    Of course, that is what is written! I knew it.
+    Nothing can stop a true heroine like you.
+>
+goto.20
+label.11
+setTalkLabels.-1.-1.2
+talk.<
+    You may not understand until later, but your deeds prove that you are the chosen one of the ancient writings.
+    Your adventures will save our world.
+>
+label.20
+waitForUser
+talk.<
+    A prophecy has existed since ancient times about a hero - or rather, ahem, a heroine.
+    You will keep coming across parts of that prophecy.
+    Nobody knows all of it, not even the White Druid in the Realm of Clouds.
+>
+waitForUser
+talk.<
+    But though nobody knows all the secrets of Zanzarah, you will find help everywhere.
+    I will always be ready to offer you advice.
+    The owls also know much about Zanzarah's secrets.
+    Who knows, you may even find the ancient writings ...
+>
+waitForUser
+talk.<
+    A true heroine always finds her own way, though, doesn't she?
+    You're going to need this {4*fairy bag} if you intend to fairy fight.
+    You should learn how to fight fairy duels.
+>
+waitForUser
+setCamera.1003
+setTalkLabels.-1.-1.0
+talk.<
+    Only a true Fairy Mistress will be able to prevail.
+    Beyond this pass lies the elf village of Endeva.
+    You're bound to find out more about fairies there.
+>
+waitForUser
+changeWaypoint.3.4
+givePlayerCards.1.0.59
+changeDatabase.1D7435A4
+exit"""
+InitScript = """
+movementSpeed.10
+setModel.g000s00m"""
+UpdateScript = """
+deployNpcAtTrigger.59.0
+label.0
+lookAtPlayer.1.0
+ifTriggerIsActive.13
+startPrelude
+endIf
+goto.0"""

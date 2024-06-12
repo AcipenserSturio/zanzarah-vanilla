@@ -1,0 +1,37 @@
+UID = "E132C324"
+Name = "B18BDDB1"
+TriggerScript = """
+ifPlayerHasSpecials.1.1
+say.<You've already got a fairy!>.0
+waitForUser
+exit
+else
+setTalkLabels.-1.-1.2
+talk.<
+    A {4*Stone Fairy}.
+    They're good-natured and friendly, though maybe a little listless.
+    They can take a lot of damage in a fight, but they're not as agile as other fairies.
+    A dependable companion!
+>
+waitForUser
+setTalkLabels.10.11.1
+talk.<
+    Do you want this fairy - and I mean this one.
+    Meaning not this one and another, or another one and this one.
+    I don't mean, any other or a different one, but really just this one I'm describing here?
+>
+waitForUser
+exit
+label.10
+givePlayerCards.1.2.3
+setCamera.1006
+removeNpc
+exit
+label.11
+exit
+endIf"""
+InitScript = """
+setNpcType.3
+setCollision.0
+wizform.0.3.0"""
+UpdateScript = "lookAtPlayer.0.0"

@@ -1,0 +1,61 @@
+UID = "55E534A4"
+Name = "7B2D8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Greetings, human girl.>.0
+waitForUser
+ifNpcModifierHasValue.1
+setTalkLabels.-1.-1.2
+talk.<
+    Is it true that you defeated the {4*crystal fairy} in the maze?
+    Then you must have found my {4*7 crystals} ...
+>
+waitForUser
+goto.10
+endIf
+setTalkLabels.-1.-1.2
+talk.<
+    Have you been to the {4*cave labyrinth} beyond the waterfall?
+    A bad fairy living there stole all my {4*crystals}.
+    
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I love crystals! If you defeat this fairy and return my crystals I'll reward you as best I can.
+>
+waitForUser
+exit
+label.10
+ifPlayerHasCards.7.0.6
+setTalkLabels.15.16.1
+talk.<
+    You've got {4*seven crystals}! Will you return my crystals to me, so I can go home?
+>
+waitForUser
+label.15
+removePlayerCards.7.0.6
+setTalkLabels.-1.-1.0
+talk.<
+    Many thanks! Here are my mana potions as a reward.
+>
+waitForUser
+givePlayerCards.2.0.60
+changeDatabase.399C7404
+exit
+label.16
+setTalkLabels.-1.-1.0
+talk.<So you want to steal my crystals as well?>
+waitForUser
+exit
+endIf
+setTalkLabels.-1.-1.0
+talk.<
+    But I collected {4*seven crystals} and you don't have seven crystals.
+    Just bring me all my crystals first, then I'll give you my mana potions as a reward.
+>
+waitForUser
+exit"""
+InitScript = "setModel.d000s00m"
+UpdateScript = "lookAtPlayer.-1.1"

@@ -1,0 +1,65 @@
+UID = "83908DB4"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+ifPlayerHasCards.1.0.15
+deployNpcAtTrigger.24.1
+deployNpcAtTrigger.17.0
+playAnimation.0.-1
+playAnimation.13.-1
+say.<You vanquished the Shadow Elves?>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    It must have been some fight.
+    It's lucky I wasn't there.
+    But you really earned a reward.
+>
+waitForUser
+say.<What do you want?>.1
+choice.5.<Big healing potion>
+choice.6.<Mana potion>
+choice.7.<Silver sphere>
+waitForUser
+label.5
+givePlayerCards.1.0.2
+changeDatabase.B2EE3B04
+exit
+label.6
+givePlayerCards.1.0.60
+changeDatabase.B2EE3B04
+exit
+label.7
+givePlayerCards.1.0.17
+changeDatabase.B2EE3B04
+exit
+endIf
+gotoRandomLabel.3.1
+label.1
+playAnimation.0.-1
+say.<
+    Help! Why won't anyone help me against the Shadow Elves?
+>.0
+waitForUser
+exit
+label.2
+playAnimation.0.-1
+say.<
+    They want to rob me! Do something!
+>.0
+waitForUser
+exit
+label.3
+playAnimation.0.-1
+say.<
+    The Shadow Elves! They're after my treasure!
+>.0
+waitForUser
+exit"""
+InitScript = """
+movementSpeed.19
+setModel.g002s02m"""
+UpdateScript = """
+label.0
+moveSystem.1.2
+goto.0"""

@@ -1,0 +1,25 @@
+UID = "398C4694"
+Name = "BDE38F91"
+TriggerScript = """
+ifNumberOfNpcsIs.0.75ed2a94
+setTalkLabels.-1.-1.0
+talk.<Has this terrible {4*pixie} really disappeared from my shop?>
+waitForUser
+setCamera.3001
+changeWaypoint.-1.2
+talk.<Thanks for catching the pixies, now I can open my shop again.>
+waitForUser
+changeDatabase.B9D44694
+exit
+endIf
+say.<Help me!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I {4*hate} pixies.
+    Until this creature stops rampaging in my shop I won't sell any magic items.
+>
+waitForUser
+exit"""
+InitScript = "setModel.g200s20m"
+UpdateScript = "lookAtPlayer.0.1"

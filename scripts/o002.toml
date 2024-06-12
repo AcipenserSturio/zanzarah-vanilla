@@ -1,0 +1,30 @@
+UID = "A8B22034"
+Name = "5B6A3F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.15.-1
+say.<Come closer, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    That swamp is a ghastly place, don't you agree, Amy?
+    My feathers have become all sticky in the damp air.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Don't spend too long in this foggy world.
+    There are {4*abysses} everywhere and the local {4*fairies} are very aggressive.
+    There are sinister {4*bushes} full of thorns barring paths and blocking passes.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    The worst you can do is to get lost.
+    It's amazing how quickly that can happen.
+    Maybe those {4*ghost lights} can help, they seem to be feeling friendly towards you.
+>
+waitForUser"""
+InitScript = "setModel.w003s03m"
+UpdateScript = "lookAtPlayer.0.0"

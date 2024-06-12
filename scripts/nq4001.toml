@@ -1,0 +1,28 @@
+UID = "02989FB4"
+Name = "97688F91"
+TriggerScript = """
+setCamera.1000
+changeWaypoint.-1.-1
+say.<Did I smell a human?>.0
+waitForUser
+setCamera.1006
+fight.-1.0"""
+InitScript = """
+setModel.u003s03m
+defaultWizForm.15.0.5
+defaultWizForm.31.1.10
+defaultWizForm.38.2.8"""
+UpdateScript = """
+label.0
+idle
+ifPlayerIsClose.40
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.1000
+say.<You can't defeat us all!>.0
+waitForUser
+startEffect.0.-1
+removeNpc"""
+VictoriousScript = "killPlayer"

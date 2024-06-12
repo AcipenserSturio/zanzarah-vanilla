@@ -1,0 +1,80 @@
+UID = "D4F6A294"
+Name = "6E781E01"
+TriggerScript = """
+setCamera.1000
+ifPlayerHasSpecials.1.1
+say.<Aren't you Amy, the girl from the human world?>.0
+playAnimation.13.-1
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You've already got one of my fairies.
+    I can't do any more for you.
+    Go and help {4*Lucius}, the Guardian of Pixies, on his hunt.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.24
+say.<Aren't you Amy, the girl from the human world?>.0
+playAnimation.13.-1
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    My house is on the opposite side of the tavern, close to the river.
+    Take one of my {4*fairies} and help me hunt the pixies!
+>
+waitForUser
+exit
+endIf
+ifNpcModifierHasValue.1
+say.<Don't I know you ...>.0
+else
+say.<What strange manner of creature are you?>.0
+setNpcModifier.-1.-1.1
+endIf
+playAnimation.13.-1
+waitForUser
+setTalkLabels.1.2.1
+talk.<
+    A human?
+    I thought you had all died out centuries ago! I'm {4*Rufus}, the Fairy Master.
+    Who are you?
+    Have you come to help us fight the {4*pixie plague}?
+>
+waitForUser
+label.1
+setTalkLabels.-1.-1.2
+talk.<
+    Then you'll need your own {4*fairy}.
+    In this area there are many {4*wild fairies}.
+    They'll attack you if you come too close to them.
+    You'll only be able to defend yourself with your own fairy.
+    
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You had best go straight to my house.
+    There are three fairies there that you can choose from.
+    Pick {4*one}, then you can help us fight the pixie plague.
+    Take this {4*key} so you can enter my home.
+>
+waitForUser
+givePlayerCards.1.0.24
+exit
+label.2
+setTalkLabels.-1.-1.0
+talk.<
+    That is typical of you humans.
+    If you don't help us, I won't help you either.
+>
+waitForUser
+exit"""
+InitScript = """
+setModel.g202s22m
+defaultWizForm.1.1.10
+defaultWizForm.2.2.10
+defaultWizForm.3.3.10
+defaultWizForm.4.4.10"""
+UpdateScript = "lookAtPlayer.0.1"

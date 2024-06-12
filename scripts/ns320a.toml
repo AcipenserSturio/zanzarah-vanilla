@@ -1,0 +1,60 @@
+UID = "E985B6B4"
+Name = "BDE38F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+ifNpcModifierHasValue.0
+goto.10
+else
+goto.12
+endIf
+label.10
+ifNumberOfNpcsIs.1.75ED2A94
+say.<
+    Bless all the fairies of this world! I've been saved!
+>.0
+waitForUser
+talk.<
+    There's a dreadful monster in my cellar! Can you help me?
+    With your size it should be easy to catch this revolting being!
+>
+waitForUser
+exit
+else
+setNpcModifier.-1.-1.1
+talk.<
+    Thank you so much for relieving me of this beast, now I can get at my {4*magic items} again.
+    I can sell you some if you want me to!
+>
+waitForUser
+exit
+label.12
+say.<It's good to see you again, human child.>.0
+waitForUser
+label.11
+say.<How can I help you?>.1
+choice.0.<Buy magic items>
+choice.1.<Information about the catacombs of Tiralin>
+choice.2.<Not right now>
+waitForUser
+endIf
+exit
+label.2
+exit
+label.0
+tradingCurrency.C564B4A3
+tradingItem.250.9ED19693
+tradingItem.40.66F10A03
+tradingItem.40.1889A2B3
+tradingItem.20.99613EA3
+waitForUser
+goto.11
+label.1
+talk.<
+    Under {4*Tiralin} is a dreadful place no elf dares to enter.
+    There are dark fairies living down there, and they have supernatural magic powers.
+>
+waitForUser
+goto.11"""
+InitScript = "setModel.g203s23m"
+UpdateScript = "lookAtPlayer.-1.1"

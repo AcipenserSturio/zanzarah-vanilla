@@ -1,0 +1,34 @@
+UID = "D7A54E04"
+Name = "5B6A3F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.15.-1
+say.<Amy, it's good to see you.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Don't you think the {4*Realm of Clouds} is simply breathtaking?
+    There's no other place like it in all of {4*Zanzarah}, nowhere where the magic is as distinct and tangible as here.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Once upon a time, the floating isles were densely populated by {4*elves} and {4*goblins}, and even the {4*dwarves} loved coming here.
+    They celebrated in the eastern {4*pavilion}.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Their fairies competed in magic duels in the great {4*arena} in the north.
+    Their magic lived in the mythical {4*White Cathedral}, the {4*heart of Zanzarah}!
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    But all this was a long time ago, and nowadays the temples lie in ruins, and only wild Air Fairies play among the ruins and untamed plantlife.
+    Complete your mission, Amy, and recreate the old glory of the clouds!
+>
+waitForUser"""
+InitScript = "setModel.w003s03m"
+UpdateScript = "lookAtPlayer.0.0"

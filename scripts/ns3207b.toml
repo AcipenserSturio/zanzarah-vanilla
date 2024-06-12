@@ -1,0 +1,17 @@
+UID = "DF234A14"
+Name = "7B2D8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Hello, how's my little fairy doing?>.0
+waitForUser
+talk.<
+    With a little luck you'll find my second fairy.
+    It ran away some time ago.
+    It has since been seen in the gardens ...
+>
+waitForUser"""
+InitScript = """
+setModel.d000s00m
+startActorEffect.0"""
+UpdateScript = "lookAtPlayer.-1.1"

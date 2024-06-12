@@ -1,0 +1,30 @@
+UID = "9A299BA4"
+Name = "8A0B7EB1"
+TriggerScript = """
+setCamera.1005
+playAnimation.13.-1
+gotoRandomLabel.2.10
+label.10
+say.<You're always welcome.>.0
+goto.12
+label.11
+say.<Welcome, Amy!>.0
+label.12
+waitForUser
+setTalkLabels.-1.-1.0
+ifNpcModifierHasValue.1
+talk.<As long as I'm standing here the {4*pixies} will never escape.>
+else
+talk.<
+    Thanks for helping me hunt pixies.
+    My lazy son {4*Seamus} wasn't much help.
+    But then, what can you expect from a young elf these days?!
+>
+setNpcModifier.-1.-1.1
+endIf
+waitForUser"""
+InitScript = """
+setModel.g207s23m
+movementSpeed.13
+wizform.1.1.2"""
+UpdateScript = "lookAtPlayer.0.1"

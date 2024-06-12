@@ -1,0 +1,32 @@
+UID = "B503A694"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+say.<Welcome to my tavern, stranger.>.0
+waitForUser
+label.0
+say.<I've heard some bad rumours from the capital Tiralin.>.1
+choice.1.<Dark powers are on the rampage>
+choice.2.<Fairy collector>
+choice.3.<See you soon.>
+waitForUser
+label.1
+setTalkLabels.-1.-1.0
+talk.<
+    I don't know what to do.
+    The fairies are conspiring against us, our ways and paths have been blockaded and there are rumours of evil {4*Shadow Elves}.
+>
+waitForUser
+goto.0
+label.2
+setTalkLabels.-1.-1.0
+talk.<
+    Before everybody had their own {4*fairies}, but now the fairy collectors are being persecuted by the {4*Shadow Elves}.
+    Even an honourable Fairy Master like Rufus is scared to leave the village.
+>
+waitForUser
+goto.0
+label.3
+exit"""
+InitScript = "setModel.g208s21m"
+UpdateScript = "lookAtTrigger.-1.13"

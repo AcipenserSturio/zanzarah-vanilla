@@ -1,0 +1,25 @@
+UID = "4B6C8034"
+Name = "5B6A3F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.15.-1
+say.<Amy, it's good to see you.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Amy, please listen carefully! What I'm about to tell you is terribly important! So far, all your {4*fairies} are doing is helping you catch other fairies.
+    But their {4*powers} are greater than you might think ...
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<Combined with a rare magic {4*fairy card}, an active fairy - one that is visibly following you - can open up new paths and places.>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    For example, a {4*Fairy Card of Nature} enables {4*Nature Fairies} to shrink {4*sinister weeds} and make them disappear.
+    Use this ability to remove the prickly bushes that are smothering Zanzarah!
+>
+waitForUser"""
+InitScript = "setModel.w003s03m"
+UpdateScript = "lookAtPlayer.0.0"

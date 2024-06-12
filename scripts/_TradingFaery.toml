@@ -1,0 +1,49 @@
+UID = "8219B694"
+Name = "8999AF11"
+TriggerScript = """
+setCamera.1001
+say.<A Fairy Mistress!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You're just in time.
+    I'm a {4*Suane}, a {4*Light Fairy}, the custodian of the old arena.
+    That evil {4*Shadow Elf} entered my territory and brought those sinister {4*Dark Fairies} with him.
+>
+waitForUser
+talk.<
+    I didn't stand a chance.
+    As if that weren't enough, they set that revolting little {4*Chaos Fairy} on me.
+    It's terrible!
+>
+waitForUser
+talk.<
+    Help me get rid of this annoying {4*Chaos Fairy} behind me, and I will follow you wherever you go.
+    Show that beast!
+>
+waitForUser
+fight.-1.0
+exit"""
+InitScript = """
+setNpcType.3
+setModel.f071s26
+defaultWizForm.68.0.30"""
+UpdateScript = """
+label.0
+lookAtPlayer.1.0
+ifPlayerIsClose.8
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+removeWizForms
+talk.<
+    You saved me from the pest.
+    I'm eternally grateful.
+    This {4*arena} will be a lonely place for a long time to come, so I will follow you on your important mission.
+>
+waitForUser
+changeWaypoint.-1.-1
+givePlayerCards.1.2.74
+startEffect.1.-1
+removeNpc"""

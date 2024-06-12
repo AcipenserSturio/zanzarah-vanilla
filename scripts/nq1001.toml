@@ -1,0 +1,130 @@
+UID = "2D354DB4"
+Name = "8A0B7EB1"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.3001
+ifNpcModifierHasValue.1
+say.<Hello, human!>.0
+waitForUser
+else
+setNpcModifier.-1.-1.1
+say.<
+    A human! Now that is a rare sight!
+>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    If I may introduce myself: I am {4*Lucius}, Guardian of Pixies.
+    I am guarding this exit to prevent any pixies from passing, they would wreak havoc everywhere!
+>
+waitForUser
+endIf
+ifPlayerHasSpecials.1.1
+setTalkLabels.-1.-1.2
+talk.<
+    You can help me fight the {4*pixie plague} with your fairy! Why don't you visit me at the other end of the garden.
+    I will give you a magic {4*bag} to catch the pixies with.
+>
+waitForUser
+setTalkLabels.10.11.1
+talk.<Do you know how to fight with fairies?>
+waitForUser
+label.10
+setTalkLabels.-1.-1.2
+talk.<Well, then I'll get the {4*collecting bag} and we'll meet at the other end of the garden.>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    If you have trouble finding my house, take a look at this {4*map}.
+    It's not quite complete, but it should be sufficient for the {4*fairy garden}.
+>
+waitForUser
+givePlayerCards.1.0.62
+changeWaypoint.10.11
+removeNpc
+exit
+label.11
+setCamera.1005
+setTalkLabels.-1.-1.2
+talk.<
+    You can carry {4*five fairies} at the same time in your fairy bag.
+    If you are attacked, the fairies will fight for you.
+    You need to learn how to use the strengths of your active fairy in combat.
+>
+waitForUser
+talk.<
+    Any fairy can fly as long as it has sufficient energy.
+    In battle you can see their flying energy as a {4*green bar}.
+    Luckily this flying energy is renewed after a certain time.
+    Nevertheless you still need to use it wisely!
+>
+waitForUser
+talk.<
+    You can attack with {4*offensive} spells.
+    Every spell is dependent on time.
+    The longer you charge it, the stronger your spell will be.
+    But don't overdo it, or the spell will be turned against your own fairy!
+>
+waitForUser
+talk.<
+    {4*Passive} spells support your fairy.
+    They protect it from damage, strengthen its attack or help you in some other way.
+>
+waitForUser
+talk.<
+    You can purchase spells for fairy coins if you meet a {4*magic merchant}.
+    These magic merchants are dubious profiteers, but you will need their help to strengthen your fairies.
+    You can meet one of them at my {4*cottage}.
+>
+waitForUser
+setCamera.3001
+talk.<
+    Your fairy's life energy is indicated by the {4*red bar}.
+    If your fairy has been defeated, you can heal it with {4*potions} and {4*herbs}.
+>
+waitForUser
+setTalkLabels.11.10.1
+talk.<Shall I explain these basic rules to you again?>
+waitForUser
+endIf
+label.0
+say.<How can I help you, human?>.1
+choice.1.<Leave village>
+choice.2.<Fairies in Endeva>
+choice.3.<Not now>
+waitForUser
+label.1
+setTalkLabels.-1.-1.0
+talk.<
+    You must be new to {4*Zanzarah}.
+    Don't you know that without your own {4*fairy}, you're helpless against the {4*wild fairies}?
+    Find a fairy first, then you can leave the village.
+>
+waitForUser
+goto.0
+label.2
+setTalkLabels.-1.-1.0
+talk.<
+    I'm the Guardian of Pixies and I've only got one fairy.
+    But {4*Rufus} is a former {4*Fairy Master}.
+    He's staying in the house right here.
+>
+waitForUser
+setCamera.3002
+delay.18
+setTalkLabels.-1.-1.0
+setCamera.3001
+talk.<
+    Since the {4*pixies} have escaped, Rufus doesn't dare to leave the village.
+    You're sure to find him in the {4*tavern}.
+    What a great Fairy Master!
+>
+waitForUser
+goto.0
+label.3
+exit"""
+InitScript = """
+setModel.g207s23m
+movementSpeed.11
+wizform.1.1.2"""
+UpdateScript = "lookAtPlayer.0.1"

@@ -1,0 +1,6 @@
+UID = "9A491014"
+Name = "B18BDDB1"
+InitScript = """
+setCollision.0
+setModel.p000s00m"""
+UpdateScript = "lookAtPlayer.-1.1"

@@ -1,0 +1,51 @@
+UID = "1826D0B4"
+Name = "7B2D8F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+ifPlayerHasCards.1.0.22
+say.<You saved the lost leader!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    How could the Druid lock up our Dwarf Master?
+    You need to thwart the dark plans of the Druid and eliminate his {4*Guard}.
+>
+waitForUser
+goto.0
+endIf
+say.<A human in Zanzarah?>.0
+waitForUser
+label.0
+setTalkLabels.1.2.1
+talk.<
+    You are sure to have found gold on your trip.
+    You can buy crystals from us dwarves for that.
+    I'll trade {4*one crystal} for {4*five pieces of gold}.
+>
+waitForUser
+label.1
+ifPlayerHasCards.5.0.4
+removePlayerCards.5.0.4
+setTalkLabels.-1.-1.0
+talk.<
+    Here's your crystal.
+    We dwarves never cheat our customers.
+    I've still got {4*two more crystals}.
+    
+>
+waitForUser
+givePlayerCards.1.0.6
+changeDatabase.453A1534
+exit
+endIf
+setTalkLabels.-1.-1.0
+talk.<
+    You don't have five gold coins! Are you trying to deceive me, human?
+>
+waitForUser
+exit
+label.2
+exit"""
+InitScript = "setModel.d000s00m"
+UpdateScript = "lookAtPlayer.-1.1"

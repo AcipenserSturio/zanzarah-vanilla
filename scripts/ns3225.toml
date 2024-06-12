@@ -1,0 +1,7 @@
+UID = "8B76A8A4"
+Name = "B18BDDB1"
+InitScript = """
+setNpcType.3
+setCollision.0
+defaultWizForm.50.0.39"""
+UpdateScript = "lookAtPlayer.0.2"

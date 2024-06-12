@@ -1,0 +1,111 @@
+UID = "6933B394"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+say.<Welcome to my shop.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    A travelling Fairy Mistress! What luck! I'm searching desperately for the Light Fairy {4*Suane}.
+    If you find it, I'll give you the unique fairy {4*Segbuzz}.
+    
+>
+waitForUser
+ifPlayerHasCards.1.0.26
+setTalkLabels.-1.-1.2
+talk.<
+    Rumour has it you found the dwarves' {4*Staff of Rule} on a Shadow Elf.
+    I never did trust those dwarves! Anyone who lives underground can't be up to any good.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<It's true then: The dwarves have formed an alliance with the {4*Shadow Elves}!>
+waitForUser
+goto.20
+endIf
+label.10
+say.<Not only do I sell precious goods, I also collect exquisite fairies.>.1
+choice.0.<Trade Suane for Segbuzz>
+choice.1.<Purchase goods>
+choice.2.<See you soon>
+waitForUser
+label.0
+ifPlayerHasCards.1.2.74
+setTalkLabels.-1.-1.0
+talk.<
+    Hm, that's not a real {4*Suane} you're trying to sell me.
+    Are you sure you purchased it in {4*Zanzarah}?
+>
+waitForUser
+goto.10
+endIf
+setTalkLabels.-1.-1.2
+talk.<You can only trade an {4*active fairy}.>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<What a pity, I don't see {4*Suane} following you.>
+waitForUser
+goto.10
+exit
+label.1
+tradingCurrency.C564B4A3
+tradingItem.5.23173793
+tradingItem.10.99D2B4A3
+tradingItem.20.AD58B4A3
+tradingItem.20.709DB4A3
+tradingItem.25.2E2FB8A3
+waitForUser
+goto.10
+exit
+label.2
+exit
+label.20
+say.<Not only do I sell precious goods, I also collect exquisite fairies.>.1
+choice.15.<Trade Suane for Segbuzz>
+choice.14.<Purchase goods>
+choice.2.<See you soon>
+waitForUser
+label.14
+tradingCurrency.C564B4A3
+tradingItem.5.23173793
+tradingItem.10.99D2B4A3
+tradingItem.20.AD58B4A3
+tradingItem.20.709DB4A3
+tradingItem.25.2E2FB8A3
+waitForUser
+goto.20
+label.15
+ifPlayerHasCards.1.2.74
+setTalkLabels.-1.-1.0
+talk.<
+    At last my fairy collection is complete! Here, take this {4*Segbuzz}.
+>
+waitForUser
+tradeWizform.68
+setTalkLabels.-1.-1.2
+talk.<
+    There is to be a large tournament in the {4*Old Tree} in the swamp.
+    The best Fairy Masters will be competing there.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Whoever wins the tournament will be sent to find the traitor {4*Quinlin} and stop him.
+    You should take part in the tournament, Amy.
+>
+waitForUser
+removeWizForms
+changeDatabase.25A37894
+exit
+endIf
+setTalkLabels.-1.-1.2
+talk.<You can only trade an {4*active fairy}.>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<What a pity, I don't see {4*Suane} following you.>
+waitForUser
+goto.20"""
+InitScript = """
+setModel.g201s21m
+wizform.0.68.40"""
+UpdateScript = "lookAtPlayer.-1.1"

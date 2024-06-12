@@ -1,0 +1,49 @@
+UID = "837B7934"
+Name = "7B2D8F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1002
+ifPlayerHasCards.1.0.22
+say.<You saved the lost leader!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    How could the Druid lock up our Dwarf Master?
+    You need to thwart the dark plans of the Druid and eliminate his {4*Guard}.
+>
+waitForUser
+goto.0
+endIf
+say.<
+    Hello Amy.
+    You're my best customer when it comes to crystals.
+>.0
+waitForUser
+label.0
+say.<
+    I don't have any crystals left.
+    Shall I tell you more about the dwarves instead?
+>.1
+choice.1.<Home of the dwarves>
+choice.2.<Task of the dwarves>
+choice.3.<Not now>
+waitForUser
+label.1
+talk.<
+    We dwarves live in the underground village of {4*Monagham}.
+    There are elves in {4*Zanzarah} who confuse us with {4*Shadow Elves} because we live below the ground.
+    If they'd only visit us, they'd see how wrong they are!
+>
+waitForUser
+goto.0
+label.2
+talk.<
+    Dwarves are the only ones who can control the element of metal.
+    We use it to forge artistic gates, unbreakable locks and machines - such wonderful machines!
+>
+waitForUser
+goto.0
+label.3
+exit"""
+InitScript = "setModel.d000s00m"
+UpdateScript = "lookAtPlayer.-1.1"

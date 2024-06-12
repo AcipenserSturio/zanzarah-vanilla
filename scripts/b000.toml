@@ -1,0 +1,34 @@
+UID = "A77B9534"
+Name = "92F29531"
+TriggerScript = """
+setCamera.1000
+say.<Do you want to read the book?>.1
+choice.0.<Yes>
+choice.1.<No>
+waitForUser
+label.0
+playAnimation.14.-1
+delay.15
+ifNpcModifierHasValue.0
+playVideo.1
+endIf
+ifNpcModifierHasValue.1
+playVideo.2
+endIf
+ifNpcModifierHasValue.2
+playVideo.3
+endIf
+ifNpcModifierHasValue.3
+playVideo.4
+endIf
+ifNpcModifierHasValue.4
+playVideo.5
+endIf
+delay.5
+label.1
+playAnimation.0.-1
+exit"""
+InitScript = """
+setNpcType.4
+setModel.i001si01"""
+UpdateScript = "lookAtPlayer.0.0"

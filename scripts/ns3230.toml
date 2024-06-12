@@ -1,0 +1,84 @@
+UID = "DCD4EF94"
+Name = "C1BBEB91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+ifNumberOfNpcsIs.1.149DEE04
+goto.100
+else
+goto.200
+endIf
+label.100
+say.<Amy, I'm pleased to see you!>.0
+waitForUser
+ifNpcModifierHasValue.1
+setTalkLabels.-1.-1.0
+talk.<
+    It's terrible.
+    How could the {4*White Druid} capture my friend?
+    It was very brave of you to stand up to him.
+    Accept this precious fairy as a token of my thanks.
+>
+waitForUser
+givePlayerCards.1.2.43
+removeWizForms
+setNpcModifier.-1.-1.2
+exit
+else
+setTalkLabels.-1.-1.0
+talk.<
+    I'm grateful to you for saving my good friend {4*Lasse}.
+    The {4*White Druid} is definitely not to be trusted.
+>
+waitForUser
+exit
+endIf
+label.200
+ifPlayerHasCards.1.0.25
+say.<Come closer!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I don't believe it! My {4*Lasse} - captured by the Druid?
+    You've got to save him!
+>
+waitForUser
+exit
+endIf
+ifNpcModifierHasValue.0
+say.<Come closer!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Are {4*you} the one who removed the rock?
+    It was blocking our paths into the mountains.
+    The terrible rock landed there just after my friend {4*Lasse} had left the village.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    {4*Lasse} had left to look for his father {4*Quinlin}.
+    He just disappeared, nobody knows where to.
+    We're all terribly worried.
+>
+waitForUser
+setNpcModifier.-1.-1.1
+exit
+else
+say.<Come closer!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Things are looking bad for our village.
+    Our leader {4*Quinlin} has vanished, and we haven't heard from {4*Lasse} for ages either.
+>
+waitForUser
+exit
+endIf"""
+InitScript = """
+setModel.d009s09
+ifNpcModifierHasValue.2
+else
+defaultWizForm.43.0.20
+endIf"""
+UpdateScript = "lookAtPlayer.0.1"

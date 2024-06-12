@@ -1,0 +1,57 @@
+UID = "E7D47224"
+Name = "7B2D8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+gotoRandomLabel.2.10
+label.10
+say.<An unexpected visitor!>.0
+goto.12
+label.11
+say.<Welcome, Fairy Mistress.>.0
+label.12
+waitForUser
+ifPlayerHasCards.1.0.54
+setTalkLabels.-1.-1.0
+talk.<
+    I see you now have the {4*Elementary Key of Fire}.
+    I hardly think there's anything I can do to help you.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.70
+goto.20
+else
+setTalkLabels.-1.-1.2
+talk.<
+    I'm guarding the access to a rare {4*dwarf treasure}.
+    I'd like to help you on your great quest, but first you have to prove that you're a friend of our people.
+    
+>
+waitForUser
+talk.<A long time ago, when we dwarves still built the most splendid and powerful machinery in all of {4*Zanzarah}, we had special {4*tools} that we used for our work.>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Seek and find these tools and show them to me.
+    It will prove that you are worthy of our treasure!
+>
+waitForUser
+exit
+endIf
+label.20
+setTalkLabels.-1.-1.0
+ifNpcModifierHasValue.0
+talk.<Ah, you have the {4*tools}, one moment please ...>
+waitForUser
+setNpcModifier.-1.-1.1
+setCamera.3000
+else
+talk.<I will help you on your way ...>
+waitForUser
+endIf
+createSceneObjects.0
+exit"""
+InitScript = "setModel.d000s00m"
+UpdateScript = "lookAtPlayer.0.1"

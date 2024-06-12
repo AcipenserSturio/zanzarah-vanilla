@@ -1,0 +1,28 @@
+UID = "C4343914"
+Name = "B18BDDB1"
+TriggerScript = """
+delay.20
+setCamera.3010
+say.<The derelict dwarf factory ...>.1
+playAmyVoice.trg05a
+delay.30
+setCamera.3011
+say.<
+    ...
+    this must be where it all started!
+>.1
+playAmyVoice.trg05b
+delay.30
+setCamera.3012
+delay.30
+removeNpc"""
+InitScript = """
+setNpcType.4
+setCollision.0"""
+UpdateScript = """
+label.0
+ifPlayerIsClose.155
+startPrelude
+endIf
+idle
+goto.0"""

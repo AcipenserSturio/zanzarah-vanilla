@@ -1,0 +1,29 @@
+UID = "53CA4E04"
+Name = "5B6A3F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Amy, it's good to see you.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    At last a being of flesh and blood has come to see me, I appreciate that.
+    I usually only see ghosts and spirits - not exactly ideal company for a wise woodland owl.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    The dark corners of {4*Zanzarah} are the preferred homes of {4*Chaos Fairies}.
+    They love the putrid, morbid atmosphere.
+    However, the {4*Chaos Fairies} aren't quite as bad as the {4*Dark Fairies}.
+    You'd better keep out of their way if you can!
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    The catacombs go down far below the earth, but the {4*dwarves} locked the entrance to those chilling places with a magic {4*iron lock} a long, long time ago! I can't exactly say I'm not grateful for that.
+    Who knows what might be lurking down there ...
+>
+waitForUser"""
+InitScript = "setModel.w003s03m"
+UpdateScript = "lookAtPlayer.0.0"

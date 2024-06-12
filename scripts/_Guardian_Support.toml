@@ -1,0 +1,6 @@
+UID = "A26B5F04"
+Name = "A46E5421"
+InitScript = """
+setNpcType.3
+setCollision.0
+defaultWizForm.65.0.40"""

@@ -1,0 +1,78 @@
+UID = "6FD7BD94"
+Name = "7B2D8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<What kind of ghastly apparition are you?>.0
+waitForUser
+label.10
+say.<
+    Don't be sad, not everybody can be a dwarf.
+    Can I help you anyway?
+>.1
+choice.0.<Origin and sense of this ominous storm cloud>
+choice.1.<Buy something>
+choice.2.<Have a good journey>
+waitForUser
+exit
+label.0
+setTalkLabels.-1.-1.2
+talk.<
+    Don't ask me about this idiotic thundercloud.
+    It rains down on me day by day, and then there are these permanent flashes of lightning ...
+>
+waitForUser
+talk.<
+    I actually wanted to try a little experiment.
+    Being such a great inventor, I wanted to use the lightning of a storm to supply energy to our machines.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Unfortunately, the lightning I had hoped for hit me.
+    Ever since, I seem to be in the centre of a low.
+    Here in this cave, at least I don't annoy anybody ...
+>
+waitForUser
+goto.10
+label.1
+setTalkLabels.-1.-1.2
+talk.<
+    I'm no great trader, but I could sell you my {4*fairy}.
+    It was a nice Nature Fairy once, but the constant lightning somehow confused its magical essence.
+>
+waitForUser
+setTalkLabels.20.10.1
+talk.<
+    I'll give you this rare fairy for the ridiculous price of {4*400} fairy coins.
+    Do you agree?
+>
+waitForUser
+label.20
+setTalkLabels.-1.-1.0
+ifPlayerHasCards.400.0.4
+removePlayerCards.400.0.4
+givePlayerCards.1.2.43
+talk.<
+    Great, take this fairy.
+    There was a second one of its kind, but it escaped.
+    Maybe you can find it.
+>
+waitForUser
+removeWizForms
+changeDatabase.df234a14
+exit
+endIf
+talk.<
+    Oh, you don't have enough money.
+    Just come back later, I'll stay here and rain some more ...
+>
+waitForUser
+exit
+label.2
+exit"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.43.0.3
+startActorEffect.0"""
+UpdateScript = "lookAtPlayer.0.1"

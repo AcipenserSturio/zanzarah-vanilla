@@ -1,0 +1,89 @@
+UID = "ED367294"
+Name = "BDE38F91"
+TriggerScript = """
+gotoRandomLabel.2.0
+label.0
+say.<Welcome to Endeva, the village of the elves.>.0
+goto.2
+label.1
+say.<Welcome, traveller.>.0
+label.2
+playAnimation.13.-1
+setCamera.1000
+waitForUser
+ifPlayerHasSpecials.1.1
+label.20
+say.<How can I help you?>.1
+choice.10.<Do you want to train?>
+choice.11.<Catching wild fairies>
+choice.12.<Not right now>
+waitForUser
+label.10
+setCamera.1006
+fight.220.0
+exit
+else
+goto.100
+label.12
+exit
+endIf
+exit
+label.11
+setTalkLabels.-1.-1.2
+talk.<
+    You want to catch wild fairies?
+    Then you need {4*magic spheres}, they are very rare and cost a lot of money.
+    If you've got a magic sphere, you can catch a weakened fairy with your own fairy!
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Let's hope you're luckier than me.
+    I only ever catch very weak fairies.
+    It's really depressing.
+>
+waitForUser
+goto.20
+label.100
+ifNpcModifierHasValue.0
+setTalkLabels.-1.-1.2
+talk.<
+    You really seem to be a stranger to this area, you don't even own a fairy.
+    Without a fairy you'll never make it to {4*Tiralin}, the capital of Zanzarah!
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    If I may give you some advice: Meet Fairy Master {4*Rufus} in the tavern.
+    He collects fairies in his house.
+    Maybe he'll help you.
+>
+waitForUser
+setNpcModifier.-1.-1.1
+else
+setTalkLabels.-1.-1.0
+talk.<
+    You must have a fairy of your own, otherwise you won't get far in {4*Zanzarah}.
+    There are wild fairies lurking in almost every tree and behind stones.
+    They will attack you if you get too close.
+>
+waitForUser
+endIf"""
+InitScript = """
+setModel.g300s30m
+wizform.0.0.0
+movementSpeed.14"""
+UpdateScript = """
+label.0
+moveSystem.0.3
+gotoRandomLabel.2.0
+goto.0
+label.1
+lookAtPlayer.10.1
+goto.0"""
+DefeatedScript = """
+setTalkLabels.-1.-1.0
+talk.<You can visit me to train here any time.>
+waitForUser
+createDynamicItems.4.3.-1
+playSound.0"""

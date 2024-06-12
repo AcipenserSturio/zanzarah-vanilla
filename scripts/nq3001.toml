@@ -1,0 +1,57 @@
+UID = "C5B14EB4"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+say.<Welcome to the biggest shop for potions and powders in the whole of Zanzarah.>.0
+waitForUser
+label.10
+say.<I offer the best goods for low prices.>.1
+choice.0.<I have the {4*Swamp Rune}, do you want to buy it for {4*five crystals}?>
+choice.1.<Do you want to buy anything else?>
+choice.2.<See you soon.>
+waitForUser
+label.0
+ifPlayerHasCards.5.0.6
+removePlayerCards.5.0.6
+setTalkLabels.-1.-1.2
+talk.<
+    Thank you for the five crystals.
+    You're pretty smart for a human girl.
+    Here, take your {4*rune} and use it wisely.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    They say the {4*runes} will open direct paths to the different regions of {4*Zanzarah}.
+    This {4*Swamp Rune} will guide you to the swamp.
+    I obtained it from one of the Swamp Goblins a long, long time ago.
+>
+waitForUser
+givePlayerCards.1.0.31
+changeDatabase.6933B394
+exit
+else
+setTalkLabels.-1.-1.0
+talk.<
+    Until you have {4*five crystals}, you can't have the {4*rune}.
+    It's a very valuable stone that will take you straight to {4*Dunmore}.
+>
+waitForUser
+goto.10
+endIf
+label.1
+tradingCurrency.C564B4A3
+tradingItem.5.23173793
+tradingItem.10.99D2B4A3
+tradingItem.20.AD58B4A3
+tradingItem.20.709DB4A3
+tradingItem.25.2E2FB8A3
+waitForUser
+goto.10
+exit
+label.2
+exit"""
+InitScript = """
+setModel.g201s21m
+wizform.0.68.40"""
+UpdateScript = "lookAtPlayer.-1.1"

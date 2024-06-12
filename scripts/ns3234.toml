@@ -1,0 +1,67 @@
+UID = "C5552784"
+Name = "BDE38F91"
+TriggerScript = """
+gotoRandomLabel.10.0
+label.0
+say.<I don't believe it, he's cheating!>.0
+goto.100
+label.1
+say.<I'd better watch it, his tricks are good.>.0
+goto.100
+label.2
+say.<Should I lay my cards on the table?>.0
+goto.100
+label.3
+say.<He's bluffing, I'm sure of it ...>.0
+goto.100
+label.4
+say.<
+    What a slowcoach! Is he ever going to put a card down ...
+>.0
+goto.100
+label.5
+say.<Two more cards, then I'm the winner ...>.0
+goto.100
+label.6
+say.<Please don't interrupt, I'm not doing this for fun!>.0
+goto.100
+label.7
+label.8
+label.9
+say.<
+    Go away! Just take this coin and go!
+>.0
+createDynamicItems.4.1.-1
+goto.100
+label.100
+waitForUser"""
+InitScript = """
+setNpcType.4
+setModel.g306s36m"""
+UpdateScript = """
+label.10
+idle
+idle
+idle
+gotoRandomLabel.6.0
+goto.10
+label.0
+label.4
+label.5
+playAnimation.11.90
+playAnimation.0.20
+goto.10
+label.1
+playAnimation.12.20
+playAnimation.0.20
+goto.10
+label.2
+idle
+idle
+goto.10
+label.3
+idle
+idle
+idle
+idle
+goto.10"""

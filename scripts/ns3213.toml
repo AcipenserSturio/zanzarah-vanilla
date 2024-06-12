@@ -1,0 +1,44 @@
+UID = "52107C84"
+Name = "F566BE01"
+TriggerScript = """
+deployNpcAtTrigger.50.1
+setCamera.3003
+say.<
+    Sound the alarm! We've got an intruder!
+>.1
+delay.20
+deployNpcAtTrigger.42.39B7B084
+startEffect.0.42
+playSound.3
+setCamera.3000
+delay.10
+deployNpcAtTrigger.43.54f25a04
+startEffect.0.43
+playSound.3
+setCamera.3002
+delay.10
+deployNpcAtTrigger.45.52107c84
+startEffect.0.45
+playSound.3
+setCamera.3001
+delay.10
+talk.<
+    Nobody may enter the ancient dwarf factory! Get her, people!
+>
+waitForUser
+setCamera.1006
+fight.-1.1"""
+InitScript = """
+setNpcType.3
+defaultWizForm.67.0.40"""
+UpdateScript = """
+label.0
+idle
+ifPlayerIsClose.30
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+removeNpcAtTrigger.49
+removeNpcAtTrigger.41
+removeNpc"""

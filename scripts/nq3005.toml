@@ -1,0 +1,67 @@
+UID = "900FC934"
+Name = "389D7EB1"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Interesting, a Fairy Master from the human world?>.0
+waitForUser
+ifPlayerHasCards.1.0.22
+setTalkLabels.-1.-1.2
+talk.<
+    I still can't believe the {4*Druid} caused the chaos in Zanzarah! So he has locked up our Dwarf Master Quinlin and blamed us dwarves?
+>
+waitForUser
+goto.0
+endIf
+ifPlayerHasCards.1.0.26
+setTalkLabels.-1.-1.2
+talk.<
+    You found the dwarf artefact with the leader of the {4*Shadow Elves}?
+    Now the whole of Zanzarah will believe we summoned the Shadow Elves.
+>
+waitForUser
+endIf
+label.0
+setTalkLabels.1.2.1
+talk.<
+    I see you've collected an interesting combination of fairies.
+    Are you up for a fairy duel against me, {4*Eirik} the Fairy Master?
+>
+waitForUser
+label.1
+setCamera.1006
+fight.-1.0
+label.2
+setTalkLabels.-1.-1.0
+talk.<Pity, I'm still looking for a worthy challenge.>
+waitForUser"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.6.1.16
+defaultWizForm.7.0.12
+defaultWizForm.6.2.10"""
+UpdateScript = "lookAtPlayer.-1.1"
+DefeatedScript = """
+setCamera.3005
+setTalkLabels.1.2.1
+talk.<
+    You fight well! At last I have found a Fairy Master who is my equal.
+    I'm {4*Eirik}, a widely-travelled Fairy Master.
+    Do you want to find out more about {4*rare fairies}?
+>
+waitForUser
+label.1
+setTalkLabels.-1.-1.2
+talk.<
+    There is a legend of the {4*perfect fairy combination} among us dwarves.
+    I'm still looking for this invincible combination of fairies.
+    
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<Every kind of fairy has their own {4*strengths} and {4*weaknesses}, but it is only in the right combination that your fairy's abilities become important.>
+waitForUser
+label.2
+changeDatabase.5AC06084
+exit"""
+VictoriousScript = "killPlayer"

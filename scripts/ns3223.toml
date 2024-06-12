@@ -1,0 +1,78 @@
+UID = "191C6894"
+Name = "D5161F81"
+TriggerScript = """
+playAnimation.14.-1
+setCamera.1000
+ifNpcModifierHasValue.0
+say.<
+    Hello, stranger.
+    How do you like my smithy?
+>.0
+waitForUser
+goto.0
+else
+goto.1
+endIf
+label.0
+ifPlayerHasCards.1.0.70
+setTalkLabels.-1.-1.0
+talk.<
+    Ah, I see you've found {4*tools of the dwarves}.
+    Great, now I can explore the magic of metal.
+>
+waitForUser
+setNpcModifier.-1.-1.1
+playAnimation.33.0
+exit
+endIf
+setTalkLabels.-1.-1.2
+talk.<
+    I have been here for ages, trying to teach myself the ancient art of the dwarves, but it's impossible.
+    We have forgotten too much.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I am particularly interested in the {4*old tools}.
+    If I could examine them, I might find a way to reactivate the {4*magic of metal}.
+>
+waitForUser
+playAnimation.33.0
+exit
+label.1
+gotoRandomLabel.2.100
+label.100
+say.<Welcome to my smithy.>.0
+waitForUser
+goto.110
+label.101
+say.<It's good to see you.>.0
+waitForUser
+label.110
+setTalkLabels.10.11.1
+talk.<
+    Thanks to you, I can use the magic powers of {4*dwarf metal} and create spells.
+    Would you like a selection?
+>
+waitForUser
+label.10
+setupGambling.3.1.55
+setupGambling.3.1.56
+setupGambling.3.1.57
+setupGambling.3.1.58
+setupGambling.3.1.59
+setupGambling.3.1.115
+setupGambling.3.1.116
+setupGambling.3.1.117
+setupGambling.3.1.118
+setupGambling.3.1.119
+waitForUser
+playAnimation.33.0
+exit
+label.11
+playAnimation.33.0
+exit"""
+InitScript = """
+setNpcType.4
+setModel.d008s00m
+playAnimation.33.0"""

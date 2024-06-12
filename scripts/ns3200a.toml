@@ -1,0 +1,50 @@
+UID = "D5C56E04"
+Name = "C86EAF91"
+TriggerScript = """
+setCamera.1000
+say.<Oh, it's you again!>.0
+waitForUser
+label.10
+say.<How can I help you?>.1
+choice.0.<Replenish mana for fairies>
+choice.1.<Information about the fairies' mana>
+choice.2.<Not today>
+waitForUser
+label.0
+setCamera.3000
+delay.1
+startEffect.2.27
+delay.1
+setCamera.3001
+startEffect.2.28
+delay.1
+startEffect.2.29
+delay.1
+startEffect.2.30
+delay.1
+setCamera.3002
+startEffect.2.31
+delay.1
+startEffect.2.32
+delay.1
+setCamera.3000
+startEffect.2.35
+delay.1
+startEffect.2.33
+delay.1
+startEffect.2.34
+revive
+goto.10
+label.1
+talk.<
+    Only a fairy who owns enough {4*mana} can cast spells in a duel.
+    Every spell will then cost one {4*mana point}.
+    You need to be cautious, because if all the mana has been used up, the fairy will use its {4*life energy} to cast spells!
+>
+waitForUser
+goto.10
+label.2
+exit"""
+InitScript = """
+setNpcType.4
+setModel.v001s01"""

@@ -1,0 +1,59 @@
+UID = "582574A4"
+Name = "E95016B1"
+TriggerScript = """
+ifNumberOfNpcsIs.0.ABF0DA04
+goto.10
+endIf
+say.<You can only rescue me by defeating the fat {4*Shadow Elf}.>.0
+waitForUser
+exit
+label.10
+deployNpcAtTrigger.36.1
+setCamera.3004
+startEffect.3.67
+delay.2
+startEffect.3.68
+delay.2
+startEffect.3.69
+delay.2
+startEffect.3.67
+startEffect.3.70
+delay.2
+startEffect.3.68
+startEffect.3.71
+delay.2
+startEffect.3.69
+startEffect.3.72
+delay.2
+endActorEffect
+say.<Well done, Amy!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    So it was the {4*Druid} who locked my father up?
+    His fear of the humans must have blinded him.
+    We need to stop him and eliminate the {4*Guard}, else he'll destroy the whole of {4*Zanzarah}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You received the {4*key} to the {4*iron gates} from my father?
+    Use it to enter the sinister {4*Shadow Realm}.
+    Destroy the {4*Guard} and end this curse.
+>
+waitForUser
+changeWaypoint.30.31
+setTalkLabels.-1.-1.0
+talk.<
+    I will return to the dwarf village of {4*Monagham} to see my father and my friend {4*Jani}.
+    Visit us whenever you want.
+    You're always welcome.
+>
+waitForUser
+changeWaypoint.31.32
+setNpcModifier.3404.3.1
+removeNpc"""
+InitScript = """
+setModel.d006s02m
+startActorEffect.1"""
+UpdateScript = "lookAtPlayer.-1.1"

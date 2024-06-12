@@ -1,0 +1,142 @@
+UID = "CB2B6E04"
+Name = "0E2216B1"
+TriggerScript = """
+ifNumberOfNpcsIs.1.149DEE04
+goto.40
+endIf
+playAnimation.13.-1
+setCamera.1000
+ifPlayerHasCards.1.0.22
+goto.10
+endIf
+ifPlayerHasCards.1.0.25
+goto.30
+endIf
+ifNpcModifierHasValue.4
+say.<Leave me alone, you false snake!>.0
+waitForUser
+exit
+endIf
+say.<You must be the human the whole of Zanzarah is talking about.>.0
+waitForUser
+setTalkLabels.11.12.1
+talk.<
+    My friend {4*Lasse the Dwarf} and his father are missing.
+    Have you met my Lasse on your travels?
+>
+waitForUser
+label.11
+setTalkLabels.-1.-1.0
+talk.<
+    Oh?
+    So you've met him often?
+    I don't like it one bit when strange women take to meeting {4*my} friend!
+>
+waitForUser
+setCamera.1006
+fight.1.0
+label.12
+setTalkLabels.-1.-1.0
+talk.<
+    You haven't met him?
+    Then how did you come by his {4*fairy book}?
+    You're a common thief!
+>
+waitForUser
+setCamera.1006
+setNpcModifier.88882211.37.4
+fight.1.0
+label.10
+ifNpcModifierHasValue.4
+say.<
+    Hello Amy.
+    For a human, you're not that bad.
+>.0
+waitForUser
+goto.20
+endIf
+setTalkLabels.-1.-1.2
+talk.<
+    You're on the right path, Amy.
+    Use the {4*iron key} and find the {4*Guard}.
+    
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I would be eternally grateful if you could free my friend Lasse the Dwarf from the hands of the Druid.
+    If you want to save him, hurry to the {4*White Cathedral}!
+>
+waitForUser
+label.20
+setTalkLabels.25.26.1
+talk.<
+    I live in this house with {4*Lasse}.
+    If only he were in the village more often!
+>
+waitForUser
+label.25
+changeDatabase.E856B204
+exit
+label.26
+exit
+label.30
+say.<The Druid has captured Lasse?>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    My Lasse is no thief! Our leader, the {4*Dwarf Master}, can surely prove that.
+>
+waitForUser
+talk.<
+    You can only prove Lasse's innocence by finding out who's really behind all these intrigues.
+    Find our leader, the {4*Dwarf Master}!
+>
+waitForUser
+goto.20
+label.40
+deployNpcAtTrigger.5.1
+setCamera.3001
+playAnimation.13.-1
+say.<Welcome to our small hut, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Thank you for rescuing Lasse from the Druid.
+    Now I can go on my travels and Lasse will look after our house.
+>
+waitForUser
+changeWaypoint.1.2
+changeWaypoint.2.3
+removeNpc"""
+InitScript = """
+setModel.g000s00m
+defaultWizForm.4.4.10"""
+UpdateScript = "lookAtPlayer.-1.1"
+DefeatedScript = """
+deployNpcAtTrigger.41.1
+ifNpcModifierHasValue.4
+setTalkLabels.-1.-1.0
+talk.<You may have defeated me, but for as long as you {4*lie} to me, we can never be friends.>
+waitForUser
+exit
+endIf
+setTalkLabels.-1.-1.0
+talk.<
+    Oh right, you're just {4*good friends}.
+    I should have guessed.
+    {4*My Lasse} doesn't like tall women.
+>
+waitForUser
+setTalkLabels.7.8.1
+talk.<
+    I live in this house with {4*Lasse}.
+    If only he were in the village more often!
+>
+waitForUser
+label.7
+changeWaypoint.5.6
+changeDatabase.E856B204
+label.8
+exit"""
+VictoriousScript = "killPlayer"

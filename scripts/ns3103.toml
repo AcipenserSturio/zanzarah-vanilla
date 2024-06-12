@@ -1,0 +1,27 @@
+UID = "49F089B4"
+Name = "0FDF8F91"
+TriggerScript = """
+deployNpcAtTrigger.53.1
+setCamera.3005
+changeWaypoint.10.11
+setCamera.3006
+deployNpcAtTrigger.50.0
+changeWaypoint.12.13
+talk.<
+    I fought the {4*Shadow Elves}, but my fairies were too weak.
+    First the {4*soldiers} attacked me ...
+    then my fairies were exhausted and suddenly their {4*leader} attacked me ...
+>
+waitForUser
+changeDatabase.3418ED04
+exit"""
+InitScript = """
+setModel.g007s01m
+defaultWizForm.62.0.9"""
+UpdateScript = """
+label.0
+idle
+ifTriggerIsActive.54
+startPrelude
+endIf
+goto.0"""

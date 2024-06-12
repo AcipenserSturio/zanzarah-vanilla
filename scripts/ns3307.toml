@@ -1,0 +1,39 @@
+UID = "89B87A94"
+Name = "2B4B0221"
+TriggerScript = """
+setNpcModifier.1050.18.1000
+setCamera.1000
+playAnimation.13.-1
+say.<Greetings, Amy !>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Well done, Amy.
+    You defeated all the Fairy Masters.
+    You alone are worthy of receiving the {4*Fairy Card of Air}.
+    Use it to reach the distant regions of {4*Zanzarah}.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Now there is nowhere the traitor {4*Quinlin} can hide.
+    Uncover his sinister game with the {4*Shadow Realm} and free {4*Zanzarah} from this curse.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Take this {4*card} and use it with an active {4*Air Fairy}.
+    That way you will be able to use all the eddies in the air for your mission.
+    I will now return to my realm.
+>
+waitForUser
+startEffect.0.-1
+removeNpc"""
+InitScript = "setModel.v000s00"
+UpdateScript = """
+label.0
+ifPlayerIsClose.10
+startPrelude
+endIf
+lookAtPlayer.2.1
+goto.0"""

@@ -1,0 +1,35 @@
+UID = "CB368EB4"
+Name = "B18BDDB1"
+TriggerScript = """
+deployNpcAtTrigger.11.1
+setCamera.1000
+say.<
+    What a weird idea...
+    moving the platform with a screw!
+>.1
+playAmyVoice.trg04a
+delay.50
+say.<This must be the forgotten realm Realm of clouds.>.1
+playAmyVoice.trg04b
+setCamera.3011
+delay.40
+goto.1
+say.<
+    ...
+    I feel dizzy ...
+>.1
+playAmyVoice.trg04c
+label.1
+setCamera.3012
+delay.30
+removeNpc"""
+InitScript = """
+setNpcType.4
+setCollision.0"""
+UpdateScript = """
+label.0
+ifPlayerIsClose.155
+startPrelude
+endIf
+idle
+goto.0"""

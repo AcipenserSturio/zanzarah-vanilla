@@ -1,0 +1,52 @@
+UID = "4FB6DD24"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.0
+say.<Argh, the humans are in Zanzarah!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    These are truly desperate times.
+    Now even the humans are invading our paradise.
+    As if the {4*Shadow Elves} weren't bad enough!
+>
+waitForUser
+setNpcModifier.-1.-1.1
+exit
+endIf
+ifPlayerHasCards.1.0.15
+say.<Hello, Fairy Mistress.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I heard of your great deeds in {4*Dunmore}.
+    Who knows, maybe there is still hope for {4*Zanzarah} ...
+    or maybe not.
+>
+waitForUser
+exit
+endIf
+say.<Ah, the human.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    If you really want to help us, drive the {4*Shadow Elves} from our village in the swamp.
+    That way you could prove our good intentions.
+>
+waitForUser"""
+InitScript = """
+setModel.g004s03m
+movementSpeed.8"""
+UpdateScript = """
+label.0
+moveSystem.1.2
+gotoRandomLabel.3.0
+goto.0
+label.1
+playAnimation.0.30
+goto.0
+label.2
+playAnimation.11.30
+goto.0"""

@@ -1,0 +1,24 @@
+UID = "9171CF24"
+Name = "B18BDDB1"
+TriggerScript = """
+setCamera.1000
+say.<dummy - A human?!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    dummy - Maybe you can help ...
+    Do you see this air eddy?
+>
+waitForUser
+setCamera.3101
+delay.20
+setCamera.1006
+talk.<dummy - I've been trying to use this natural phenomenon for years, but apparently this is simply not the right element for me ...>
+waitForUser
+setCamera.1000
+setTalkLabels.-1.-1.0
+talk.<dummy - Let me know as soon as you've solved the secret of these eddies!>
+waitForUser
+startEffect.1.-1
+removeNpc"""
+InitScript = "wizform.0.3.1"

@@ -1,0 +1,5 @@
+UID = "C9921194"
+Name = "BDE38F91"
+InitScript = """
+setNpcType.4
+setModel.g305s35m"""

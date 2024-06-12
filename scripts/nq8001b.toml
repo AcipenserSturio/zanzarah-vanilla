@@ -1,0 +1,33 @@
+UID = "7A2F0724"
+Name = "2B4B0221"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Welcome to the Cloud Pavilion.>.0
+waitForUser
+label.4
+say.<What can I do for you?>.1
+choice.5.<Fairy Card of Earth>
+choice.6.<Realm of Clouds>
+choice.7.<Not now>
+waitForUser
+label.5
+setTalkLabels.-1.-1.0
+talk.<
+    The {4*Fairy Card of Earth} is a powerful spell.
+    If you own this card and have a Stone Fairy as your active fairy {4*at the same time}, you can overcome the rocks that are blocking the paths in {4*Zanzarah}.
+>
+waitForUser
+goto.4
+label.6
+setTalkLabels.-1.-1.0
+talk.<
+    The {4*Realm of Clouds} is my new home.
+    To the north lies the {4*White Cathedral}, my homestead.
+    No other place in {4*Zanzarah} is as pure, nor as magical.
+>
+waitForUser
+goto.4
+label.7"""
+InitScript = "setModel.v000s00"
+UpdateScript = "lookAtPlayer.0.1"

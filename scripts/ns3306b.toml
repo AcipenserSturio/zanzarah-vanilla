@@ -1,0 +1,54 @@
+UID = "599E9214"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifPlayerHasCards.1.0.44
+say.<Well, well.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You won the tournament for the {4*Fairy Card of Air}.
+    I'm impressed.
+    I hope you have some powerful Air Fairies in your collection to use it with.
+>
+waitForUser
+exit
+endIf
+say.<How do you like our tree?>.0
+waitForUser
+label.0
+say.<How can I help you?>.1
+choice.1.<The Great Tree>
+choice.2.<Tournament>
+choice.3.<Not right now>
+waitForUser
+label.1
+setTalkLabels.-1.-1.0
+talk.<
+    After {4*Dunmore}, which is to the north, this Great Tree is the Swamp Goblins' second settlement in {4*Zanzarah}.
+    It's an extremely swampy-cosy place, don't you think?
+>
+waitForUser
+goto.0
+label.2
+setTalkLabels.-1.-1.2
+talk.<I can't say I'm thrilled that the {4*White Druid} picked our tree for the great fairy tournament.>
+waitForUser
+talk.<
+    But the {4*Fairy Card of Air} is a truly unique magic artefact.
+    Only the best Fairy Master in all of {4*Zanzarah} should have the right to use it.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    A long time ago, when there were still many Fairy Masters, tournaments were held in the great {4*arena}.
+    But the paths that lead there have long since been forgotten.
+>
+waitForUser
+goto.0
+label.3
+exit"""
+InitScript = "setModel.g001s01m"
+UpdateScript = "lookAtPlayer.0.1"
+VictoriousScript = "killPlayer"

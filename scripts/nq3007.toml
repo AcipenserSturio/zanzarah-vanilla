@@ -1,0 +1,63 @@
+UID = "9E31E034"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.0
+setNpcModifier.-1.-1.1
+say.<So you're the human everyone's talking about.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I am the keeper of stories and legends of days gone by.
+    Hardly any of them tell of good or kind humans ...
+>
+waitForUser
+else
+say.<The human has returned.>.0
+waitForUser
+endIf
+label.0
+say.<What shall I tell you about?>.1
+choice.1.<Three worlds>
+choice.2.<Guilt of the humans>
+choice.3.<Nothing for now>
+waitForUser
+label.1
+setTalkLabels.-1.-1.2
+talk.<There once was a time when all worlds were connected, when humans and fairies respected each other and lived together in peace.>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    There has always been a human world, a world of fairies and our world, {4*Zanzarah}.
+    But you never hear of the time when the worlds were united, except in legends and myths.
+>
+waitForUser
+goto.0
+label.2
+setCamera.2003
+setTalkLabels.-1.-1.2
+talk.<
+    Humans! Monsters! Many centuries ago, you began your \"Great Hunt\" - you persecuted the creatures of magic.
+    We owe it to the {4*White Druid} alone that we are still alive.
+    
+>
+waitForUser
+talk.<
+    Anything you couldn't explain was strange to you, and anything that was strange to you had to be hunted down.
+    You drove the fairies and wizards out and banned them from your world.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    The {4*White Druid} divided Zanzarah from the human world and closed the ancient paths.
+    But now you humans have found a portal into our world.
+    I fear that this is the end of peace for all of us.
+>
+waitForUser
+setCamera.1006
+goto.0
+label.3
+exit"""
+InitScript = "setModel.g205s21m"
+UpdateScript = "lookAtPlayer.0.1"

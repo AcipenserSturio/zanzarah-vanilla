@@ -1,0 +1,59 @@
+UID = "252FAF24"
+Name = "8A0B7EB1"
+TriggerScript = """
+setCamera.1005
+playAnimation.13.-1
+gotoRandomLabel.2.10
+label.10
+say.<Hello Amy, was your pixie hunt successful?>.0
+goto.12
+label.11
+say.<How was the pixie hunt?>.0
+label.12
+waitForUser
+ifPlayerHasSpecials.0.10
+setTalkLabels.-1.-1.2
+talk.<
+    Wonderful! Thanks a lot for the pixies.
+    Here's your reward for {4*five pixies}.
+>
+waitForUser
+givePlayerCards.50.0.4
+changeDatabase.F9B3D3A4
+exit
+endIf
+setTalkLabels.-1.-1.0
+talk.<
+    I'm sorry, but you don't have enough pixies to trade.
+    I'll give you a reward for {4*five pixies caught}.
+>
+waitForUser
+label.0
+say.<How can I help you?>.1
+choice.1.<Cellar key>
+choice.2.<Seamus>
+choice.3.<Happy hunting.>
+waitForUser
+label.1
+setTalkLabels.-1.-1.0
+talk.<
+    You can use this {4*cellar key} to enter the cellar of my house.
+    It will take you to the underworld of Zanzarah.
+>
+waitForUser
+goto.0
+label.2
+setTalkLabels.-1.-1.0
+talk.<
+    {4*Seamus} dreams of becoming a great and famous Fairy Master, but I need his help hunting {4*pixies}.
+    Oh, these children ...
+>
+waitForUser
+goto.0
+label.3
+exit"""
+InitScript = """
+setModel.g207s23m
+movementSpeed.13
+wizform.1.1.2"""
+UpdateScript = "lookAtPlayer.0.1"

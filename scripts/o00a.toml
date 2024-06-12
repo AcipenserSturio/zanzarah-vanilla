@@ -1,0 +1,30 @@
+UID = "B0DC5C14"
+Name = "5B6A3F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.15.-1
+say.<Amy, it's good to see you.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You're entering the lovely {4*fairy garden}.
+    It's a place full of colour, scents and sounds.
+    Careful, though.
+    Many of the larger trees and stones are the homes of {4*wild fairies}.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    These fairies enjoy attacking {4*travellers} like you, just to annoy them.
+    You can fight them off using your own fairies!
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    If your fairies are weakened by {4*magic duels}, avoid these trees and other conspicuous places.
+    That way you may get by without a fight!
+>
+waitForUser"""
+InitScript = "setModel.w003s03m"
+UpdateScript = "lookAtPlayer.0.0"

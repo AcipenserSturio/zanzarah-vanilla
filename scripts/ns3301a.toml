@@ -1,0 +1,26 @@
+UID = "B6A31714"
+Name = "10E82091"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Welcome to my humble home.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Books can be a lot of help in {4*Zanzarah}.
+    They contain the legends of our ancestors.
+    One of those legends tells of a hero who will heal our world.
+    It must mean the {4*White Druid}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Sadly, the books don't say how he can save {4*Zanzarah} all on his own.
+    Take a look around.
+    Maybe you'll find an important clue we missed.
+>
+waitForUser"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.3.0.20"""
+UpdateScript = "lookAtPlayer.0.1"

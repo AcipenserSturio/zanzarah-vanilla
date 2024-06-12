@@ -1,0 +1,5 @@
+UID = "54F25A04"
+Name = "F566BE01"
+InitScript = """
+setNpcType.3
+defaultWizForm.65.0.52"""

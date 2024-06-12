@@ -1,0 +1,36 @@
+UID = "915CBBB4"
+Name = "5B6A3F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.15.-1
+say.<Amy, it's good to see you.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    How do you like the {4*fairy garden}?
+    In the normal way, it's a very harmonious place.
+    However, the {4*fairies} who live here have been aggressive of late, and there are {4*pixies} everywhere.
+>
+waitForUser
+talk.<
+    If you want to catch fairies, you'll need a {4*magic fairy sphere}.
+    There are three different kinds: one of {4*silver}, one of {4*gold} and one made of {4*crystal}.
+>
+waitForUser
+talk.<
+    Before you can catch a fairy using your sphere, it must be weakened in a fairy duel and attacked by your fairy.
+    When it is back from the {4*astral plane}, the fairy will be seized by the magic sphere and whisked away to your place of birth.
+>
+waitForUser
+talk.<
+    You may need a more powerful sphere, depending on the {4*experience level} of the fairy you want to catch.
+    You can catch fairies up to level {4*20} using a {4*silver sphere}.
+    More powerful fairies will require the use of a {4*golden sphere} or even the rare {4*crystal sphere}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<Visit me any time you want, Amy.>
+waitForUser"""
+InitScript = "setModel.w003s03m"
+UpdateScript = "lookAtPlayer.0.0"

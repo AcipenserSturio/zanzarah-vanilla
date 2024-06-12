@@ -1,0 +1,66 @@
+UID = "A1370F94"
+Name = "BDE38F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+ifNpcModifierHasValue.1
+say.<
+    Ah, the human ...
+    again!
+>.0
+else
+say.<Hello, human.>.0
+endIf
+waitForUser
+ifPlayerHasCards.1.0.22
+setTalkLabels.-1.-1.0
+talk.<
+    You say the Druid is responsible for the chaos in {4*Zanzarah}, not the dwarves?
+    I find that very hard to believe.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.26
+setTalkLabels.-1.-1.2
+talk.<
+    You found the dwarves' {4*Staff of Rule} with the {4*Shadow Elves}?
+    I always knew those dwarves were evil!
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<Any race that prefers to live in the dark must have a warped mentality.>
+waitForUser
+exit
+endIf
+setTalkLabels.-1.-1.0
+ifNpcModifierHasValue.0
+talk.<
+    I first heard of you humans a very long time ago - and little of what I heard was good.
+    Have you now come to plague our peaceful town as well?
+    I'm having enough trouble coping with the dwarves.
+    I wish they'd go back to their dark caves!
+>
+setNpcModifier.-1.-1.1
+else
+talk.<
+    Believe me, human, there's something wrong with the dwarves.
+    They live in dark caves and avoid trees and meadows.
+>
+endIf
+waitForUser
+exit"""
+InitScript = "setModel.g301s31m"
+UpdateScript = """
+gotoRandomLabel.3.0
+label.0
+deployNpcAtTrigger.37.0
+goto.10
+label.1
+deployNpcAtTrigger.38.0
+goto.10
+label.2
+deployNpcAtTrigger.39.0
+goto.10
+label.10
+lookAtPlayer.0.1"""

@@ -1,0 +1,54 @@
+UID = "D4B4AE94"
+Name = "10E82091"
+TriggerScript = """
+setCamera.3000
+deployNpcAtTrigger.35.1
+playAnimation.13.-1
+say.<Welcome to the Tower of the Wise, human girl.>.0
+waitForUser
+setTalkLabels.10.11.1
+talk.<
+    Don't you know that my brothers and myself are guarding this tower?
+    Did you come to challenge me?
+>
+waitForUser
+label.10
+setTalkLabels.-1.-1.0
+talk.<
+    Then let's measure the strength of our fairies! May the better Fairy Master win!
+>
+waitForUser
+setCamera.1006
+fight.-1.0
+label.11
+setTalkLabels.-1.-1.0
+talk.<This decision is more healthy for you and your fairies anyway!>
+waitForUser"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.3.0.20
+defaultWizForm.3.1.25
+defaultWizForm.5.2.30"""
+UpdateScript = """
+label.0
+idle
+ifPlayerIsClose.5
+startPrelude
+else
+lookAtPlayer.5.1
+endIf
+goto.0"""
+DefeatedScript = """
+setTalkLabels.-1.-1.0
+setCamera.3000
+setTalkLabels.-1.-1.0
+talk.<
+    You have strong fairies! Maybe you can help the {4*White Druid} on his mission.
+    Come and visit me if you want to find out more about the Druid.
+>
+waitForUser
+changeWaypoint.-1.200
+changeWaypoint.200.201
+removeNpc
+setCamera.1006"""
+VictoriousScript = "killPlayer"

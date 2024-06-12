@@ -1,0 +1,48 @@
+UID = "72861934"
+Name = "7B2D8F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+ifPlayerHasCards.1.0.22
+say.<You saved the lost leader!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    How could the Druid lock up our Dwarf Master?
+    You need to thwart the dark plans of the Druid and eliminate his {4*Guard}.
+>
+waitForUser
+goto.0
+endIf
+say.<Hello Amy, I'm always happy to see regulars like you.>.0
+waitForUser
+label.0
+setTalkLabels.1.2.1
+talk.<
+    Do you need even more crystals?
+    I'll trade my last crystal for {4*ten gold coins}.
+>
+waitForUser
+label.1
+ifPlayerHasCards.10.0.4
+removePlayerCards.10.0.4
+setTalkLabels.-1.-1.0
+talk.<
+    Now you've got my {4*last crystal} as well.
+    It was a pleasure doing business with you.
+>
+waitForUser
+givePlayerCards.1.0.6
+changeDatabase.837B7934
+exit
+endIf
+setTalkLabels.-1.-1.0
+talk.<
+    That's no way to do business! You don't have {4*ten gold coins}!
+>
+waitForUser
+exit
+label.2
+exit"""
+InitScript = "setModel.d000s00m"
+UpdateScript = "lookAtPlayer.-1.1"

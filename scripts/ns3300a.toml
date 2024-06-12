@@ -1,0 +1,29 @@
+UID = "07953694"
+Name = "10E82091"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<It was a fair fight.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    A long, long time ago, {4*Quinlin} asked us to guard the {4*Elemental Stone of Earth}.
+    These stones are rare and precious.
+>
+waitForUser
+talk.<
+    We dwarves use their magic powers to run our machines.
+    The elevator near the tower is activated by three stones.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    It requires the Elemental Stones of {4*Air}, {4*Earth} and {4*Nature}.
+    There are other elevators as well, which need other stones.
+    I'm afraid that's all I know.
+>
+waitForUser"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.47.0.24"""
+UpdateScript = "lookAtPlayer.0.1"

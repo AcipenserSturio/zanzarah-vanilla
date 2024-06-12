@@ -1,0 +1,46 @@
+UID = "4D925714"
+Name = "10E82091"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Hello Amy, how are you doing?>.0
+waitForUser
+label.10
+say.<What do you want to find out more about?>.1
+choice.0.<Heroics of the White Druid>
+choice.1.<Destiny of the Dwarf Master>
+choice.2.<Farewell>
+waitForUser
+label.0
+setTalkLabels.-1.-1.2
+talk.<
+    A long time ago, the {4*White Druid} saved us from the humans.
+    That is why I am certain he will help us this time as well.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You need to help him search for the reasons! Because he will not be able to find the culprit who is behind this disaster on his own.
+>
+waitForUser
+goto.10
+label.1
+setTalkLabels.-1.-1.2
+talk.<
+    Our leader, {4*Quinlin} the Dwarf Master, has been lost since the dark shadow of chaos descended on {4*Zanzarah}.
+    We're all very worried about him.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    The son of the Dwarf Master is roaming the whole of Zanzarah searching for his father.
+    The Dwarf Master must know who caused this chaos.
+>
+waitForUser
+goto.10
+label.2
+exit"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.3.0.20"""
+UpdateScript = "lookAtPlayer.0.1"

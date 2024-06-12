@@ -1,0 +1,20 @@
+UID = "44141584"
+Name = "B18BDDB1"
+TriggerScript = """
+ifPlayerHasCards.1.0.70
+delay.5
+setCamera.1007
+playSound.1
+playAnimation.13.0
+delay.10
+setCamera.3000
+delay.5
+unlockDoor.39.1
+exit
+else
+say.<This lever seems to be damaged ...>.0
+waitForUser
+endIf"""
+InitScript = """
+setNpcType.4
+setModel.i000si00"""

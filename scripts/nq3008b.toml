@@ -1,0 +1,38 @@
+UID = "9C20B994"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.3001
+changeWaypoint.5.6
+playAnimation.13.-1
+say.<A human in Tiralin?>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Maybe you can help us goblins.
+    Our {4*swamp village} is besieged by the {4*Shadow Elves}.
+    They have blocked any paths through the swamp.
+>
+waitForUser
+talk.<
+    If you help us goblins we'll be eternally grateful.
+    You must find a {4*way} into the swamp village and defeat all the {4*Shadow Elves}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I don't know how long my friends will be able to hang on in the besieged village.
+    Please hurry!
+>
+waitForUser
+changeWaypoint.6.5
+removeNpc"""
+InitScript = """
+setModel.g007s01m
+movementSpeed.15"""
+UpdateScript = """
+label.0
+idle
+ifTriggerIsActive.9
+startPrelude
+endIf
+goto.0"""

@@ -1,0 +1,23 @@
+UID = "C3E8B284"
+Name = "5B6A3F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.15.-1
+say.<Amy, it's good to see you.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Seeing you here, Amy, is ample compensation for the long wait in the bleak, musty swamp! Ahead of you is the {4*\"other side\"} of Zanzarah.
+    The place where you can create a balance between {4*light} and {4*dark}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Before you lies the \"{4*Shadow Realm}\".
+    None of us can follow you there and help you, you're on your own.
+    Trust in the magic powers of your fairies and fulfil your quest!
+>
+waitForUser"""
+InitScript = "setModel.w003s03m"
+UpdateScript = "lookAtPlayer.0.0"

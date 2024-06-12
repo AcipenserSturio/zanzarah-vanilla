@@ -1,0 +1,76 @@
+UID = "8B410394"
+Name = "0FDF8F91"
+TriggerScript = """
+say.<There's a stench of {4*Shadow Elves} everywhere, ugh!>.0
+waitForUser"""
+InitScript = """
+setNpcType.4
+setModel.g010s01m"""
+UpdateScript = """
+label.10
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+idle
+gotoRandomLabel.30.0
+goto.10
+label.0
+createDynamicItems.4.1.-1
+goto.10
+label.1
+createDynamicItems.0.1.-1
+goto.10
+label.2
+createDynamicItems.60.1.-1
+goto.10
+label.3
+createDynamicItems.4.1.-1
+goto.10
+label.4
+createDynamicItems.4.1.-1
+goto.10
+label.5
+label.6
+label.7
+label.8
+label.9
+label.10
+label.11
+label.12
+label.13
+label.14
+label.15
+label.16
+label.17
+label.18
+label.19
+label.20
+label.21
+label.22
+label.23
+label.24
+label.25
+label.26
+label.27
+label.28
+label.29
+goto.10"""

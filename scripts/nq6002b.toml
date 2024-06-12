@@ -1,0 +1,42 @@
+UID = "E3A72994"
+Name = "F655D391"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.0
+say.<Didn't I meet you in the swamp village?>.0
+else
+say.<
+    Amy! It's good to see you.
+>.0
+endIf
+waitForUser
+ifNpcModifierHasValue.0
+setNpcModifier.-1.-1.1
+setTalkLabels.-1.-1.2
+talk.<I'll never forget how you cleared our valley of prickly bushes.>
+waitForUser
+endIf
+setTalkLabels.0.1.1
+talk.<
+    As a token of my gratitude, I'll turn {4*two} small healing potions into a big one for you.
+    Agreed?
+>
+waitForUser
+label.1
+exit
+label.0
+setTalkLabels.-1.-1.0
+ifPlayerHasCards.2.0.0
+removePlayerCards.2.0.0
+talk.<It was a pleasure!>
+waitForUser
+givePlayerCards.1.0.2
+exit
+else
+talk.<Please bring me two healing potions, otherwise I can't help you!>
+waitForUser
+exit
+endIf"""
+InitScript = "setModel.w001s01m"
+UpdateScript = "lookAtPlayer.0.1"

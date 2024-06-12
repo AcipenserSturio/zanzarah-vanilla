@@ -1,0 +1,34 @@
+UID = "6C605F04"
+Name = "44EB3001"
+TriggerScript = """
+setCamera.2003
+changeWaypoint.-1.19
+talk.<Did I not say I'd defeat you with this spell?>
+waitForUser
+setCamera.1006
+fight.-1.1"""
+InitScript = """
+setModel.u000s00m
+defaultWizForm.72.0.30"""
+UpdateScript = """
+label.0
+idle
+ifPlayerIsClose.50
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.1000
+talk.<
+    How could I lose this fight?
+    We will meet again, and then {4*I} will be the one to win.
+>
+waitForUser
+delay.15
+startEffect.0.-1
+givePlayerCards.1.0.26
+createDynamicItems.4.3.-1
+playSound.0
+deployNpcAtTrigger.50.89A09214
+removeNpc
+exit"""

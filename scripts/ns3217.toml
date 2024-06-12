@@ -1,0 +1,65 @@
+UID = "C4A8C594"
+Name = "BDE38F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+ifPlayerHasCards.0.0.16
+goto.10
+else
+say.<Ah, the human visits us again.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Oh, you've got a {4*pixie bag}! It's good to see someone's dealing with those pests! Pixies cause chaos, they make a home in our larders and mock us.
+>
+waitForUser
+exit
+endIf
+label.10
+ifNpcModifierHasValue.0
+setNpcModifier.-1.-1.1
+say.<Help, a giant!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Strange times have come to {4*Zanzarah}.
+    First those horrid little pixies appear, and now giants are intruding in our village ...
+>
+waitForUser
+talk.<
+    Those vicious {4*pixies} stole my valuable {4*fairy sphere}.
+    Now I can't catch any more fairies.
+    
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I suspect the {4*pixies} have hidden it somewhere in the village.
+    If only I knew where ...
+>
+waitForUser
+exit
+else
+say.<You again!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    If you want to do something to help us, get the {4*pixie bag}.
+    That's the only way you can catch the revolting creatures.
+>
+waitForUser
+endIf"""
+InitScript = "setModel.g301s31m"
+UpdateScript = """
+gotoRandomLabel.3.0
+label.0
+deployNpcAtTrigger.92.0
+goto.10
+label.1
+deployNpcAtTrigger.93.0
+goto.10
+label.2
+deployNpcAtTrigger.94.0
+goto.10
+label.10
+lookAtPlayer.0.1"""

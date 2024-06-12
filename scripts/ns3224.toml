@@ -1,0 +1,54 @@
+UID = "008C94A4"
+Name = "0648ACA1"
+TriggerScript = """
+setCamera.1000
+ifNpcModifierHasValue.1
+say.<The human child visits us again!>.0
+waitForUser
+setTalkLabels.10.20.1
+talk.<
+    We had better not chance another duel - I am still replenishing the mana I lost in our last fight.
+    Do you still want to create the Ascent again?
+>
+waitForUser
+exit
+label.10
+createSceneObjects.0
+exit
+label.20
+exit
+endIf
+say.<You must own strong fairies to dare enter such a place, human child.>.0
+waitForUser
+setTalkLabels.0.1.0
+talk.<
+    If you defeat my friends and me in a fair duel, I will open the portal to the secret of this place! Are you ready to fight?
+>
+waitForUser
+setCamera.3001
+fight.-1.1
+exit"""
+InitScript = """
+setNpcType.3
+defaultWizForm.26.0.58
+defaultWizForm.26.1.58"""
+UpdateScript = """
+ifNpcModifierHasValue.1
+lookAtPlayer.0.0
+endIf
+exit
+label.0
+lookAtPlayer.5.0
+ifPlayerIsClose.15
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setTalkLabels.-1.-1.0
+talk.<
+    You are the strongest fairy collector I have ever encountered.
+    You have earned access to the {4*magic Fairy Card of Fire}.
+>
+waitForUser
+createSceneObjects.0
+setNpcModifier.-1.-1.1"""

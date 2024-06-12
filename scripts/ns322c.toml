@@ -1,0 +1,129 @@
+UID = "E277B534"
+Name = "2B4B0221"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<
+    Humans and Fairy Masters! I hate you all!
+>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    While I still have some fight left in me, my magic protects the portals to the {4*Guard}.
+    Face me in battle.
+    It's the only way you can fulfil your mission.
+>
+waitForUser
+setCamera.1006
+fight.-1.-1"""
+InitScript = """
+defaultWizForm.74.0.50
+defaultWizForm.72.1.55
+defaultWizForm.70.2.45
+defaultWizForm.33.3.50
+defaultWizForm.25.4.40
+setModel.v000s00"""
+UpdateScript = "lookAtPlayer.0.0"
+DefeatedScript = """
+setTalkLabels.-1.-1.2
+talk.<
+    I was unable to defeat you, Amy.
+    The path to the {4*Guard}, the protector of {4*Zanzarah}, lies open before you.
+>
+waitForUser
+talk.<
+    When Dwarf Master {4*Quinlin} and I created the {4*Guard} in the hidden dwarf factory far below the mountains, we argued and went our separate ways.
+    {4*Quinlin} regarded the Guard as a temporary protector.
+    He believed implicitly in the bond between mankind and the fairies.
+>
+waitForUser
+talk.<
+    But the stupid dwarf had never witnessed mankind's deeds with his own eyes.
+    He hadn't been persecuted and killed like the wizards, he hadn't been there when the very existence of the fairies was denied and the belief in them forbidden.
+    
+>
+waitForUser
+talk.<
+    I was left with no other choice than to hold {4*Quinlin} captive, and with him the wisdom of the dwarves.
+    It was the only way I could protect {4*Zanzarah} and keep the Guard alive when his time had run out.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You thwarted all my plans.
+    Now you will determine the fate of {4*Zanzarah} in my place.
+    The path to the {4*Guard} lies open.
+>
+waitForUser
+startEffect.0.-1
+deployNpcAtTrigger.82.0
+delay.10
+setCamera.3020
+startEffect.0.91
+startEffect.1.92
+delay.1
+startEffect.0.92
+startEffect.2.93
+delay.1
+startEffect.0.93
+startEffect.1.94
+delay.1
+startEffect.0.94
+startEffect.2.95
+delay.1
+startEffect.0.95
+startEffect.1.96
+delay.1
+startEffect.0.96
+startEffect.2.97
+delay.1
+startEffect.0.97
+startEffect.1.98
+delay.1
+startEffect.0.98
+startEffect.2.99
+delay.1
+startEffect.0.99
+startEffect.1.0
+delay.1
+startEffect.0.0
+startEffect.1.2
+delay.1
+startEffect.0.2
+startEffect.1.91
+delay.1
+startEffect.0.91
+startEffect.1.92
+delay.1
+startEffect.0.92
+startEffect.2.93
+delay.1
+startEffect.0.93
+startEffect.1.94
+delay.1
+startEffect.0.94
+startEffect.1.95
+delay.1
+startEffect.0.95
+startEffect.2.96
+delay.1
+startEffect.0.96
+startEffect.1.97
+delay.1
+startEffect.0.97
+startEffect.1.98
+delay.5
+startEffect.2.0
+startEffect.3.2
+startEffect.2.91
+startEffect.3.92
+startEffect.2.93
+startEffect.3.94
+startEffect.2.95
+startEffect.3.96
+startEffect.2.97
+startEffect.3.98
+startEffect.2.99
+delay.10
+setNpcModifier.-1.3.1
+removeNpc"""

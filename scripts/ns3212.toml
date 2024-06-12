@@ -1,0 +1,56 @@
+UID = "D7A1C7B4"
+Name = "BDE38F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+ifNpcModifierHasValue.1
+say.<
+    Greetings, human.
+    I hope my {4*Nature Fairy} likes being with you.
+>.0
+setTalkLabels.-1.-1.0
+talk.<That was an excellent trade - a revolting {4*Nature Fairy} for the beautiful Stone Fairy {4*JumRock}.>
+waitForUser
+exit
+endIf
+say.<
+    Hey, hey.
+    A human whom the fairies will follow.
+    That's strange.
+>.0
+waitForUser
+setTalkLabels.0.1.1
+talk.<
+    As you can see, I have a strong and rare {4*Nature Fairy} in my collection.
+    I would love to trade it for one of those wonderful Stone Fairies ...
+    what was its name now ...
+    oh yes, I'd love to trade it for {4*JumRock}.
+    Do you agree?
+>
+waitForUser
+label.0
+setTalkLabels.-1.-1.0
+ifPlayerHasCards.1.2.63
+talk.<That was an excellent trade - a revolting {4*Nature Fairy} for the beautiful Stone Fairy {4*JumRock}.>
+waitForUser
+removeWizForms
+tradeWizform.61
+setNpcModifier.-1.-1.1
+exit
+else
+setTalkLabels.-1.-1.0
+talk.<
+    Oh, what a pity - I don't see {4*JumRock} following you.
+    Of course, Stone Fairies are hard to find, especially this one.
+>
+waitForUser
+endIf
+label.1
+exit"""
+InitScript = """
+setModel.g301s31m
+movementSpeed.14
+ifNpcModifierHasValue.0
+defaultWizForm.61.0.9
+endIf"""
+UpdateScript = "lookAtPlayer.0.1"

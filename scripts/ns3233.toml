@@ -1,0 +1,8 @@
+UID = "5759EF04"
+Name = "0FDF8F91"
+TriggerScript = """
+say.<Hey, kid!>.0
+waitForUser"""
+InitScript = """
+setNpcType.4
+setModel.g011s05m"""

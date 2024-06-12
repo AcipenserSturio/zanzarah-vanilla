@@ -1,0 +1,44 @@
+UID = "1D191D04"
+Name = "A46E5421"
+TriggerScript = """
+ifNpcModifierHasValue.1
+delay.10
+fight.0.1
+exit
+endIf
+say.<This statue is surrounded by a powerful spell.>.1
+delay.30"""
+InitScript = """
+setNpcType.3
+defaultWizForm.67.0.60
+defaultWizForm.66.1.40
+defaultWizForm.65.2.40
+defaultWizForm.67.3.50"""
+DefeatedScript = """
+playVideo.6
+delay.10
+startEffect.2.0
+startEffect.3.2
+startEffect.2.91
+startEffect.3.92
+startEffect.2.93
+startEffect.3.94
+startEffect.2.95
+startEffect.3.96
+startEffect.2.97
+startEffect.3.98
+startEffect.2.99
+delay.2
+startEffect.1.0
+startEffect.1.2
+startEffect.1.91
+startEffect.1.92
+startEffect.1.93
+startEffect.1.94
+startEffect.1.95
+startEffect.1.96
+startEffect.1.97
+startEffect.1.98
+startEffect.1.99
+delay.2
+endGame"""

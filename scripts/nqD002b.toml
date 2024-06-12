@@ -1,0 +1,38 @@
+UID = "285EB684"
+Name = "2B4B0221"
+TriggerScript = """
+delay.15
+setCamera.3002
+say.<It's terrible that all this had to happen.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You rescued {4*Quinlin} from the old factory?
+    Then you must realise the {4*dwarves} are not your enemies.
+    They never worked with the {4*Shadow Elves}.
+>
+waitForUser
+setCamera.3003
+startEffect.1.36
+delay.3
+deployNpcAtTrigger.36.ABF0DA04
+talk.<
+    Mine were the powers which blocked your paths and summoned the {4*Shadow Elves}.
+    The prophecy must never be fulfilled.
+     The {4*Guard} cannot be allowed to fall.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I will leave your friend {4*Lasse} in the care of my pallid friends.
+    They will take good care of him.
+    Turn around, Amy.
+    Leave {4*Zanzarah}, or you will be forced to learn that I am the only true {4*Fairy Master}.
+>
+waitForUser
+startEffect.0.-1
+delay.2
+removeNpc
+exit"""
+InitScript = "setModel.v000s00"
+UpdateScript = "startPrelude"

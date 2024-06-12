@@ -1,0 +1,21 @@
+UID = "DEC0BEA4"
+Name = "60D826B1"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Hello, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<Thanks to you, I can return to the leadership of {4*Monagham}, though politics were never really one of my strong points.>
+waitForUser
+talk.<
+    Continue on your journey, Amy.
+    The {4*iron key} will allow you to visit new places in {4*Zanzarah} that have been closed to you so far.
+    You must use it!
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<If ever you come across {4*Rafi} again, send him my regards.>
+waitForUser"""
+InitScript = "setModel.d005s01m"
+UpdateScript = "lookAtPlayer.0.1"

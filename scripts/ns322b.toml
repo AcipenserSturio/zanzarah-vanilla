@@ -1,0 +1,81 @@
+UID = "1F795CB4"
+Name = "2B4B0221"
+TriggerScript = """
+setCamera.3000
+changeWaypoint.-1.-1
+playAnimation.13.-1
+say.<You should not have come here, Amy!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    The {4*Dark Cathedral} is the refuge of the {4*Guard}, our protector against human scum.
+    
+>
+waitForUser
+setCamera.3002
+delay.15
+setTalkLabels.-1.-1.2
+talk.<
+    Created by me with the help of the ignorant dwarves, he must never be allowed to fall.
+    Forged of iron, brought to life by magic, he watches over the borders between the worlds.
+>
+waitForUser
+setCamera.3001
+talk.<
+    Thenceforth, he and his mechanical aids have protected the world of the fairies from you humans.
+    His powers closed the great {4*portal}, so that no fairy may ever set eyes on the human world.
+>
+waitForUser
+talk.<
+    I covered {4*Zanzarah} with chaos and summoned the {4*Shadow Elves}.
+    I could never allow a Fairy Master to become more powerful than the Guard ...
+    but the {4*Shadow Elves} failed.
+    Now I must destroy you myself!
+>
+waitForUser
+fight.-1.-1"""
+InitScript = """
+defaultWizForm.27.0.50
+defaultWizForm.21.1.55
+defaultWizForm.63.2.45
+defaultWizForm.5.3.50
+defaultWizForm.25.4.40
+setModel.v000s00"""
+UpdateScript = """
+label.0
+lookAtPlayer.1.1
+ifPlayerIsClose.15
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.3000
+setTalkLabels.-1.-1.0
+talk.<I despise you and your accursed fairies!>
+waitForUser
+startEffect.0.-1
+deployNpcAtTrigger.82.0
+delay.10
+startEffect.0.83
+startEffect.0.89
+startEffect.1.84
+startEffect.1.85
+setCamera.3010
+delay.2
+startEffect.1.86
+startEffect.0.87
+delay.2
+startEffect.0.89
+delay.4
+startEffect.0.83
+startEffect.1.84
+delay.3
+startEffect.0.83
+startEffect.0.89
+delay.5
+setTalkLabels.-1.-1.0
+talk.<
+    I am not beaten yet! While I can still fight, you will never make it to the Guard!
+>
+waitForUser
+removeNpc"""

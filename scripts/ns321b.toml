@@ -1,0 +1,46 @@
+UID = "4D105FA4"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<
+    Hello.
+    I hope you're a worthy victim.
+>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    I'm looking for a suitable player.
+    The rules are quite simple: The board measures 5x5 playing fields, and you must try to get your 5 playing pieces to the opposite side.
+>
+waitForUser
+setTalkLabels.0.1.1
+talk.<
+    You can have a go for just {4*10 fairy coins}.
+    If you win, you will receive a reward! Do you want to play?
+>
+waitForUser
+label.0
+ifPlayerHasCards.10.0.4
+removePlayerCards.10.0.4
+subGame.1.2.10
+waitForUser
+else
+setTalkLabels.-1.-1.0
+talk.<Pity, you don't have enough money!>
+waitForUser
+endIf
+label.1
+exit
+label.10
+setTalkLabels.-1.-1.0
+talk.<
+    Not bad.
+    You won that round!
+>
+waitForUser
+playSound.0
+givePlayerCards.15.0.4
+exit"""
+InitScript = "setModel.g300s30m"
+UpdateScript = "lookAtPlayer.0.1"

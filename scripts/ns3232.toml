@@ -1,0 +1,67 @@
+UID = "BFEF52B4"
+Name = "7B2D8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.1
+goto.1
+endIf
+say.<
+    Hm, a stranger in our town.
+    A rare sight!
+>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    We dwarves have very few visitors, let alone ones as droll as you.
+    But since you removed the great rock from our entrance,
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    you deserve a reward.
+    Take this bag of {4*crystals}.
+    It should be very useful.
+    If you have any more questions, don't hesitate to visit me any time.
+>
+waitForUser
+givePlayerCards.15.0.6
+setNpcModifier.-1.-1.1
+exit
+label.1
+say.<Greetings, human.>.0
+waitForUser
+label.13
+say.<Is there anything I can do to help you?>.1
+choice.10.<The art of the dwarves>
+choice.11.<Fire Fairies>
+choice.12.<No thanks>
+waitForUser
+label.10
+setTalkLabels.-1.-1.0
+talk.<
+    Once upon a time, we dwarves were masters of smithery.
+    We created all manner of magnificent machines using the hot {4*mountain blazes}.
+    Sadly, this art has been lost through the ages, and the entrance to the mountains has disappeared.
+>
+waitForUser
+goto.13
+exit
+label.11
+setTalkLabels.-1.-1.2
+talk.<
+    Fire Fairies are rare in {4*Zanzarah}.
+    The {4*Shadow Elves} still carry a few, which makes them dangerous opponents.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Maybe you can find one of the rare {4*evolutionary stones}.
+    You might be able to use it to create a {4*Fire Fairy} ...
+>
+waitForUser
+goto.13
+exit
+label.12"""
+InitScript = "setModel.d002s02m"
+UpdateScript = "lookAtPlayer.0.1"

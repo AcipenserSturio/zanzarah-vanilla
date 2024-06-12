@@ -1,0 +1,43 @@
+UID = "B68F5714"
+Name = "10E82091"
+TriggerScript = """
+setCamera.3001
+changeWaypoint.-1.0
+playAnimation.13.-1
+say.<You have defeated all my brothers?>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Maybe you're worthy of using our {4*Elementary Key of Earth}.
+    But first you will have to prove your talent against me.
+    Prepare yourself!
+>
+waitForUser
+fight.-1.0"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.3.0.20
+defaultWizForm.5.1.25
+defaultWizForm.31.2.32
+defaultWizForm.63.3.30"""
+UpdateScript = """
+label.0
+idle
+ifTriggerIsActive.19
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.3001
+deployNpcAtTrigger.19.1
+setTalkLabels.-1.-1.2
+talk.<
+    You have really earned our {4*Elementary Key of Earth}.
+    Take it, the hopes of the dwarves now rest on a human girl.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<Use the key wisely and come to me if you want to know more about the legends of {4*Zanzarah}.>
+waitForUser
+changeWaypoint.0.1
+changeDatabase.4D925714"""

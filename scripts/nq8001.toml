@@ -1,0 +1,116 @@
+UID = "8DECD2A4"
+Name = "2B4B0221"
+TriggerScript = """
+ifNumberOfNpcsIs.0.E943B9B4
+goto.20
+endIf
+label.0
+deployNpcAtTrigger.45.1
+setCamera.1007
+goto.2000
+startEffect.3.37
+delay.1
+startEffect.3.38
+delay.1
+startEffect.3.39
+delay.1
+startEffect.3.40
+delay.1
+startEffect.3.41
+delay.1
+startEffect.3.42
+delay.1
+startEffect.3.43
+delay.1
+startEffect.3.44
+label.2000
+setCamera.3001
+ifNpcModifierHasValue.1
+say.<You're wasting your time.>.0
+waitForUser
+setCamera.1007
+setTalkLabels.-1.-1.0
+talk.<
+    The {4*Shadow Elves} still besiege this pavilion.
+    Do not return until you have defeated them!
+>
+waitForUser
+else
+say.<Could it be ...>.0
+waitForUser
+setCamera.1007
+setTalkLabels.-1.-1.2
+talk.<These were the words of the prophecies contained in the winged books: \"A human will come who will bring great change.\" They told of the greatest Fairy Master of all time - but they can't have meant you, surely?>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Prove your abilities to me and defeat the sinister {4*Shadow Elves}.
+    Their numbers are increasing, and they are a plague to my realm.
+    They are searching for the {4*Fairy Card of Earth}.
+>
+waitForUser
+setCamera.3002
+delay.2
+endIf
+startEffect.0.57
+label.1000
+deployNpcAtTrigger.53.6E238F04
+deployNpcAtTrigger.54.E943B9B4
+ifNpcModifierHasValue.0
+delay.30
+setNpcModifier.-1.-1.1
+setCamera.1006
+talk.<
+    Challenge them and send them back to the {4*Shadow Realm}.
+    There is no other way you can convince me that you are the {4*chosen one} ...
+>
+waitForUser
+endIf
+exit
+label.20
+ifNumberOfNpcsIs.0.6E238F04
+setCamera.1000
+playAnimation.13.-1
+say.<It must be true then.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You have more talent than I thought.
+    But beware, change is rarely for the better.
+    That's something I was forced to find out the hard way many, many years ago.
+>
+waitForUser
+talk.<
+    I'm a fugitive from your world.
+    I was persecuted and exiled by humans who feared the power of the fairies' magic, and banned it.
+    Those were terrible years.
+    But I found a new home here in {4*Zanzarah}, the fairies' own realm.
+>
+waitForUser
+talk.<
+    {4*Zanzarah} is a peaceful world, a magic paradise.
+    I left behind my earthly name, and the inhabitants of {4*Zanzarah} call me the {4*White Druid}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    They created a home for me among the clouds.
+    It was their way of thanking me for helping them when they were hunted by humans.
+    Here, take this card as a sign of gratitude for your help.
+>
+waitForUser
+changeWaypoint.-1.-1
+givePlayerCards.1.0.45
+changeDatabase.7A2F0724
+exit
+else
+goto.0
+endIf"""
+InitScript = "setModel.v000s00"
+UpdateScript = """
+label.0
+lookAtPlayer.2.0
+ifTriggerIsActive.36
+startPrelude
+endIf
+goto.0"""

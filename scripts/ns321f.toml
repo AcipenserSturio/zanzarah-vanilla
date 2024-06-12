@@ -1,0 +1,115 @@
+UID = "B11A4C94"
+Name = "BDE38F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+say.<
+    Hello, stranger.
+    Welcome to my tavern.
+>.0
+waitForUser
+label.15
+say.<May I help you?>.1
+choice.10.<Information about Zanzarah and Tiralin>
+choice.11.<Trade magic fairy spheres>
+choice.12.<Not today>
+waitForUser
+label.11
+tradingCurrency.8E0E9503
+tradingItem.3.62689503
+tradingItem.5.ADB09503
+tradingItem.1.1889A2B3
+tradingItem.1.66F10A03
+waitForUser
+goto.15
+label.12
+exit
+label.10
+ifNpcModifierHasValue.4
+setTalkLabels.-1.-1.0
+talk.<
+    I'm afraid I don't have any information for you.
+    Maybe one of the guests can help you.
+>
+waitForUser
+goto.15
+exit
+else
+setTalkLabels.0.15.1
+talk.<
+    You've come to the right place if you're looking for information about {4*Zanzarah}.
+    I hear a lot of gossip! I can help you for a lousy {4*30 coins}.
+    How about it?
+>
+waitForUser
+endIf
+label.0
+ifPlayerHasCards.30.0.4
+setTalkLabels.-1.-1.0
+goto.1
+else
+setTalkLabels.-1.-1.0
+talk.<
+    Oh, what a shame you don't have enough change.
+    It should be easy to get {4*30 fairy coins}.
+    Many {4*wild fairies} collect the glittering coins just for the fun of it.
+    Why don't you try to get some off them?
+>
+waitForUser
+exit
+endIf
+label.1
+removePlayerCards.30.0.4
+ifNpcModifierHasValue.0
+goto.100
+endIf
+ifNpcModifierHasValue.1
+goto.200
+endIf
+ifNpcModifierHasValue.2
+goto.300
+endIf
+ifNpcModifierHasValue.3
+goto.400
+endIf
+ifNpcModifierHasValue.4
+goto.500
+endIf
+label.100
+setNpcModifier.-1.-1.1
+talk.<
+    There are lots of places to visit in {4*Tiralin}.
+    There's the {4*tavern}, the {4*herb shop} just around the corner, the {4*exchange booth}, and a seller of {4*magic objects} at the other end of town.
+>
+waitForUser
+exit
+label.200
+setNpcModifier.-1.-1.2
+talk.<
+    Some of the fairies in {4*Zanzarah} are more than a little dopey.
+    Train them as you might, you'll never get them to learn anything.
+    In cases like that, you can use a legendary {4*Golden Carrot}.
+    They increase a fairy's experience up to the next {4*experience level}.
+>
+waitForUser
+exit
+label.300
+setNpcModifier.-1.-1.3
+talk.<
+    They say there are huge treasures in the {4*catacombs} of {4*Tiralin}.
+    But be careful, there are sinister fairies there as well.
+>
+waitForUser
+exit
+label.400
+setNpcModifier.-1.-1.4
+talk.<
+    It's said there are ancient dark ruins in north-west {4*Tiralin}.
+    I wouldn't know myself, but I've heard some brave fairy collectors mention them.
+>
+waitForUser
+exit
+label.1000
+exit"""
+InitScript = "setModel.g201s21m"
+UpdateScript = "lookAtPlayer.0.1"

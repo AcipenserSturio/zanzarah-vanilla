@@ -1,0 +1,82 @@
+UID = "5A886314"
+Name = "2B4B0221"
+TriggerScript = """
+ifTriggerIsActive.34
+deployNpcAtTrigger.12.1
+setCamera.3001
+playAnimation.13.-1
+say.<These are hard times for our beloved Zanzarah.>.0
+waitForUser
+goto.10
+endIf
+ifTriggerIsActive.33
+goto.20
+endIf
+label.10
+say.<We must remain steadfast in these difficult times.>.1
+choice.12.<Guilt of the dwarves>
+choice.13.<The cathedral>
+choice.14.<See you soon>
+waitForUser
+label.12
+setTalkLabels.15.16.1
+talk.<
+    {4*Quinlin the Dwarf Master} be cursed! This traitor supports the Shadow Elves! We must stop him.
+    Or do you have any doubts as to the dwarves' guilt?
+>
+waitForUser
+label.15
+setTalkLabels.-1.-1.0
+talk.<
+    You conquered the {4*dwarf artefact} in my arena yourself.
+    It obviously came from the Dwarf Master.
+>
+waitForUser
+goto.10
+label.16
+setTalkLabels.-1.-1.0
+talk.<
+    You're right.
+    The dwarves can't be trusted any more, they betrayed us to the {4*Shadow Elves}.
+>
+waitForUser
+goto.10
+label.13
+setTalkLabels.-1.-1.2
+talk.<
+    Isn't it beautiful?
+    Full of purity and peace.
+    No one, not a {4*dwarf} nor a {4*Shadow Elf}, not even a human like you can ever change that.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    The prophecy may predict change, but I will not allow it to disrupt my peace.
+    Heed my words!
+>
+waitForUser
+goto.10
+label.14
+exit
+label.20
+deployNpcAtTrigger.10.1
+setCamera.3005
+setTalkLabels.-1.-1.0
+talk.<
+    Good luck on your travels.
+    Just remember: The dwarves are guilty of our disaster here.
+    
+>
+waitForUser"""
+InitScript = "setModel.v000s00"
+UpdateScript = """
+deployNpcAtTrigger.15.0
+label.0
+lookAtPlayer.2.0
+ifTriggerIsActive.33
+startPrelude
+endIf
+ifTriggerIsActive.34
+startPrelude
+endIf
+goto.0"""

@@ -1,0 +1,6 @@
+UID = "AB6B58B4"
+Name = "BDE38F91"
+InitScript = """
+setNpcType.4
+setCollision.0
+setModel.g304s34m"""

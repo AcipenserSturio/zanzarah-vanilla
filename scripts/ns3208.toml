@@ -1,0 +1,26 @@
+UID = "13CEC914"
+Name = "05360321"
+TriggerScript = """
+playSound.3
+say.<Who's disturbing me ...>.0
+setCamera.1000
+waitForUser
+talk.<
+    A girl in my catacombs?
+    You must be mad to come here.
+    Prepare yourself for a lesson ...
+>
+waitForUser
+fight.-1.0"""
+InitScript = """
+setNpcType.3
+defaultWizForm.69.0.35"""
+DefeatedScript = """
+talk.<
+    I should never have left the Shadow Realm.
+    Visit me there, then I will defeat you!
+>
+waitForUser
+createDynamicItems.4.5.-1
+startEffect.1.-1
+removeNpc"""

@@ -1,0 +1,14 @@
+UID = "69108AB4"
+Name = "B18BDDB1"
+InitScript = "setModel.d000s00m"
+UpdateScript = """
+label.0
+changeWaypoint.10.11
+changeWaypoint.11.12
+changeWaypoint.12.13
+changeWaypoint.13.14
+changeWaypoint.14.13
+changeWaypoint.13.12
+changeWaypoint.12.11
+changeWaypoint.11.10
+goto.0"""

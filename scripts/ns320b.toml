@@ -1,0 +1,52 @@
+UID = "5EC643A4"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<
+    Oh, a human fairy collector.
+    That is a rare sight!
+>.0
+waitForUser
+label.10
+say.<Can I help you?>.1
+choice.0.<Buy magic fairy spheres>
+choice.2.<What are fairy spheres needed for?>
+choice.1.<Not at the moment>
+waitForUser
+label.0
+tradingCurrency.C564B4A3
+tradingItem.60.8E0E9503
+tradingItem.150.62689503
+tradingItem.300.ADB09503
+waitForUser
+goto.10
+label.1
+exit
+label.2
+setTalkLabels.-1.-1.2
+talk.<
+    You claim to be a Fairy Mistress, yet you know nothing about magic {4*fairy spheres}?
+    That's incredible, but I can change it.
+>
+waitForUser
+talk.<
+    Use {4*fairy spheres} to catch and tame wild fairies.
+    You must weaken them first, then lock them in the sphere.
+    The sphere will magic the fairy to your place of birth.
+>
+waitForUser
+talk.<
+    Since wild fairies possess varying strengths, there are different kinds of spheres.
+    The silver sphere can trap fairies up to level 20, and you will require a golden sphere for stronger fairies.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Save the crystal sphere for the most experienced fairies in {4*Zanzarah}.
+    It is very expensive and rarely found.
+>
+waitForUser
+goto.10"""
+InitScript = "setModel.g202s22m"
+UpdateScript = "lookAtPlayer.0.1"

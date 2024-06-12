@@ -1,0 +1,35 @@
+UID = "C598A334"
+Name = "2B4B0221"
+TriggerScript = """
+say.<I've been looking for you everywhere, Amy.>.0
+waitForUser
+setTalkLabels.5.6.1
+talk.<Have you shown the dwarf artefact to the mayor?>
+waitForUser
+label.5
+setTalkLabels.-1.-1.2
+talk.<
+    Then there's no doubt the dwarves are guilty.
+    They have allied themselves against us with the {4*Shadow Elves}.
+>
+waitForUser
+label.6
+setTalkLabels.-1.-1.2
+talk.<Then you should do that.>
+waitForUser
+label.10
+setTalkLabels.-1.-1.2
+talk.<
+    I'm organising a fairy tournament in the {4*Great Tree} in the swamp.
+    There we'll determine who's the best Fairy Master in the whole of Zanzarah.
+>
+waitForUser
+talk.<
+    We urgently need the best help this world can offer.
+    Only the best Fairy Masters will compete in the Great Tree of the swamp.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<Maybe we'll meet again there?>
+waitForUser"""
+InitScript = "setModel.v000s00"

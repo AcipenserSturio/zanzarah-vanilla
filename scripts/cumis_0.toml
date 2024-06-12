@@ -1,0 +1,39 @@
+UID = "5A2476B4"
+Name = "B18BDDB1"
+TriggerScript = """
+ifNpcModifierHasValue.0
+setNpcModifier.-1.-1.1
+goto.0
+endIf
+ifNpcModifierHasValue.1
+setNpcModifier.-1.-1.0
+goto.1
+endIf
+label.0
+movementSpeed.4
+setCamera.3000
+exit
+label.1
+movementSpeed.10
+setCamera.3001
+exit"""
+InitScript = "setModel.chr01"
+UpdateScript = """
+label.0
+changeWaypoint.0.1
+startPrelude
+changeWaypoint.1.2
+startPrelude
+changeWaypoint.2.3
+startPrelude
+changeWaypoint.3.4
+startPrelude
+changeWaypoint.4.3
+startPrelude
+changeWaypoint.3.2
+startPrelude
+changeWaypoint.2.1
+startPrelude
+changeWaypoint.1.0
+startPrelude
+goto.0"""

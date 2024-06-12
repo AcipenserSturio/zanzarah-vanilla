@@ -1,0 +1,55 @@
+UID = "B8F89614"
+Name = "F8438821"
+TriggerScript = """
+deployNpcAtTrigger.64.1
+playAnimation.13.-1
+setCamera.3000
+say.<The creature from the human world!>.0
+waitForUser
+setCamera.1000
+ifPlayerHasSpecials.2.30
+talk.<You're still wretched and weak - this time, you're going to feel it, too!>
+waitForUser
+fight.-1.-1
+else
+goto.10
+endIf
+exit
+label.10
+ifNpcModifierHasValue.1
+talk.<
+    I'm not even going to look at you until you have at least {4*30 fairies} in your collection.
+    Get out of my sight, worthless human!
+>
+else
+talk.<
+    How did you manage to enter our realm with such a weak collection of fairies?
+    It's incredible! Return to the miserable world of weak elves and dwarves, and don't come back until you have more than {4*30 fairies}!
+>
+setNpcModifier.-1.-1.1
+endIf
+waitForUser"""
+InitScript = """
+setModel.u001s01m
+defaultWizForm.39.0.40
+defaultWizForm.45.1.45
+defaultWizForm.52.2.48
+defaultWizForm.17.3.29
+defaultWizForm.63.4.45"""
+UpdateScript = """
+label.0
+lookAtPlayer.1.1
+ifTriggerIsActive.63
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+removeWizForms
+setCamera.1000
+talk.<
+    I don't believe it! You defeated me - a stupid, ugly human beat me! How did you do it?!
+>
+waitForUser
+delay.10
+startEffect.0.-1
+removeNpc"""

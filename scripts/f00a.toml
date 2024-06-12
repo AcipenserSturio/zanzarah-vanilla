@@ -1,0 +1,36 @@
+UID = "155FC724"
+Name = "B18BDDB1"
+TriggerScript = """
+ifPlayerHasSpecials.1.1
+say.<You've already got a fairy!>.0
+waitForUser
+exit
+else
+setTalkLabels.-1.-1.2
+talk.<
+    {4*Nature Fairies} are frequently to be found in these parts.
+    Their powers are evenly distributed, they are agile and capable of performing powerful magic.
+    A Nature Fairy will prepare you well for future fights.
+>
+waitForUser
+setTalkLabels.10.11.1
+talk.<
+    Do you want this fairy - and I mean this one.
+    Meaning not this one and another, or another one and this one.
+    I don't mean, any other or a different one, but really just this one I'm describing here?
+>
+waitForUser
+exit
+label.10
+givePlayerCards.1.2.0
+setCamera.1006
+removeNpc
+exit
+label.11
+exit
+endIf"""
+InitScript = """
+setNpcType.3
+setCollision.0
+wizform.0.0.0"""
+UpdateScript = "lookAtPlayer.0.0"

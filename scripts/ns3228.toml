@@ -1,0 +1,54 @@
+UID = "D7DF3704"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.0
+say.<Hello, strange human!>.0
+waitForUser
+goto.0
+else
+say.<Please leave me alone, the last defeat was bad enough.>.0
+waitForUser
+exit
+endIf
+label.0
+setTalkLabels.-1.-1.2
+talk.<
+    Isn't this a wonderful place?
+    I should be working in the town hall of {4*Tiralin}, but as I'm such an enthusiastic fairy collector I feel much happier here.
+>
+waitForUser
+setTalkLabels.10.11.1
+talk.<
+    I have been to the strangest places {4*Zanzarah} has to offer.
+    See my collection of {4*Ice Fairies}?
+    They make me unbeatable - you can try, if you like ...
+>
+waitForUser
+label.10
+setCamera.1006
+fight.-1.-1
+exit
+label.11
+exit"""
+InitScript = """
+defaultWizForm.52.0.45
+defaultWizForm.34.1.40
+defaultWizForm.35.2.26
+defaultWizForm.34.3.40
+defaultWizForm.35.4.15
+setModel.g300s30m"""
+UpdateScript = "lookAtPlayer.0.1"
+DefeatedScript = """
+setCamera.1000
+setTalkLabels.-1.-1.0
+talk.<
+    Hm, maybe there are limits to {4*Ice Fairies'} powers after all.
+    Take this {4*key}.
+    It will open the door of the {4*town hall} of {4*Tiralin}.
+    I'm afraid I don't have anything more valuable to give you.
+>
+waitForUser
+givePlayerCards.1.0.27
+setNpcModifier.-1.-1.1"""

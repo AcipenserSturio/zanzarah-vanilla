@@ -1,0 +1,24 @@
+UID = "2884C324"
+Name = "B18BDDB1"
+TriggerScript = """
+deployNpcAtTrigger.24.1
+setCamera.3000
+playPlayerAnimation.35.-1
+say.<Hey!>.1
+playAmyVoice.trg00a
+delay.20
+setCamera.3001
+say.<What's that?>.1
+playAmyVoice.trg00b
+delay.20
+removeNpc"""
+InitScript = """
+setNpcType.4
+setCollision.0"""
+UpdateScript = """
+label.0
+ifPlayerIsClose.15
+startPrelude
+endIf
+idle
+goto.0"""

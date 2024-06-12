@@ -1,0 +1,58 @@
+UID = "8C12D134"
+Name = "389D7EB1"
+TriggerScript = """
+deployNpcAtTrigger.56.1
+setCamera.3001
+playAnimation.13.-1
+say.<The Fairy Mistress from the human world.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Do you remember me?
+    I am {4*Eirik}, the dwarf from {4*Tiralin}.
+    Now that you've found the {4*Staff of Rule}, everyone will believe that we dwarves summoned the {4*Shadow Elves}.
+>
+waitForUser
+setTalkLabels.10.11.1
+talk.<
+    I will win this tournament and prove everyone wrong! Are you ready for a just fairy duel?
+>
+waitForUser
+label.10
+setCamera.1006
+fight.-1.0
+exit
+label.11
+setTalkLabels.-1.-1.0
+talk.<That makes it easier for me to win the {4*fairy card}.>
+waitForUser
+exit"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.6.0.36
+defaultWizForm.7.1.42
+defaultWizForm.6.2.30
+defaultWizForm.34.3.32"""
+UpdateScript = """
+label.0
+lookAtPlayer.2.1
+ifPlayerIsClose.4
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.3001
+playAnimation.13.-1
+setTalkLabels.-1.-1.0
+talk.<
+    I have failed.
+    Now I can never prove that my people are innocent.
+    These are hard times for us dwarves.
+>
+waitForUser
+changeWaypoint.7.6
+changeWaypoint.6.5
+changeWaypoint.5.4
+changeWaypoint.4.3
+removeNpc"""
+VictoriousScript = "killPlayer"

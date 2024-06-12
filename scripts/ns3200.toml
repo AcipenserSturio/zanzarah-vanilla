@@ -1,0 +1,52 @@
+UID = "86DB0D84"
+Name = "C86EAF91"
+TriggerScript = """
+playAnimation.13.-1
+say.<Hey, wait, just a minute!>.0
+setCamera.1000
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Can you free me from these terrible {4*Chaos Fairies}?
+    They are really annoying pests! Be careful, they're also exceptionally strong ...
+>
+waitForUser
+setCamera.3010
+delay.10
+setCamera.3011
+delay.10
+setCamera.1000
+setTalkLabels.0.1.1
+talk.<
+    To be honest - this had better remain our little secret, mind - they're undermining my authority as a scarecrow! I can't let them get away with that now, can I?
+>
+waitForUser
+label.0
+setCamera.1006
+fight.-1.1
+exit
+label.1
+setTalkLabels.0.0.0
+talk.<
+    Oh, that's a great help, thanks a lot! If you carry on like that you'll make a good {4*Shadow Elf} one of these days.
+>
+waitForUser
+exit"""
+InitScript = """
+setNpcType.4
+setModel.v001s01
+defaultWizForm.15.0.5"""
+DefeatedScript = """
+createDynamicItems.4.10.-1
+playSound.0
+setTalkLabels.-1.-1.0
+talk.<
+    Phew, thanks.
+    If ever you need help, come and visit me.
+    I can replenish your fairies' {4*magic powers} any time you want!
+>
+waitForUser
+removeNpcAtTrigger.18
+removeNpcAtTrigger.16
+removeWizForms
+changeDatabase.D5C56E04"""

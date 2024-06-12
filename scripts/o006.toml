@@ -1,0 +1,26 @@
+UID = "15F94A04"
+Name = "5B6A3F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.15.-1
+say.<Amy, it's good to see you.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    It's good to see you, Amy.
+    In front of you lies the town of {4*Monagham}, the home of the {4*dwarves}.
+    Dwarves can be a little shy of strangers, but they desperately need help, especially at the moment.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<Their skill at metalworking has always been a cause of suspicion and mistrust for {4*elves} and {4*swamp goblins}, and many find it strange that they like living in dark caves.>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Many an {4*elf} even believes {4*Monagham} is within the legendary {4*Shadow Realm}.
+    They're wrong, of course, but I'm sure you must know how rumour can spread.
+>
+waitForUser"""
+InitScript = "setModel.w003s03m"
+UpdateScript = "lookAtPlayer.0.0"

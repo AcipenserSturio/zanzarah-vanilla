@@ -1,0 +1,57 @@
+UID = "BD67EC84"
+Name = "7B2D8F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+say.<
+    Hello there! Anyone who wants to get by here will have to deal with me first!
+>.0
+deployNpcAtTrigger.43.1
+waitForUser
+setTalkLabels.0.1.1
+talk.<
+    The place behind me is special to us dwarves.
+    If you want to enter it, you'll have to defeat me in a good fairy duel first! You'll need at least one {4*Psi Fairy} in your collection though, otherwise I won't even bother to try! Are you ready to fight?
+>
+waitForUser
+label.0
+ifPlayerHasSpecials.3.6
+setCamera.1006
+fight.-1.-1
+else
+setTalkLabels.-1.-1.0
+talk.<
+    You haven't got a single {4*Psi Fairy} in your deck?
+    I'm not fighting a duel with a sloppy fairy collector like you!
+>
+waitForUser
+setCamera.1006
+endIf
+label.1
+exit"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.27.0.25
+defaultWizForm.28.1.30
+defaultWizForm.27.2.35
+defaultWizForm.3.3.25
+defaultWizForm.21.4.30"""
+UpdateScript = """
+label.0
+lookAtPlayer.1.1
+ifPlayerIsClose.12
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.1000
+setTalkLabels.-1.-1.0
+talk.<
+    Not bad for a skinny thing like you.
+    You control your fairies well.
+>
+waitForUser
+changeWaypoint.-1.1000
+setCamera.3000
+changeWaypoint.1000.1001
+removeNpc"""

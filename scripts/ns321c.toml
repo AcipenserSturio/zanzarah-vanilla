@@ -1,0 +1,58 @@
+UID = "1E3B48B4"
+Name = "15A948B1"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.0
+goto.0
+else
+goto.1
+endIf
+exit
+label.0
+say.<Oh, a fairy collector in this cheerless place!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    I spent years searching for my favourite fairy, the Fire Fairy {4*Pix}.
+    I was told I'd find it somewhere \"under\" {4*Zanzarah}.
+    My long journey led me here.
+>
+waitForUser
+talk.<
+    However, I seem to have changed in all the time I've spent searching in the {4*Shadow Realm}.
+    I daren't go back to the surface now.
+    I never found {4*Pix} down here either, though.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I'd give anything to see that wonderful fairy just once ...
+    Unfortunately all I have is this mysterious {4*bone key}, but you can have it if you bring me {4*Pix}! That's a promise!
+>
+waitForUser
+ifPlayerHasCards.1.2.31
+setTalkLabels.-1.-1.2
+talk.<
+    ...
+    Hang on ...
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    It's flying along behind you! Great, oh, how I envy you.
+    Here, take this strange key.
+    I'd love to give you more, but the key is all I have.
+    {4*Pix} is really wonderful to look at ...
+>
+waitForUser
+givePlayerCards.1.0.73
+setNpcModifier.-1.-1.1
+endIf
+exit
+label.1
+say.<You've got to admit there's no nicer fairy than {4*Pix} ...>.0
+waitForUser
+exit"""
+InitScript = "setModel.x000s00"
+UpdateScript = "lookAtPlayer.0.1"

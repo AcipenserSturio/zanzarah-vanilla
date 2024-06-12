@@ -1,0 +1,41 @@
+UID = "F82FD124"
+Name = "7B2D8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Are all you humans so tall and skinny?>.0
+waitForUser
+ifPlayerHasCards.1.0.46
+setTalkLabels.-1.-1.0
+talk.<
+    You carry the lost {4*Fairy Card of Fire}.
+    Unbelievable! You can use it to enter the hot lava caves and prepare to hunt {4*Fire Fairies}.
+    Oh, what I wouldn't give to be coming with you.
+    I'm simply too old to travel like you do.
+>
+waitForUser
+exit
+else
+setTalkLabels.-1.-1.2
+talk.<
+    I see you're a very experienced collector, you even have the legendary {4*magic fairy cards}.
+    They vanished from sight a long, long time ago.
+>
+waitForUser
+talk.<
+    I don't know who stole and hid them, but I'm amazed that a human should have found them.
+    You're still missing one card, though: the {4*Fairy Card of Fire}.
+    You need it so that a Fire Fairy can protect you from great heat.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Where might you find this card?
+    I'm afraid I can't help you there.
+    We dwarves had it once, but I've no idea where it is now ...
+>
+waitForUser
+exit
+endIf"""
+InitScript = "setModel.d000s00m"
+UpdateScript = "lookAtPlayer.0.1"

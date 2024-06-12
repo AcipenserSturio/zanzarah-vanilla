@@ -1,0 +1,56 @@
+UID = "1900B294"
+Name = "10E82091"
+TriggerScript = """
+setCamera.3001
+deployNpcAtTrigger.36.1
+playAnimation.13.-1
+say.<Welcome to the Tower of the Wise!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You have come far, I see.
+    But only who defeats me and my elder brother is worthy of owning the {4*Elementary Key of Earth}.
+>
+waitForUser
+setTalkLabels.10.11.1
+talk.<
+    Will you dare fight a fairy duel?
+    
+>
+waitForUser
+label.10
+setCamera.1006
+fight.-1.0
+label.11
+setTalkLabels.-1.-1.0
+talk.<I'm sure I would have won!>
+waitForUser"""
+InitScript = """
+setModel.d000s00m
+defaultWizForm.4.0.28
+defaultWizForm.3.1.20
+defaultWizForm.27.2.23
+defaultWizForm.48.3.9"""
+UpdateScript = """
+label.0
+idle
+ifPlayerIsClose.5
+startPrelude
+else
+lookAtPlayer.5.1
+endIf
+goto.0"""
+DefeatedScript = """
+setTalkLabels.-1.-1.0
+setCamera.3001
+setTalkLabels.-1.-1.0
+talk.<
+    Your fairies are well trained! But will they prevail against my elder brother's fairies?
+    Visit me in my library if you want to find out more about the {4*Realm of Clouds}.
+>
+waitForUser
+changeWaypoint.-1.100
+changeWaypoint.100.101
+removeNpc
+setCamera.1006"""
+VictoriousScript = "killPlayer"

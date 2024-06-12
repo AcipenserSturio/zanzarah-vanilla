@@ -1,0 +1,55 @@
+UID = "63D94324"
+Name = "F8438821"
+TriggerScript = """
+deployNpcAtTrigger.66.1
+playAnimation.13.-1
+setCamera.3000
+say.<A human, how cute!>.0
+waitForUser
+setCamera.1000
+ifPlayerHasSpecials.2.10
+talk.<Your fairy collection is still very modest, but a little fight wouldn't be bad for training ...>
+waitForUser
+fight.-1.-1
+else
+goto.10
+endIf
+exit
+label.10
+ifNpcModifierHasValue.1
+talk.<
+    Have you still not managed to catch {4*10 fairies}?
+    What a disgrace ...
+>
+else
+talk.<
+    You, a menace?
+    Impossible, you only own a handful of fairies! Just come back as soon as you've caught more than {4*10} fairies, then my {4*Fire Fairies} will teach you a real lesson!
+>
+setNpcModifier.-1.-1.1
+endIf
+waitForUser"""
+InitScript = """
+setModel.u001s01m
+defaultWizForm.31.0.20
+defaultWizForm.32.1.25
+defaultWizForm.56.2.40"""
+UpdateScript = """
+label.0
+lookAtPlayer.5.1
+ifTriggerIsActive.67
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+removeWizForms
+setCamera.1000
+talk.<
+    I don't believe it ...
+    how could I ever be defeated?
+    If we meet again, you won't be so lucky, human!
+>
+waitForUser
+delay.10
+startEffect.0.-1
+removeNpc"""

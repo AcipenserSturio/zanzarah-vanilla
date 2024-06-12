@@ -1,0 +1,87 @@
+UID = "ADDC0094"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.1
+say.<Greetings, visitor.>.0
+else
+say.<Oh, a stranger in our beautiful town!>.0
+endIf
+waitForUser
+ifNpcModifierHasValue.0
+setNpcModifier.-1.-1.1
+setTalkLabels.-1.-1.2
+talk.<
+    These are troubled times in {4*Zanzarah}.
+    I've been hearing many rumours about rampaging {4*Shadow Elves}, large {4*rocks} falling from the sky and many other dangers.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    The fact that I'm talking to a huge human isn't really making matters any easier for me! Still, our most important rule is hospitality, so if you have any questions, you've come to the right place.
+>
+waitForUser
+endIf
+label.10
+say.<What do you want to know?>.1
+choice.0.<About the Swamp Goblins>
+choice.1.<Rocks and prickly bushes>
+choice.2.<Nothing for now>
+waitForUser
+label.0
+ifPlayerHasCards.1.0.15
+setTalkLabels.-1.-1.0
+talk.<
+    I heard about your heroics in {4*Dunmore}.
+    You must be a real Fairy Master to be able to take on the {4*Shadow Elves}.
+>
+waitForUser
+else
+setTalkLabels.-1.-1.2
+talk.<
+    Oh, Swamp Goblins are peaceful enough.
+    They live in the heart of the {4*Misty Swamp}.
+    Their village is called {4*Dunmore} and is built on wooden stilts.
+    I've heard it's a pretty wobbly construction.
+>
+waitForUser
+talk.<
+    But they say there are a lot of {4*Shadow Elves} there nowadays.
+    Probably because it's so close to the {4*Shadow Realm}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    The path to {4*Dunmore} is long and dangerous.
+    Some say you can't get there on foot at all any more.
+    You'd better look out for {4*a different way of travelling}, if you're planning to visit that place.
+>
+waitForUser
+endIf
+goto.10
+label.1
+setTalkLabels.-1.-1.0
+talk.<
+    They appeared from out of nowhere, blocking paths and entrances.
+    They're a real plague.
+    There's little we elves and goblins can do about it, but I hear the {4*fairies} are powerful enough.
+>
+waitForUser
+goto.10
+label.2
+exit"""
+InitScript = """
+setModel.g200s20m
+movementSpeed.10"""
+UpdateScript = """
+label.0
+moveSystem.1.3
+gotoRandomLabel.3.0
+goto.0
+label.1
+lookAtPlayer.10.1
+goto.0
+label.2
+lookAtPlayer.20.1
+goto.0"""

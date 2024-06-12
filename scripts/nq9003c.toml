@@ -1,0 +1,28 @@
+UID = "89A09214"
+Name = "44EB3001"
+TriggerScript = """
+setCamera.1000
+say.<Thank you!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    At last, a worthy Fairy Mistress has released me from this dreadful Shadow Elf.
+    It was really demeaning fighting for such a monster.
+>
+waitForUser
+changeWaypoint.-1.-1
+givePlayerCards.1.2.74
+setNpcModifier.3303.3.1000
+setNpcModifier.3303.7.1
+removeNpc"""
+InitScript = """
+setNpcType.0
+setCollision.1
+wizform.0.74.30"""
+UpdateScript = """
+label.0
+idle
+ifPlayerIsClose.15
+startPrelude
+endIf
+goto.0"""

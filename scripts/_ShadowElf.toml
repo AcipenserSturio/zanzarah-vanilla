@@ -1,0 +1,55 @@
+UID = "F78C1A24"
+Name = "97688F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1006
+say.<Stand still, human!>.0
+waitForUser
+fight.-1.0
+exit
+setCamera.2000
+changeWaypoint.-1.-1
+playAnimation.13.-1
+setCamera.1006
+say.<Stand still, human!>.0
+waitForUser
+fight.-1.0"""
+InitScript = """
+ifNpcModifierHasValue.0
+setModel.u002s02m
+defaultDeck.0.11.1
+exit
+endIf
+ifNpcModifierHasValue.1
+setModel.u003s03m
+defaultDeck.1.25.1
+exit
+endIf
+ifNpcModifierHasValue.2
+setModel.u002s02m
+defaultDeck.2.35.1
+exit
+endIf
+ifNpcModifierHasValue.3
+setModel.u002s02m
+defaultDeck.2.45.1
+exit
+endIf
+ifNpcModifierHasValue.4
+setModel.u002s02m
+defaultDeck.2.60.1
+exit
+endIf"""
+UpdateScript = """
+label.0
+lookAtPlayer.10.1
+ifPlayerIsClose.50
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.1006
+say.<You can't defeat us all!>.0
+waitForUser
+startEffect.0.-1
+removeNpc"""

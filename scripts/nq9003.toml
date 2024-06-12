@@ -1,0 +1,48 @@
+UID = "E5D77B84"
+Name = "44EB3001"
+TriggerScript = """
+setCamera.1000
+changeWaypoint.-1.-1
+say.<Ah, the Fairy Mistress from the prophecy!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You come in vain.
+    {4*Quinlin} the Dwarf Master gave me this Staff of Rule, the symbol of the bond between the {4*Shadow Elves} and our brothers, the {4*dwarves}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Together, we will decide the fate of {4*Zanzarah}.
+    Only you are still in our way.
+    But that can soon be changed ...
+>
+waitForUser
+setCamera.1006
+fight.225.1"""
+InitScript = """
+setModel.u000s00m
+defaultWizForm.69.0.20
+defaultWizForm.70.1.22
+defaultWizForm.70.2.15"""
+UpdateScript = """
+label.0
+lookAtPlayer.2.1
+ifPlayerIsClose.30
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.1000
+removeNpcAtTrigger.65
+removeNpcAtTrigger.66
+removeNpcAtTrigger.68
+talk.<
+    You've learnt a lot since your {4*Dunmore} experience, Amy.
+    But even if I'm losing {4*Quinlin's} Staff of Rule to you now, the Shadows of {4*Zanzarah} will prevail in the end!
+>
+waitForUser
+givePlayerCards.1.0.26
+startEffect.0.-1
+removeNpc"""
+VictoriousScript = "killPlayer"

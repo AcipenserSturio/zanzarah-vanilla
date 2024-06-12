@@ -1,0 +1,44 @@
+UID = "CDE4C594"
+Name = "0FDF8F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+say.<Welcome to my little place.>.0
+waitForUser
+setTalkLabels.0.1.1
+talk.<
+    I see you collect fairies, too.
+    If you give me just {4*60 fairy coins}, I'll help you train your fairies.
+    Would you like to train them?
+>
+waitForUser
+label.0
+ifPlayerHasCards.60.0.4
+removePlayerCards.60.0.4
+fight.-1.-1
+else
+setTalkLabels.-1.-1.0
+talk.<
+    What a pity you don't have enough money.
+    Come back when you have more coins.
+>
+waitForUser
+endIf
+exit
+label.1
+setTalkLabels.-1.-1.0
+talk.<
+    What a shame.
+    Some other time maybe.
+    But watch out for the dark {4*Shadow Elves}, they hate us fairy collectors!
+>
+waitForUser"""
+InitScript = """
+setModel.g001s01m
+wizform.0.9.20
+wizform.1.10.20"""
+UpdateScript = "lookAtPlayer.-1.1"
+DefeatedScript = """
+setTalkLabels.-1.-1.0
+talk.<Not bad, just come back any time ...>
+waitForUser"""

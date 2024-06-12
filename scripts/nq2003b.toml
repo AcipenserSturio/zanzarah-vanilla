@@ -1,0 +1,43 @@
+UID = "B9D44694"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1003
+say.<Welcome to my shop.>.0
+playAnimation.13.-1
+waitForUser
+label.0
+say.<I'm selling magic items and I can explain their effects.>.1
+choice.1.<Buy>
+choice.3.<Information about healing and mana potions>
+choice.2.<See you soon>
+waitForUser
+label.1
+tradingCurrency.C564B4A3
+tradingItem.5.23173793
+tradingItem.10.99D2B4A3
+tradingItem.20.AD58B4A3
+tradingItem.15.709DB4A3
+tradingItem.30.99613EA3
+waitForUser
+goto.0
+label.2
+exit
+label.3
+setTalkLabels.-1.-1.2
+talk.<
+    {4*Healing potions} freshen up your fairies' energy after they are exhausted in a fairy duel.
+    You can even reanimate a fairy with {4*herbs} if it has been defeated in a duel.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    If your fairy has used up its magic energy, its spells may be replenished by {4*mana potions}.
+    Just try some magic items yourself.
+    
+>
+waitForUser
+goto.0"""
+InitScript = "setModel.g200s20m"
+UpdateScript = """
+deployNpcAtTrigger.8.0
+lookAtPlayer.0.1"""

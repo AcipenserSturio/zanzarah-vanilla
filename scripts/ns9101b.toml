@@ -1,0 +1,29 @@
+UID = "84C594B4"
+Name = "B18BDDB1"
+TriggerScript = """
+setCamera.1006
+setTalkLabels.-1.-1.0
+talk.<I won't give the crystals back without a fight!>
+waitForUser
+fight.-1.0"""
+InitScript = """
+setNpcType.0
+movementSpeed.70
+setCollision.1
+defaultWizForm.62.2.40"""
+UpdateScript = """
+label.0
+moveSystem.0.2
+goto.0"""
+DefeatedScript = """
+createDynamicItems.6.7.-1
+playSound.0
+setTalkLabels.-1.-1.0
+talk.<
+    No! How could I possibly lose in my realm?
+>
+waitForUser
+givePlayerCards.1.2.62
+setNpcModifier.2211.39.1
+removeNpc"""
+VictoriousScript = "killPlayer"

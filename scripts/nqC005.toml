@@ -1,0 +1,50 @@
+UID = "7266B9B4"
+Name = "E95016B1"
+TriggerScript = """
+changeWaypoint.-1.-1
+setCamera.1000
+playAnimation.13.-1
+say.<Do you really believe that we dwarves are helping the Shadow Elves?>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<Since you've found the {4*artefact} in the arena, the people of Zanzarah believe that we dwarves are guilty of the chaos.>
+waitForUser
+talk.<
+    As sure as my name is Lasse the Dwarf, we are innocent! I will visit the {4*Druid} and ask him for advice.
+    Maybe he knows where my father, the {4*Dwarf Master}, is being held.
+>
+waitForUser
+setTalkLabels.1.2.1
+talk.<
+    We should visit him in the Realm of Clouds.
+    Shall we meet again in the {4*White Cathedral}?
+    
+>
+waitForUser
+label.1
+delay.3
+setTalkLabels.-1.-1.0
+talk.<Good, then we'll meet in the {4*White Cathedral}.>
+waitForUser
+changeWaypoint.-1.2
+removeNpc
+exit
+label.2
+delay.3
+setTalkLabels.-1.-1.0
+talk.<
+    I'm sure the Druid can tell us more about the disaster which is taking place here.
+    You should visit him in the {4*White Cathedral}.
+>
+waitForUser
+changeWaypoint.-1.2
+removeNpc
+exit"""
+InitScript = "setModel.d006s02m"
+UpdateScript = """
+label.0
+idle
+ifPlayerIsClose.20
+startPrelude
+endIf
+goto.0"""

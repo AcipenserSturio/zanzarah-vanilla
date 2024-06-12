@@ -1,0 +1,29 @@
+UID = "AAD29294"
+Name = "B18BDDB1"
+TriggerScript = """
+delay.10
+deployNpcAtTrigger.65.1
+setCamera.3010
+say.<A flying cathedral in pure white...>.1
+playAmyVoice.trg06a
+delay.30
+setCamera.3011
+say.<
+    ...
+    this world is amazing!
+>.1
+playAmyVoice.trg06b
+delay.30
+setCamera.3012
+delay.10
+removeNpc"""
+InitScript = """
+setNpcType.4
+setCollision.0"""
+UpdateScript = """
+label.0
+ifPlayerIsClose.15
+startPrelude
+endIf
+idle
+goto.0"""

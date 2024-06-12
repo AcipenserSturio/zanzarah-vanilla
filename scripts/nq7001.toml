@@ -1,0 +1,107 @@
+UID = "E1094DB4"
+Name = "E95016B1"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.0
+goto.20
+endIf
+ifNumberOfNpcsIs.4.902391A4
+say.<Hello, Amy!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<There are still {4*four} dangerous fairies in the cave.>
+waitForUser
+exit
+endIf
+ifNumberOfNpcsIs.3.902391A4
+say.<Hello, Amy!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<You've got to find another {4*three} wild fairies in the cave, Amy.>
+waitForUser
+exit
+endIf
+ifNumberOfNpcsIs.2.902391A4
+say.<Hello, Amy!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<Just {4*two} more fairies to find and drive out, then I can finally leave this cave.>
+waitForUser
+exit
+endIf
+ifNumberOfNpcsIs.1.902391A4
+say.<Hello, Amy!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You can do it, Amy.
+    Just {4*one} more fairy, then I can reach the exit unharmed.
+>
+waitForUser
+exit
+endIf
+ifNumberOfNpcsIs.0.902391A4
+goto.10
+endIf
+label.20
+setNpcModifier.-1.-1.1
+ifNumberOfNpcsIs.0.902391A4
+goto.10
+endIf
+say.<I'm so happy to see you, Amy!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    I'm still looking for my father, {4*Quinlin} the Dwarf Master.
+    But I'm not having much luck.
+    It's driving me to despair.
+>
+waitForUser
+talk.<
+    I couldn't find a trace of him - neither in the woods nor in the swamps of {4*Zanzarah}.
+    So I crossed the mountains and became stuck in this horrid cave.
+>
+waitForUser
+talk.<
+    There are vicious wild {4*fairies} everywhere.
+    I've been trapped in here for days, and I hate the cold.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I'd be eternally grateful if you could find all the fairies and drive them away.
+    Be careful, though, the fairies could be hiding in any corner of this {4*damp} cave.
+>
+waitForUser
+exit
+label.10
+deployNpcAtTrigger.82.1
+setCamera.3001
+playAnimation.13.-1
+say.<You did it, Amy!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You found all {4*four} wild fairies in this cave and drove them out.
+    You were brilliant!
+>
+waitForUser
+talk.<
+    At last I can leave this cold tomb.
+    Take this precious {4*Elementary Key of Air} as a sign of my thanks.
+    I found this old dwarf relic when I was travelling through the caves.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Now I can carry on looking for my father, the lost Dwarf Master.
+    He must be somewhere! See you soon, Amy.
+>
+waitForUser
+givePlayerCards.1.0.55
+changeWaypoint.1.2
+changeWaypoint.2.3
+removeNpc"""
+InitScript = "setModel.d006s02m"
+UpdateScript = "lookAtPlayer.0.1"

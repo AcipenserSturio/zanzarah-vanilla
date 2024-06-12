@@ -1,0 +1,56 @@
+UID = "1E12D3B4"
+Name = "23D47EB1"
+TriggerScript = """
+deployNpcAtTrigger.65.1
+setCamera.3000
+playAnimation.13.-1
+say.<Greetings from Seamus the Great, the Invincible.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    {4*I} alone will reach the top of the tower and seize the prize.
+    I am the true hero who will bring about the downfall of the {4*Dwarf Master}.
+    
+>
+waitForUser
+setTalkLabels.10.11.1
+talk.<
+    You're far too weak.
+    Go back to your human world and play with your dollies.
+    Or would you dare to fight me?
+>
+waitForUser
+label.10
+setCamera.1006
+fight.-1.0
+exit
+label.11
+setTalkLabels.-1.-1.0
+talk.<You wouldn't have stood a chance anyway.>
+waitForUser
+exit"""
+InitScript = """
+setModel.g204s20m
+defaultWizForm.3.0.31
+defaultWizForm.4.1.36
+defaultWizForm.21.2.34
+defaultWizForm.22.3.41"""
+UpdateScript = """
+label.0
+lookAtPlayer.1.1
+ifPlayerIsClose.2
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.3000
+setTalkLabels.-1.-1.0
+talk.<
+    I lost against you again! Why, oh why?
+>
+waitForUser
+changeWaypoint.30.31
+setCamera.3004
+changeWaypoint.31.32
+changeWaypoint.32.33
+removeNpc"""

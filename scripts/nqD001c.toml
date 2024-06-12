@@ -1,0 +1,33 @@
+UID = "149DEE04"
+Name = "E95016B1"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+say.<
+    Hello Amy! It's good to see you.
+>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Thank you for saving my father and myself from the {4*Druid}.
+    His fear of you humans has blinded him.
+>
+waitForUser
+talk.<
+    Now you need to find the {4*Guard} and eliminate him.
+    Use my father's {4*iron key} and descend into the {4*Shadow Realm}.
+>
+waitForUser
+talk.<
+    You'll find the entry to this dark underworld on the other side of the {4*Great Tree} in the swamp.
+    
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    I would come with you, but I've only just returned to my family and my girlfriend.
+    I need a rest before I start travelling again.
+>
+waitForUser"""
+InitScript = "setModel.d006s02m"
+UpdateScript = "lookAtPlayer.-1.1"

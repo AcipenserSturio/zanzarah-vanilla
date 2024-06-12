@@ -1,0 +1,57 @@
+UID = "30D9A6B4"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifPlayerHasCards.1.0.22
+goto.10
+endIf
+ifPlayerHasCards.1.0.44
+goto.20
+endIf
+say.<
+    Hear! Hear!
+>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    A tournament of the Fairy Masters has been announced.
+    Whoever manages to get to the top of the {4*Great Tree} will receive the powerful {4*Fairy Card of Air}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    There is only one {4*Fairy Card of Air}.
+    Whoever receives it will be sent to search for the traitor {4*Quinlin} with it.
+>
+waitForUser
+exit
+label.10
+say.<Welcome to the Great Tree, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    The dwarves were innocent?
+    The Druid is the one who summoned the Shadow Elves?
+    Bless my swamp bubbles, now you've got me totally confused.
+>
+waitForUser
+exit
+label.20
+say.<Welcome to the Great Tree, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You've found the {4*Fairy Card of Air}?
+    Then you need to find {4*Quinlin}, the lost leader of the dwarves.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Quinlin's {4*Staff of Rule} proves that he's working with the {4*Shadow Elves}.
+    Find the traitor and punish him!
+>
+waitForUser
+exit"""
+InitScript = "setModel.g001s01m"
+UpdateScript = "lookAtPlayer.0.1"

@@ -1,0 +1,41 @@
+UID = "96837434"
+Name = "7B2D8F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+say.<Welcome to my humble shop!>.0
+waitForUser
+label.10
+say.<How can I help you?>.1
+choice.0.<Buy potions and herbs>
+choice.1.<What do you know about the Fire Fairies?>
+choice.2.<Not at all>
+waitForUser
+label.0
+tradingCurrency.BAA9B8A3
+tradingItem.3.99D2B4A3
+tradingItem.4.AD58B4A3
+tradingItem.3.99613EA3
+tradingItem.5.2E2FB8A3
+tradingItem.4.66F10A03
+waitForUser
+goto.10
+label.1
+setTalkLabels.-1.-1.2
+talk.<
+    {4*Fire Fairies} are especially precious beings in Zanzarah.
+    They're hard to find.
+    That is, to be precise: Nobody has seen one since the ancient times.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    There are rumours that the {4*house of the Dwarf Master} holds {4*Fire Fairies}.
+    These are inaccessible to us, since the {4*door mechanism} was broken a long time ago ...
+>
+waitForUser
+goto.10
+label.2
+exit"""
+InitScript = "setModel.d003s03m"
+UpdateScript = "lookAtPlayer.-1.1"

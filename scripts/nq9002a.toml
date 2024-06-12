@@ -1,0 +1,71 @@
+UID = "4C505E04"
+Name = "2B4B0221"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Greetings, Amy.>.0
+waitForUser
+ifPlayerHasCards.1.0.26
+setCamera.3001
+setTalkLabels.-1.-1.2
+talk.<
+    If that isn't {4*Quinlin's} Staff of Rule ...! You found it on a {4*Shadow Elf}?
+    That makes this dwarf artefact a valuable piece of evidence! 
+>
+waitForUser
+setCamera.3001
+setTalkLabels.-1.-1.0
+talk.<
+    Take it to {4*Tiralin}.
+    The mayor of Tiralin should be able to tell you more about the artefact.
+    Maybe we'll be able to find out who's behind the evil in {4*Zanzarah} thanks to you.
+>
+waitForUser
+endIf
+label.9
+say.<What would you like to know?>.1
+choice.10.<Old arena>
+choice.15.<Origin of the Shadow Elves>
+choice.16.<Nothing for now>
+waitForUser
+label.10
+setTalkLabels.-1.-1.2
+talk.<
+    Once upon a time, collecting and training fairies was the highest art of all in {4*Zanzarah}.
+    Fairy fights would be held throughout {4*Zanzarah}, and Fairy Masters met at the arena.
+    
+>
+waitForUser
+talk.<
+    The best of them competed in fantastic magical duels.
+    There were lavish celebrations where people danced and sang ...
+    but our traditions were lost.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    No inhabitant of {4*Zanzarah} found the path to the arena for a very long time.
+    The once so glorious buildings went to ruins, and the arena was forgotten.
+>
+waitForUser
+goto.9
+label.15
+setTalkLabels.-1.-1.2
+talk.<
+    Light and dark are close together.
+    The world beyond the swamp is as sinister and full of shadows as this Realm of Clouds is radiant and light.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    It is the home of the {4*Shadow Elves}, who have now left the darkness.
+    Nobody knows who summoned them.
+>
+waitForUser
+goto.9
+label.16
+exit"""
+InitScript = "setModel.v000s00"
+UpdateScript = """
+deployNpcAtTrigger.43.0
+lookAtPlayer.-1.0"""

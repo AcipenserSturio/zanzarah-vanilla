@@ -1,0 +1,24 @@
+UID = "25A37894"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+say.<Welcome to my shop.>.0
+waitForUser
+say.<You are bound to want to buy something from me, isn't that so?>.1
+choice.5.<Yes>
+choice.6.<No>
+waitForUser
+label.5
+tradingCurrency.C564B4A3
+tradingItem.5.23173793
+tradingItem.10.99D2B4A3
+tradingItem.20.AD58B4A3
+tradingItem.20.709DB4A3
+tradingItem.25.2E2FB8A3
+waitForUser
+label.6
+exit"""
+InitScript = """
+setModel.g201s21m
+wizform.0.74.40"""
+UpdateScript = "lookAtPlayer.-1.1"

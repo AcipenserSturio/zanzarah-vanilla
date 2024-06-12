@@ -1,0 +1,21 @@
+UID = "93D15694"
+Name = "0FDF8F91"
+TriggerScript = """
+gotoRandomLabel.4.0
+label.0
+say.<You'd think at least one might ...>.0
+goto.10
+label.1
+say.<I never expected a trout, just a little swampfish, maybe ...>.0
+goto.10
+label.2
+say.<Those stupid Shadow Elves have scared off all the fish ...>.0
+goto.10
+label.3
+say.<I wonder if it's because of the bait ...?>.0
+goto.10
+label.10
+waitForUser"""
+InitScript = """
+setNpcType.4
+setModel.g009s04m"""

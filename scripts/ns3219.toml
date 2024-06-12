@@ -1,0 +1,76 @@
+UID = "11428094"
+Name = "44EB3001"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Prepare for your last fight!>.0
+waitForUser
+changeWaypoint.-1.-1
+talk.<
+    You'll never escape this trap.
+    Our {4*dark fairies} will easily destroy yours!
+>
+waitForUser
+setCamera.3000
+deployNpcAtTrigger.82.6eceda24
+startEffect.0.82
+delay.10
+playSound.5
+setCamera.3001
+delay.10
+playSound.5
+setCamera.3002
+delay.10
+playSound.5
+setCamera.3003
+delay.10
+playSound.5
+fight.-1.1"""
+InitScript = """
+setModel.u000s00m
+defaultWizForm.69.0.50
+defaultWizForm.68.1.45
+defaultWizForm.70.2.55
+defaultWizForm.51.3.45
+defaultWizForm.24.4.33"""
+UpdateScript = """
+label.0
+lookAtPlayer.1.1
+ifPlayerIsClose.15
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+talk.<The Druid help us, who can stop her now?!>
+waitForUser
+removeNpcAtTrigger.81
+delay.10
+startEffect.0.87
+delay.1
+setCamera.3001
+startEffect.0.88
+delay.1
+startEffect.1.89
+delay.1
+setCamera.3000
+startEffect.1.90
+delay.1
+startEffect.0.88
+delay.1
+startEffect.0.91
+delay.1
+setCamera.3003
+startEffect.1.91
+delay.1
+startEffect.0.87
+delay.1
+setCamera.3002
+startEffect.1.92
+delay.1
+startEffect.1.89
+delay.1
+startEffect.1.90
+delay.1
+startEffect.0.88
+delay.1
+removeNpc"""

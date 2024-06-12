@@ -1,0 +1,29 @@
+UID = "E9A6CBA4"
+Name = "B18BDDB1"
+TriggerScript = """
+ifNpcModifierHasValue.1
+say.<Unfortunately this chest is empty!>.0
+waitForUser
+exit
+endIf
+say.<Open casket?>.1
+choice.0.<Yes>
+choice.1.<No>
+waitForUser
+label.0
+setCamera.1007
+playAnimation.14.0
+playSound.1
+createDynamicModel.0.-1.-1
+givePlayerCards.1.0.29
+setNpcModifier.-1.-1.1
+delay.10
+setCamera.1006
+label.1
+exit"""
+InitScript = """
+setNpcType.4
+setModel.i003si03
+ifNpcModifierHasValue.1
+playAnimation.14.0
+endIf"""

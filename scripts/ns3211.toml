@@ -1,0 +1,51 @@
+UID = "0D55A334"
+Name = "7B2D8F91"
+TriggerScript = """
+playAnimation.13.-1
+setCamera.1000
+say.<A fairy collector, oh how nice.>.0
+waitForUser
+ifNpcModifierHasValue.1
+setTalkLabels.-1.-1.0
+talk.<I hope you're happy with your Electric Fairy!>
+waitForUser
+exit
+endIf
+setTalkLabels.-1.-1.2
+talk.<
+    I see you're also an enthusiastic {4*fairy collector}.
+    I found this strange fairy on a long journey.
+    It throws bolts of lightning ...
+>
+waitForUser
+setTalkLabels.0.1.1
+talk.<
+    However, I now specialise in {4*Air} Fairies.
+    I would like to trade my {4*Energy Fairy} for the Air Fairy {4*Fathrael}.
+    Do you agree?
+>
+waitForUser
+label.0
+setTalkLabels.-1.-1.0
+ifPlayerHasCards.1.2.42
+talk.<
+    Wonderful! Here, take my Energy Fairy!
+>
+waitForUser
+removeWizForms
+tradeWizform.29
+setNpcModifier.-1.-1.1
+exit
+else
+talk.<Sorry, I don't see Fathrael with you anywhere!>
+waitForUser
+endIf
+label.1
+exit"""
+InitScript = """
+setModel.d000s00m
+movementSpeed.14
+ifNpcModifierHasValue.0
+defaultWizForm.29.0.9
+endIf"""
+UpdateScript = "lookAtPlayer.0.1"

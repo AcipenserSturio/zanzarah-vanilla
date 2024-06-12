@@ -1,0 +1,58 @@
+UID = "780C9704"
+Name = "2B4B0221"
+TriggerScript = """
+ifNpcModifierHasValue.0
+setNpcModifier.1032.2.1000
+setNpcModifier.-1.-1.1
+setCamera.3003
+delay.20
+exit
+endIf
+deployNpcAtTrigger.19.1
+setCamera.3003
+playAnimation.13.-1
+say.<Welcome to my Realm of Clouds, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You have found the old {4*arena of the Fairy Masters}, Amy.
+    This is where the best Fairy Masters would meet to let their fairies fight.
+>
+waitForUser
+talk.<
+    They gathered here from all over {4*Zanzarah}.
+    The goblins came from the swamp, the dwarves from the mountains and the elves from the dark forests.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    But now the once so glorious arena is haunted by a malicious {4*Shadow Elf}.
+    He is supported by the evil {4*Dark Fairies}, particularly powerful and dangerous creatures from the depths of {4*Zanzarah}.
+    Be careful, Amy! 
+>
+waitForUser
+changeWaypoint.1.2
+changeWaypoint.2.3
+deployNpcAtTrigger.43.0
+changeDatabase.4C505E04
+exit"""
+InitScript = "setModel.v000s00"
+UpdateScript = """
+label.0
+lookAtPlayer.3.0
+ifNpcModifierHasValue.0
+goto.10
+else
+goto.11
+endIf
+goto.0
+label.10
+ifPlayerIsClose.1500
+startPrelude
+endIf
+goto.0
+label.11
+ifPlayerIsClose.10
+startPrelude
+endIf
+goto.0"""

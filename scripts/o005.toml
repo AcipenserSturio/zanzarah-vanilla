@@ -1,0 +1,25 @@
+UID = "A7AC4A04"
+Name = "5B6A3F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.15.-1
+say.<Amy, it's good to see you.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Strange things are happening in {4*Zanzarah}.
+    Sinister {4*prickly bushes} full of thorns are growing, huge {4*rocks} come loose and block paths and passes.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    There must be something evil behind it all, Amy.
+    Be careful on your travels, and never underestimate the power of the fairies - they created {4*Zanzarah}, and they control the elements.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<With their help, you can overcome obstacles and use natural phenomena like the {4*air eddies}.>
+waitForUser"""
+InitScript = "setModel.w003s03m"
+UpdateScript = "lookAtPlayer.0.0"

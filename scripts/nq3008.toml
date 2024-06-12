@@ -1,0 +1,55 @@
+UID = "B517A5B4"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifPlayerHasCards.1.0.15
+say.<I hope you had a good trip.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Our village is once again {4*safe}.
+    Thank you, Amy.
+>
+waitForUser
+exit
+endIf
+say.<Maybe you can help.>.0
+waitForUser
+gotoRandomLabel.3.5
+label.5
+talk.<
+    My friends are trapped in our {4*swamp village}.
+    Please help us! They say there is a {4*rune} that grants the bearer access to our village.
+>
+waitForUser
+exit
+label.6
+talk.<
+    The {4*Shadow Elves} are besieging my village in the swamp! All entrances are blocked.
+    Please help us! Find the {4*Swamp Rune}.
+    It's the only way to access the swamp village.
+>
+waitForUser
+exit
+label.7
+talk.<
+    If you liberate our village from the siege of the {4*Shadow Elves}, we goblins will be eternally grateful.
+    You will need a {4*rune} to enter our village.
+>
+waitForUser
+exit"""
+InitScript = """
+setModel.g007s01m
+movementSpeed.10"""
+UpdateScript = """
+label.0
+moveSystem.1.1
+gotoRandomLabel.3.0
+goto.0
+label.1
+playAnimation.0.30
+goto.0
+label.2
+playAnimation.11.30
+goto.0"""

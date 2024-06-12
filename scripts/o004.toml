@@ -1,0 +1,31 @@
+UID = "867BC434"
+Name = "5B6A3F31"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.15.-1
+say.<Amy, it's good to see you.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    You've come a long way, Amy.
+    Anyone who travels the deep canyons and valleys of {4*Zanzarah} must be experienced and have stamina.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    But believe me: If you climb to the very top of those mountains, you've still never seen the highest points of Zanzarah! No natural path leads there.
+    You have to use the {4*dwarves' elevators}.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<Driven by the magic energy contained in the legendary {4*Elemental Stones}, these elevators will take you to the strangest places of {4*Zanzarah}.>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Depending on the destination, such an elevator requires different {4*Elemental Stones} to function.
+    The elevator just around the corner requires those of {4*Air}, {4*Earth} and {4*Nature} - there always have to be three.
+>
+waitForUser"""
+InitScript = "setModel.w003s03m"
+UpdateScript = "lookAtPlayer.0.0"

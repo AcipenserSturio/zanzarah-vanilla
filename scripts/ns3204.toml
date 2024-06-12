@@ -1,0 +1,47 @@
+UID = "B8FAD994"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Oh, a human in our world?!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    I've never seen a human before, let alone one with a {4*fairy}! Come on, let's see whose fairy's best.
+    If you win, I'll give you a valuable {4*item}!
+>
+waitForUser
+setCamera.1006
+fight.223.0"""
+InitScript = """
+setModel.g300s30m
+defaultWizForm.9.0.2
+defaultWizForm.0.1.3"""
+UpdateScript = """
+label.0
+ifPlayerIsClose.11
+startPrelude
+else
+lookAtPlayer.5.1
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.1000
+setTalkLabels.-1.-1.2
+talk.<
+    Your skill is surprising.
+    Take this {4*mana potion}.
+    You can use it to recharge your fairies' {4*magic energy}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You'd better check whether your fairy still has sufficient {4*mana}.
+    If its energy is used up, it'll automatically use up its life essence, which is not very good for it.
+>
+waitForUser
+givePlayerCards.2.0.60
+setCamera.3000
+changeWaypoint.-1.100
+removeNpc
+setCamera.1006"""

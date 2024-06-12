@@ -1,0 +1,27 @@
+UID = "2476C9B4"
+Name = "B18BDDB1"
+TriggerScript = """
+setCamera.3010
+say.<Oh, that must be {4*Rafi's} home ...>.1
+playAmyVoice.trg03a
+delay.20
+setCamera.3011
+delay.20
+say.<
+    ...
+    but who are those dull creatures?
+>.1
+playAmyVoice.trg03b
+setCamera.3012
+delay.20
+removeNpc"""
+InitScript = """
+setNpcType.4
+setCollision.0"""
+UpdateScript = """
+label.0
+ifPlayerIsClose.155
+startPrelude
+endIf
+idle
+goto.0"""

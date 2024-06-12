@@ -1,0 +1,62 @@
+UID = "9B19DD14"
+Name = "F655D391"
+TriggerScript = """
+ifPlayerHasCards.1.0.56
+deployNpcAtTrigger.13.1
+setCamera.3001
+playAnimation.13.-1
+say.<Greetings, traveller.>.0
+waitForUser
+setCamera.1000
+changeWaypoint.-1.-1
+talk.<
+    You saved our forest hut from the {4*prickly bushes}! Thank you so much, now I can finally return home to my beloved wife.
+>
+waitForUser
+changeWaypoint.0.1
+talk.<Just drop by when you're near our forest hut.>
+waitForUser
+changeWaypoint.1.2
+setNpcModifier.212.11.0
+removeNpc
+exit
+endIf
+setCamera.1000
+playAnimation.13.-1
+say.<I'm a traveller in these swamps as well.>.0
+waitForUser
+ifPlayerHasCards.1.0.47
+setTalkLabels.-1.-1.2
+talk.<
+    Oh, you've found the lost {4*Fairy Card of Nature}! If you choose a {4*Nature Fairy} as your active fairy, it will destroy the prickly bushes surrounding our {4*forest hut}.
+    
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Please help us! My wife and I are being driven to despair! The weeds are choking everything else!
+>
+waitForUser
+exit
+endIf
+setTalkLabels.-1.-1.2
+talk.<
+    I come from the forests of {4*Zanzarah}.
+    I live in a cosy hut which I share with my beloved wife.
+    But for some time now, {4*prickly bushes} have been smothering our home like weeds.
+>
+waitForUser
+talk.<
+    So I'm travelling all around {4*Zanzarah} looking for help.
+    When I got to {4*Dunmore}, I heard of a magic place in the swamp, a ring of stone surrounded by ghost lights.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    But it's far too dangerous for me to go there.
+    Only a Fairy Master could dare to try.
+>
+waitForUser
+exit"""
+InitScript = "setModel.w001s01m"
+UpdateScript = "lookAtPlayer.0.1"

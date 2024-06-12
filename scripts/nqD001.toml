@@ -1,0 +1,44 @@
+UID = "DA3243A4"
+Name = "E95016B1"
+TriggerScript = """
+setCamera.1002
+playAnimation.13.-1
+ifPlayerHasCards.1.0.25
+say.<Don't trust the Druid!>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You've got the {4*key to the dwarf factory}.
+    Go to the dwarf village {4*Monagham} and find out the truth.
+>
+waitForUser
+exit
+endIf
+say.<Amy, help me!>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    Don't believe a word the Druid says! A dwarf would never steal anything.
+    I was only searching for a hint on where I might find my father {4*Quinlin}.
+>
+waitForUser
+setCamera.2003
+talk.<
+    Then I found this valuable old {4*dwarf key}.
+    It's the key to the hidden {4*dwarf factory} in {4*Monagham}.
+    Use it.
+    That's the only place you can find out what happened to {4*Zanzarah}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Don't let the {4*Druid's} glory blind you.
+    Go to {4*Monagham}!
+>
+waitForUser
+setCamera.1006
+givePlayerCards.1.0.25"""
+InitScript = """
+setModel.d006s02m
+startActorEffect.1"""
+UpdateScript = "lookAtPlayer.-1.1"

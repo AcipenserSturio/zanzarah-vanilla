@@ -1,0 +1,65 @@
+UID = "56EA89B4"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.3001
+ifPlayerHasCards.1.0.15
+say.<Welcome to my shop.>.0
+waitForUser
+label.0
+say.<Since you defeated the Shadow Elves, more goods are being delivered to the swamp village.>.1
+choice.1.<Buy>
+choice.3.<Secrets of the swamp>
+choice.2.<See you soon>
+waitForUser
+label.1
+tradingCurrency.C564B4A3
+tradingItem.5.23173793
+tradingItem.10.99D2B4A3
+tradingItem.15.AD58B4A3
+tradingItem.15.709DB4A3
+tradingItem.30.1889A2B3
+waitForUser
+goto.0
+label.3
+setTalkLabels.-1.-1.0
+talk.<
+    Deep in the swamp you'll find many helpful {4*objects}.
+    But beware, the swamp is full of {4*peril} and {4*danger}!
+>
+waitForUser
+goto.0
+label.2
+exit
+endIf
+say.<
+    You must be the human they're all talking about.
+    
+>.0
+waitForUser
+label.9
+say.<I can sell you things and give you advice.>.1
+choice.10.<Buy>
+choice.11.<Secrets of the swamp>
+choice.12.<See you soon>
+waitForUser
+label.10
+tradingCurrency.C564B4A3
+tradingItem.10.23173793
+tradingItem.20.AD58B4A3
+tradingItem.50.709DB4A3
+waitForUser
+goto.9
+label.11
+setTalkLabels.-1.-1.0
+talk.<
+    There are rumours of a {4*fairy card} hidden in the swamp.
+    But it is easy to get lost there.
+    In some places you will find {4*ghost lights}.
+    These will mostly lead you to interesting places.
+>
+waitForUser
+goto.9
+label.12
+exit"""
+InitScript = "setModel.g002s02m"
+UpdateScript = "lookAtPlayer.-1.1"

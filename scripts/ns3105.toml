@@ -1,0 +1,44 @@
+UID = "5D6AB704"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+ifNumberOfNpcsIs.1.B2EE3B04
+playAnimation.13.-1
+say.<Welcome.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<You're a true friend of the goblins.>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.15
+playAnimation.13.-1
+say.<Welcome.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Thank you for helping us.
+    Even my husband dares to tread the catwalks once more.
+>
+waitForUser
+exit
+endIf
+playAnimation.12.-1
+say.<Oh, it's terrible.>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    My poor husband, he just can't calm down.
+    The Shadow Elves have raided us, they have stolen anything they could find in the house.
+    My husband panicked and he's never calmed down since.
+    
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Rid us of the {4*Shadow Elves} in this village.
+    I hope that will take his fear from him.
+>
+waitForUser"""
+InitScript = "setModel.g003s03m"
+UpdateScript = "lookAtPlayer.0.1"

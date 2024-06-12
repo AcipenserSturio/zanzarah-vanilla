@@ -1,0 +1,130 @@
+UID = "A5058034"
+Name = "9F4416B1"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.29.-1
+say.<Praise the Druid, it's so good to see you, Amy.>.0
+waitForUser
+ifPlayerHasCards.1.0.15
+setTalkLabels.-1.-1.0
+talk.<
+    Where did you get this {4*Fairy Conch}?
+    It's a lost spell for {4*Water Fairies}.
+    As long as you have this Fairy Conch, the Water Fairies are driven out of their hiding places and you can collect them.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.39
+setTalkLabels.-1.-1.0
+talk.<
+    The {4*prickly bushes} are a real plague.
+    They're hurting my fins.
+    But there are rumours of a {4*Fairy Card of Nature}, which can overcome the bushes.
+    This counter spell has been lost in the {4*swamp}.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.31
+setTalkLabels.-1.-1.0
+talk.<
+    Everything is lost! The {4*Shadow Elves} are still besieging my people's village in the swamp! Nobody can get in or get out of there.
+    Only if you've got the {4*Swamp Rune} can you {4*use} it to get straight into the village.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.16
+label.4
+say.<What do you want to know more about?>.1
+choice.5.<Pixie plague>
+choice.6.<Fairy bag>
+choice.2.<Nothing for now>
+waitForUser
+label.5
+setTalkLabels.-1.-1.0
+talk.<
+    Is it true that the {4*pixies} have escaped?
+    Pixies are unnerving little beasts! I hope somebody catches them.
+    {4*Lucius}, the Guardian of Pixies, will surely pay you a {4*reward} for your help.
+>
+waitForUser
+goto.4
+label.6
+setTalkLabels.-1.-1.2
+talk.<
+    You can carry {4*five fairies} with you in your fairy bag.
+    The first fairy is your {4*active fairy}, and will fight first in a battle.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You can see your collecting bag in the {4*menu}.
+    Choose your fairies wisely! Only with the right combination can you become a real Fairy Master.
+>
+waitForUser
+goto.4
+endIf
+ifPlayerHasSpecials.1.1
+setTalkLabels.-1.-1.0
+talk.<
+    So you've found a fairy?
+    Good Fairy Masters collect all kinds of fairies and train them.
+    Find a fairy collector and practice in a fairy duel, then you can find {4*wild fairies} more easily.
+>
+waitForUser
+exit
+endIf
+setTalkLabels.1.2.1
+talk.<
+    You can use the {4*rune} in your menu and always jump back to my cave.
+    You'll always be welcome here and I will {4*help} you as much as I can.
+    Do you want to find out more about Zanzarah?
+>
+waitForUser
+label.1
+setTalkLabels.-1.-1.2
+talk.<
+    There are {4*three worlds}: your human world, our Zanzarah and the world of the fairies.
+    In the olden days, these worlds were connected, but that was a long time ago.
+    Only the fairies can get to Zanzarah from their world.
+>
+waitForUser
+talk.<
+    The {4*fairies} were our friends, but now they are attacking us.
+    If a fairy attacks you, it'll fight against one of your {4*fairies}.
+    The elves in the forest village {4*Endeva} will know more.
+    The village is on the other side of this passageway.
+>
+waitForUser
+setCamera.3002
+delay.18
+setCamera.1006
+setTalkLabels.-1.-1.0
+talk.<
+    Once upon a time Zanzarah was paradise for us magical creatures.
+    There is no death or disease here.
+    But an {4*evil curse} is spreading through our world, as if Zanzarah were rotting away from the inside.
+    Be careful on your travels!
+>
+waitForUser
+exit
+label.2
+exit"""
+InitScript = """
+movementSpeed.10
+setModel.g000s00m"""
+UpdateScript = """
+lookAtPlayer.35.1
+label.0
+moveSystem.0.0
+gotoRandomLabel.3.0
+goto.0
+label.1
+lookAtPlayer.30.1
+goto.0
+label.2
+lookAtPlayer.60.1
+goto.0"""

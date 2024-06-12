@@ -1,0 +1,57 @@
+UID = "BD221D14"
+Name = "BDE38F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifNpcModifierHasValue.0
+say.<Oh my, what kind of a giant creature are you?>.0
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    I've been roaming the woods of {4*Zanzarah} for some time, looking for rare Nature Fairies.
+    I love those little green creatures, even though their spells can be really mean.
+>
+waitForUser
+talk.<
+    Their {4*Poison spell} is particularly dangerous.
+    A fairy hit by it will continually lose {4*life energy} while it is in the {4*astral plane}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You will need {4*medicine} to heal a poisoned fairy.
+    Here's a phial just in case.
+    Only use it when you need it!
+>
+waitForUser
+givePlayerCards.1.0.7
+setNpcModifier.-1.-1.1
+exit
+else
+goto.100
+endIf
+label.100
+say.<There must be some rare fairies here somewhere ...>.0
+waitForUser
+setTalkLabels.-1.-1.0
+ifNpcModifierHasValue.1
+talk.<
+    Hm, there's not much to find in this forest.
+    Maybe I should try somewhere else ...
+>
+endIf
+waitForUser
+setNpcModifier.-1.-1.1000
+exit"""
+InitScript = """
+setModel.g300s30m
+movementSpeed.13
+defaultWizForm.2.0.4"""
+UpdateScript = """
+label.0
+ifPlayerIsClose.15
+lookAtPlayer.10.1
+else
+moveSystem.1.10
+endIf
+goto.0"""

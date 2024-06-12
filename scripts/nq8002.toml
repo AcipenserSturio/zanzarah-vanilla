@@ -1,0 +1,33 @@
+UID = "E943B9B4"
+Name = "97688F91"
+TriggerScript = """
+setCamera.1000
+setTalkLabels.5.10.1
+talk.<
+    A human being! You're a ridiculous opponent.
+    Do you dare challenge me to a fight?
+>
+waitForUser
+label.5
+setCamera.1006
+fight.-1.0
+label.10
+setTalkLabels.-1.-1.0
+talk.<That is a cowardly but wise decision.>
+waitForUser"""
+InitScript = """
+setModel.u003s03m
+defaultWizForm.15.0.25
+defaultWizForm.35.1.20
+defaultWizForm.51.2.34
+defaultWizForm.68.3.40"""
+UpdateScript = "lookAtPlayer.-1.1"
+DefeatedScript = """
+setCamera.1000
+say.<
+    You're a troublesome beast! And one day I'll have my revenge on you!
+>.0
+waitForUser
+startEffect.0.-1
+removeNpc"""
+VictoriousScript = "killPlayer"

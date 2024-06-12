@@ -1,0 +1,14 @@
+UID = "B2EE3B04"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Hello, Fairy Mistress.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<I hope I never see those {4*Shadow Elves} again!>
+waitForUser"""
+InitScript = """
+movementSpeed.2
+setModel.g002s02m"""
+UpdateScript = "lookAtPlayer.0.1"

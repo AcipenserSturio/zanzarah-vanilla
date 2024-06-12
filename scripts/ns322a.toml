@@ -1,0 +1,45 @@
+UID = "EDF3CF24"
+Name = "97688F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Aha, it's the pesky human girl at last!>.0
+waitForUser
+changeWaypoint.-1.-1
+setTalkLabels.-1.-1.2
+talk.<
+    I have been waiting for you for a long time.
+    I was posted in this dreadful place to put an end to your journey, once and for all.
+    
+>
+waitForUser
+talk.<
+    Please don't think I'm enjoying this - I loathe this dizzying height and the constant bright light.
+    
+>
+waitForUser
+talk.<Let's begin the fight at once, I must get back to my {4*Shadow Realm}!>
+waitForUser
+setCamera.3005
+fight.-1.-1"""
+InitScript = """
+defaultWizForm.14.0.36
+defaultWizForm.60.1.40
+defaultWizForm.54.2.46
+defaultWizForm.38.3.50
+defaultWizForm.12.4.30
+setModel.u002s02m"""
+UpdateScript = """
+label.0
+lookAtPlayer.2.1
+ifPlayerIsClose.20
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.3005
+talk.<Finally, finally I can leave ...>
+waitForUser
+delay.10
+startEffect.0.-1
+removeNpc"""

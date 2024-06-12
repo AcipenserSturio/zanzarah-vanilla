@@ -1,0 +1,55 @@
+UID = "D23AD1A4"
+Name = "44EB3001"
+TriggerScript = """
+setCamera.3000
+changeWaypoint.-1.-1
+playAnimation.13.-1
+say.<Halt, who goes there?!>.0
+waitForUser
+ifNumberOfNpcsIs.0.2989FB4
+setCamera.1006
+setTalkLabels.-1.-1.2
+talk.<You were lucky against my soldiers, but that won't help you any more now.>
+waitForUser
+fight.-1.0
+else
+setTalkLabels.-1.-1.0
+talk.<
+    A human?
+    You are unworthy of challenging me, the {4*leader of the Shadow Elves}, to a duel.
+    I will only fight against you if you defeat my {4*three soldiers}.
+>
+waitForUser
+deployNpcAtTrigger.73.1
+deployNpcAtTrigger.32.0
+setCamera.1006
+delay.10
+endIf"""
+InitScript = """
+setModel.u000s00m
+defaultWizForm.15.0.18
+defaultWizForm.16.1.11
+defaultWizForm.29.2.4
+defaultWizForm.32.3.5
+defaultWizForm.16.4.13"""
+UpdateScript = """
+label.0
+idle
+ifTriggerIsActive.28
+startPrelude
+endIf
+goto.0"""
+DefeatedScript = """
+setCamera.1000
+talk.<
+    How could I lose this fight?
+    I'll find new fairies, then I'll defeat you!
+>
+waitForUser
+givePlayerCards.1.0.15
+delay.15
+setCamera.3003
+changeWaypoint.-1.4200
+changeWaypoint.4200.4201
+changeWaypoint.4201.4202
+removeNpc"""

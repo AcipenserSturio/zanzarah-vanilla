@@ -1,0 +1,207 @@
+UID = "1D7435A4"
+Name = "9F4416B1"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+playPlayerAnimation.13.-1
+say.<Praise the Druid, it's so good to see you, Amy.>.0
+waitForUser
+ifPlayerHasSpecials.1.0
+setTalkLabels.-1.-1.2
+talk.<
+    Before you can set out on your travels in Zanzarah, you need to have your own {4*fairy}! It's the only thing that can protect you from the wild fairies that live among the trees, stones and by the river.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You'd best visit the village of {4*Endeva}.
+    It's not far from here and its inhabitants are the peaceful {4*Forest Elves}.
+    They should be able to help you.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.0.0.16
+setTalkLabels.-1.-1.2
+talk.<
+    The fairies follow you, Amy! You may not be aware that not many people experience such a miracle in their lifetimes!
+>
+waitForUser
+talk.<
+    Train your fairy as well as possible.
+    Your journey will be long and difficult.
+    You should visit {4*Lucius} next.
+    He lives in a small house on the edge of the garden.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<The inhabitants of Zanzarah have entrusted {4*Lucius} with keeping all the {4*pixies} locked in his cellar, but it seems the pixies have escaped ...>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.0.0.31
+setTalkLabels.-1.-1.2
+talk.<
+    Using your own fairy, you should now be able to reach the {4*fairy city of Tiralin}.
+    {4*Tiralin} is in the heart of Zanzarah.
+    Its narrow streets are full of elves, dwarves and goblins.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You will come across many interesting beings and information, but don't spend too long in the magnificent town! Your real destination is the Swamp Goblins' village of {4*Dunmore}.
+    You should be able to get there easily from {4*Tiralin}.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.0.0.47
+setTalkLabels.-1.-1.2
+talk.<
+    Do you know our game of cards?
+    It's a mysterious game of power and magic.
+    Each card in this game represents an element such as {4*fire}, {4*air} or {4*earth}.
+    The important card for you at the moment is the {4*Fairy Card of Nature}.
+>
+waitForUser
+talk.<
+    Combined with an {4*active Nature Fairy}, you can use this to destroy the weeds that have begun smothering Zanzarah.
+    Find the card, it's the only way you can continue your quest!
+>
+setTalkLabels.-1.-1.0
+waitForUser
+talk.<Like all lost cards of the game, this one is kept in a {4*magic place} surrounded by mist, swamp and glowing creatures ...>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.0.0.45
+setTalkLabels.-1.-1.2
+talk.<
+    The {4*Fairy Card of Nature} is just one in a line of cards.
+    To explore other places within Zanzarah, find the {4*Fairy Card of Earth}.
+    Combine it with a {4*Stone Fairy} to remove the large rocks.
+>
+waitForUser
+setTalkLabels.-1.-1.2
+talk.<
+    My information is old, unproven, more legend than fact ...
+    but you should find this card in the forgotten {4*Realm of Clouds}.
+    The dwarves once built machines to reach those heights.
+>
+waitForUser
+talk.<
+    Visit their refuge of knowledge, the {4*Tower of the Dwarves}.
+    It stands by a cliff among the mountains.
+    Proceed with caution, dwarves are peaceful, but also distrustful.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    A further port of call should be the secluded {4*hut in the forest}.
+    Its inhabitants are peaceful and may be able to help you ...
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.0.0.26
+setTalkLabels.-1.-1.2
+talk.<
+    I see you've found the {4*Fairy Card of Earth Magic}.
+    It is a powerful card.
+    Use it with a Stone Fairy to destroy the rocks that cover {4*Zanzarah}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Explore the most distant corners of {4*Zanzarah}.
+    It is the only way you can continue your journey.
+    Maybe you will even find the path to legendary places like the {4*arena} in the Realm of Clouds ...
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.0.0.44
+setTalkLabels.-1.-1.2
+talk.<
+    The game is not yet over, Amy.
+    You have nature and earth, but you must find the {4*Fairy Card of Air}.
+    It is kept in a tree amid the {4*Misty Swamp}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Combine it with an {4*Air Fairy} so that you can use the {4*eddies} that you will find throughout Zanzarah.
+    Use it to overcome abysses and heights!
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.0.0.22
+setTalkLabels.-1.-1.2
+talk.<
+    Sadly, the dwarf art of smithery has often been ill-used, and many important magic places in Zanzarah have been closed by indestructible iron gates.
+    No fairy card and no spell will help you there.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    You had better try to find the key to the iron gates.
+    I'm afraid I don't know where you might find it, but why don't you try the legendary {4*White Cathedral} of Zanzarah.
+    I have long suspected that there is some kind of link between the powers of sky and earth.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.0.0.52
+setTalkLabels.-1.-1.0
+talk.<
+    Just a small hint, but one that may come in useful, Amy: During my travels in Zanzarah, I heard of a magic stone concealed behind a beautiful waterfall.
+    Maybe you can use it somehow ...
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.-1.2.31
+setTalkLabels.-1.-1.0
+talk.<
+    Amy, you are well equipped for your final great {4*fairy fight}.
+    Fulfil the prophecy and prove that you are the best fairy collector ever.
+    Reopen the {4*ancient paths}!
+>
+waitForUser
+exit
+endIf
+setTalkLabels.-1.-1.2
+talk.<
+    I'm afraid there's not much I can do to help you now, Amy.
+    The entrance to the sinister {4*Shadow Realm} has been opened.
+    It lies in the Misty Swamp, behind the old tree.
+>
+waitForUser
+talk.<
+    But don't be hasty, you don't yet know all the secrets and places of {4*Zanzarah}.
+    Try to find the last fairy cards first, and open the door to the fiery depths of Zanzarah.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    One more thing: Using the rare and precious {4*evolutionary stones}, you can change some fairies' elementary class by making them evolve.
+    You will need to do so desperately!
+>
+waitForUser
+exit"""
+InitScript = """
+movementSpeed.10
+setModel.g000s00m"""
+UpdateScript = """
+lookAtPlayer.35.1
+label.0
+moveSystem.0.0
+gotoRandomLabel.3.0
+goto.0
+label.1
+lookAtPlayer.30.1
+goto.0
+label.2
+lookAtPlayer.60.1
+goto.0"""

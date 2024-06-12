@@ -1,0 +1,33 @@
+UID = "B2989D04"
+Name = "0FDF8F91"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+say.<Greetings, Amy, saviour of the Swamp Goblins.>.0
+waitForUser
+setTalkLabels.1.2.1
+talk.<
+    I've been collecting herbs now that the swamp has become safe.
+    Would you like to trade eight gold coins for a fairy herb?
+>
+waitForUser
+label.1
+ifPlayerHasCards.8.0.4
+givePlayerCards.1.0.3
+removePlayerCards.8.0.4
+exit
+endIf
+talk.<
+    You must have miscounted.
+    There are no eight gold coins here.
+>
+waitForUser
+exit
+label.2
+exit"""
+InitScript = """
+setModel.g007s01m
+defaultWizForm.62.0.9"""
+UpdateScript = """
+deployNpcAtTrigger.67.0
+lookAtPlayer.-1.1"""

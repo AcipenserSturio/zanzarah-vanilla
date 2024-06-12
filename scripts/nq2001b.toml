@@ -1,0 +1,58 @@
+UID = "E8A1C684"
+Name = "8A0B7EB1"
+TriggerScript = """
+setCamera.1005
+playAnimation.13.-1
+gotoRandomLabel.2.10
+label.10
+say.<Hello Amy, was your pixie hunt successful?>.0
+goto.12
+label.11
+say.<How was the pixie hunt?>.0
+label.12
+waitForUser
+ifPlayerHasSpecials.0.10
+setTalkLabels.-1.-1.2
+talk.<
+    Wonderful! Thanks a lot for the pixies.
+    Here's your reward for {4*five pixies}.
+>
+waitForUser
+givePlayerCards.30.0.4
+changeDatabase.B1B031A4
+exit
+endIf
+setTalkLabels.-1.-1.0
+talk.<
+    I'm sorry, but you don't have enough pixies to trade.
+    I'll give you a reward for {4*five pixies caught}.
+>
+waitForUser
+label.0
+say.<How can I help you?>.1
+choice.1.<Pixie hunt>
+choice.2.<Seamus>
+choice.3.<Happy hunting.>
+waitForUser
+label.1
+talk.<
+    This is very embarrassing for me: The pixies escaped from my hut! The little pests are on the loose in {4*Zanzarah} now.
+    Catch them and bring the back to me! I'll lock them back in my cellar, where they belong.
+    
+>
+waitForUser
+goto.0
+label.2
+talk.<
+    {4*Seamus} dreams of becoming a great and famous Fairy Master, but I need his help hunting {4*pixies}.
+    Oh, these children ...
+>
+waitForUser
+goto.0
+label.3
+exit"""
+InitScript = """
+setModel.g207s23m
+movementSpeed.13
+wizform.1.1.2"""
+UpdateScript = "lookAtPlayer.0.1"

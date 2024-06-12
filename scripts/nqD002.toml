@@ -1,0 +1,31 @@
+UID = "C04B4184"
+Name = "2B4B0221"
+TriggerScript = """
+deployNpcAtTrigger.12.1
+setCamera.3001
+changeWaypoint.1.2
+playAnimation.13.-1
+say.<You're just in time, Amy.>.0
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    Here's another piece of evidence of the dwarves' guilt.
+    This insidious dwarf broke into my palace and tried to {4*steal} from me!
+>
+waitForUser
+setCamera.3020
+delay.20
+setCamera.3001
+setTalkLabels.-1.-1.0
+talk.<But I caught him and trapped him behind this impenetrable magic barrier.>
+waitForUser
+changeDatabase.5A886314
+exit"""
+InitScript = "setModel.v000s00"
+UpdateScript = """
+label.0
+idle
+ifTriggerIsActive.33
+startPrelude
+endIf
+goto.0"""

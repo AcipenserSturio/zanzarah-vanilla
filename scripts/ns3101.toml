@@ -1,0 +1,114 @@
+UID = "552589B4"
+Name = "C2A67EB1"
+TriggerScript = """
+setCamera.1000
+playAnimation.13.-1
+ifPlayerHasCards.1.0.15
+say.<Greetings, Amy, saviour of our village.>.0
+waitForUser
+else
+say.<I've been expecting you.>.0
+waitForUser
+endIf
+ifPlayerHasCards.1.0.22
+setTalkLabels.-1.-1.2
+talk.<
+    So the dwarves haven't formed an alliance with the {4*Shadow Elves} after all?
+    It was the {4*Druid} who summoned the Shadow Elves to keep the Guard alive?
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    How could the Druid bring this disaster on us?! Use the {4*iron key} and open up the gate to the subterranean world.
+    You'll find the entry into this realm on the other side of the {4*Great Tree}.
+>
+waitForUser
+exit
+endIf
+ifPlayerHasCards.1.0.26
+setTalkLabels.-1.-1.0
+talk.<
+    Is it true that the dwarves have formed an alliance with the {4*Shadow Elves}?
+    Oh dear.
+    I, Mowit the Seer, predict terrible times ahead!
+>
+waitForUser
+exit
+endIf
+ifNpcModifierHasValue.0
+setTalkLabels.-1.-1.0
+talk.<
+    I am {4*Mowit} the Seer.
+    I can help you in many things, creature from the human world.
+>
+waitForUser
+setNpcModifier.-1.-1.1
+endIf
+label.4
+say.<What do you want to ask Mowit the Seer?>.1
+choice.5.<Rafi the Goblin>
+ifPlayerHasCards.1.0.15
+choice.7.<Fairy Conch>
+else
+choice.6.<Shadow Elves>
+endIf
+choice.8.<See you soon>
+waitForUser
+label.5
+setTalkLabels.-1.-1.2
+talk.<
+    We Swamp Goblins are famous for our love of adventure.
+    Many of us have set out to explore new worlds.
+    The bravest among them is {4*Rafi}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    He even had the opportunity of visiting your realm.
+    I believe it had something to do with the prophecy mentioned in the ancient writings.
+>
+waitForUser
+goto.4
+label.6
+setTalkLabels.-1.-1.2
+talk.<
+    The {4*Shadow Elves} appeared from among the fog in the swamp and attacked our village.
+    They wreaked havoc in our houses and stole the {4*Fairy Conch}.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    The Fairy Conch is a precious object, the only thing that can lure the {4*Water Fairies} from their damp hiding places.
+    Those elves are bad!
+>
+waitForUser
+goto.4
+label.7
+setTalkLabels.-1.-1.2
+talk.<
+    You obtained the Fairy Conch from the {4*Shadow Elves}?
+    That is a truly brave deed.
+    Keep it as a token of our gratitude.
+>
+waitForUser
+setTalkLabels.-1.-1.0
+talk.<
+    With its help, you can find {4*Water Fairies}.
+    They mostly live in damp places like ponds, creeks or waterfalls.
+>
+waitForUser
+goto.4
+label.8
+exit"""
+InitScript = """
+setModel.g006s00m
+movementSpeed.7"""
+UpdateScript = """
+label.0
+lookAtPlayer.-1.1
+moveSystem.1.1
+gotoRandomLabel.2.0
+goto.0
+label.1
+playAnimation.0.90
+goto.0"""
